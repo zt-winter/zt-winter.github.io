@@ -1,561 +1,380 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/4/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://example.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta name="author" content="John Doe">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://example.com">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>Hexo - </title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="blog" />
+<meta property="og:title" content="Hexo - " />
+<meta property="og:description" content="" />
+<meta property="og:url" content="http://example.com" />
+<meta property="og:site_name" content="Hexo" />
+
+<link rel="dns-prefetch" href="http://example.com">
+<link rel="prefetch" href="http://example.com">
+<link rel="prerender" href="http://example.com">
+<link rel="stylesheet" href="/css/JSimple.min.css">
+    <script type="text/javascript">
+        (function() {
+            let jsi_config = {
+                rootUrl: 'http://example.com/',
+                isPost: 'false',
+                buildingTime: '01/20/2018',
+                snsQRCode: '',
+                donateImg: '/images/donate-qr.png',
+                readMode: 'day',
+                localSearch: { dbPath: '' }
+            };
+            
+            window.jsi_config = jsi_config;
+        })()
+    </script>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<script src="/js/SimpleCore.min.js"></script>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
 <meta name="generator" content="Hexo 6.2.0"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
         
-          <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
         
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    </nav>
+</div>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-typora/code/go/module" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/typora/code/go/module/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
-</a>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="模块-module"><a href="#模块-module" class="headerlink" title="模块 module"></a>模块 module</h1><p>一个基本模块的创建</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># cd ~/code/<span class="keyword">go</span></span><br><span class="line"># mkdir greetings &amp;&amp; cd greetings</span><br><span class="line"># <span class="keyword">go</span> mod init test.com/greetings</span><br><span class="line"><span class="keyword">go</span>: creating <span class="built_in">new</span> <span class="keyword">go</span>.mod: module test.com/greetings</span><br><span class="line"># vim greetings.<span class="keyword">go</span></span><br><span class="line"><span class="comment">//函数首字母大写，表示该函数可以被其他包调用</span></span><br><span class="line"><span class="keyword">package</span> greetings</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hello</span><span class="params">(name <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">        message := fmt.Sprintf(<span class="string">&quot;Hi, %v. welcome!&quot;</span>, name)</span><br><span class="line">        <span class="keyword">return</span> message</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//需要有main package，但go mod init &quot;模块名&quot; 模块名任意</span></span><br><span class="line"># <span class="keyword">go</span> build </span><br><span class="line"># ./<span class="string">&quot;模块名&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>一个模块调用另一个模块</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># cd ~/code/<span class="keyword">go</span></span><br><span class="line"># mkdir hello &amp;&amp; cd hello</span><br><span class="line"># <span class="keyword">go</span> mod init test.com/hello</span><br><span class="line"><span class="keyword">go</span>: creating <span class="built_in">new</span> <span class="keyword">go</span>.mod: module test.com/hello</span><br><span class="line"># vim hello.<span class="keyword">go</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">        <span class="string">&quot;fmt&quot;</span></span><br><span class="line">        <span class="string">&quot;test.com/greetings&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">        message := greetings.Hello(<span class="string">&quot;Gladys&quot;</span>)</span><br><span class="line">        fmt.Println(message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>​		上面这种包引用情况是，你将greetings里所有函数打包，然后形成greetings包上传到test.com中，然后在写hello时要调用greetings中的函数，就直接从网上下载，然后使用。但很多时候，一个大项目中许多小项目要互相引用，但有要引用的项目还没有上线，或者两个项目都在一个主机上，那么该如何引用其中的函数呢？这里提供方法，就是相对于本项目，指出要引用的包的路径。</p>
-<p>​		这里我们要引用greetings中函数</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># tree</span><br><span class="line">.</span><br><span class="line">├── greetings</span><br><span class="line">│   ├── <span class="keyword">go</span>.mod</span><br><span class="line">│   └── greetings.<span class="keyword">go</span></span><br><span class="line">├── hello</span><br><span class="line">│   ├── <span class="keyword">go</span>.mod</span><br><span class="line">│   └── hello.<span class="keyword">go</span></span><br><span class="line">└── pkg</span><br><span class="line">    └── mod</span><br><span class="line">        └── cache</span><br><span class="line">            └── lock</span><br><span class="line"><span class="comment">/* 	在hello目录的命令提示符下执行下列命令</span></span><br><span class="line"><span class="comment">	将go.mod文件中test.com/greetings替换为../greetings</span></span><br><span class="line"><span class="comment">	当前目录~/code/go/hello，那么../greetings就是</span></span><br><span class="line"><span class="comment">	~/code/go/greetings目录</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"># <span class="keyword">go</span> mod edit -replace test.com/greetings=../greetings</span><br><span class="line"></span><br><span class="line"><span class="comment">/*	在hello目录的命令提示符下执行下列命令</span></span><br><span class="line"><span class="comment">	该命令会在刷新同步test.com/hello模块的依赖，</span></span><br><span class="line"><span class="comment">	自动添加不全所需要的代码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"># <span class="keyword">go</span> mod tidy</span><br><span class="line"><span class="keyword">go</span>: found test.com/greetings in test.com/greetings v0<span class="number">.0</span><span class="number">.0</span><span class="number">-00010101000000</span><span class="number">-000000000000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	这之后go.mod文件的内容</span></span><br><span class="line">module test.com/hello</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.17</span></span><br><span class="line"></span><br><span class="line">replace test.com/greetings =&gt; ../greetings</span><br><span class="line"></span><br><span class="line">require test.com/greetings v0<span class="number">.0</span><span class="number">.0</span><span class="number">-00010101000000</span><span class="number">-000000000000</span></span><br><span class="line"># <span class="keyword">go</span> run .</span><br><span class="line">Hi, Gladys. welcome!</span><br></pre></td></tr></table></figure>
-
-<p>这里我们继续添加一个模块，模块位于hello模块中。目录结构如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># mkdir ./hello/submodule</span><br><span class="line"># tree</span><br><span class="line">├── greetings</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   └── greetings.go</span><br><span class="line">├── hello</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   ├── hello</span><br><span class="line">│   ├── hello.go</span><br><span class="line">│   └── submodule</span><br><span class="line">└── pkg</span><br><span class="line">    └── mod</span><br><span class="line">        └── cache</span><br><span class="line">            └── lock</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	我们在submodule文件夹下开始新的模块的建立</span></span><br><span class="line"># <span class="keyword">go</span> mod init test.com/submodule</span><br><span class="line"># vim submodule.<span class="keyword">go</span></span><br><span class="line"><span class="keyword">package</span> submodule</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Test</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;This is a test module&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	然后我们回到hello目录下</span></span><br><span class="line"># vim hello.<span class="keyword">go</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">        <span class="string">&quot;fmt&quot;</span></span><br><span class="line">        <span class="string">&quot;test.com/greetings&quot;</span></span><br><span class="line">        <span class="string">&quot;test.com/submodule&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">        message := greetings.Hello(<span class="string">&quot;Gladys&quot;</span>)</span><br><span class="line">        fmt.Println(message)</span><br><span class="line">        submodule.Test()</span><br><span class="line">&#125;</span><br><span class="line"># <span class="keyword">go</span> mod edit -replace test.com/submodule=./submodule</span><br><span class="line"># <span class="keyword">go</span> mod tidy</span><br><span class="line"><span class="keyword">go</span>: found test.com/submodule in test.com/submodule v0<span class="number">.0</span><span class="number">.0</span><span class="number">-00010101000000</span><span class="number">-000000000000</span></span><br><span class="line"># <span class="keyword">go</span> run .</span><br><span class="line">Hi, Gladys. welcome!</span><br><span class="line">This is a test module</span><br></pre></td></tr></table></figure>
-
-<h2 id="在同一个项目下"><a href="#在同一个项目下" class="headerlink" title="在同一个项目下"></a>在同一个项目下</h2><p><strong>注意</strong>：在一个项目（project）下我们是可以定义多个包（package）的。</p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>现在的情况是，我们在<code>moduledemo/main.go</code>中调用了<code>mypackage</code>这个包。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moduledemo</span><br><span class="line">├── go.mod</span><br><span class="line">├── main.go</span><br><span class="line">└── mypackage</span><br><span class="line">    └── mypackage.go</span><br></pre></td></tr></table></figure>
-
-<h3 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h3><p>这个时候，我们需要在<code>moduledemo/go.mod</code>中按如下定义：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module moduledemo</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
-
-<p>然后在<code>moduledemo/main.go</code>中按如下方式导入<code>mypackage</code></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;moduledemo/mypackage&quot;</span>  <span class="comment">// 导入同一项目下的mypackage包</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    mypackage.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h3><p>举一反三，假设我们现在有文件目录结构如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">└── bubble</span><br><span class="line">    ├── dao</span><br><span class="line">    │   └── mysql.go</span><br><span class="line">    ├── go.mod</span><br><span class="line">    └── main.go</span><br></pre></td></tr></table></figure>
-
-<p>其中<code>bubble/go.mod</code>内容如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module github.com/q1mi/bubble</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
-
-<p><code>bubble/dao/mysql.go</code>内容如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dao</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;mypackage.New&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>bubble/main.go</code>内容如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;github.com/q1mi/bubble/dao&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dao.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="不在同一个项目下"><a href="#不在同一个项目下" class="headerlink" title="不在同一个项目下"></a>不在同一个项目下</h2><h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├── moduledemo</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   └── main.go</span><br><span class="line">└── mypackage</span><br><span class="line">    ├── go.mod</span><br><span class="line">    └── mypackage.go</span><br></pre></td></tr></table></figure>
-
-<h3 id="导入包-1"><a href="#导入包-1" class="headerlink" title="导入包"></a>导入包</h3><p>这个时候，<code>mypackage</code>也需要进行module初始化，即拥有一个属于自己的<code>go.mod</code>文件，内容如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module mypackage</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
-
-<p>然后我们在<code>moduledemo/main.go</code>中按如下方式导入：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;mypackage&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    mypackage.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因为这两个包不在同一个项目路径下，你想要导入本地包，并且这些包也没有发布到远程的github或其他代码仓库地址。这个时候我们就需要在<code>go.mod</code>文件中使用<code>replace</code>指令。</p>
-<p>在调用方也就是<code>packagedemo/go.mod</code>中按如下方式指定使用<strong>相对路径</strong>来寻找<code>mypackage</code>这个包。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module moduledemo</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require <span class="string">&quot;mypackage&quot;</span> v0<span class="number">.0</span><span class="number">.0</span></span><br><span class="line">replace <span class="string">&quot;mypackage&quot;</span> =&gt; <span class="string">&quot;../mypackage&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a>举个例子</h3><p>最后我们再举个例子巩固下上面的内容。</p>
-<p>我们现在有文件目录结构如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├── p1</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   └── main.go</span><br><span class="line">└── p2</span><br><span class="line">    ├── go.mod</span><br><span class="line">    └── p2.go</span><br></pre></td></tr></table></figure>
-
-<p><code>p1/main.go</code>中想要导入<code>p2.go</code>中定义的函数。</p>
-<p><code>p2/go.mod</code>内容如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module liwenzhou.com/q1mi/p2</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
-
-<p><code>p1/main.go</code>中按如下方式导入</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;liwenzhou.com/q1mi/p2&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    p2.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因为我并没有把<code>liwenzhou.com/q1mi/p2</code>这个包上传到<code>liwenzhou.com</code>这个网站，我们只是想导入本地的包，这个时候就需要用到<code>replace</code>这个指令了。</p>
-<p><code>p1/go.mod</code>内容如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module github.com/q1mi/p1</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require <span class="string">&quot;liwenzhou.com/q1mi/p2&quot;</span> v0<span class="number">.0</span><span class="number">.0</span></span><br><span class="line">replace <span class="string">&quot;liwenzhou.com/q1mi/p2&quot;</span> =&gt; <span class="string">&quot;../p2&quot;</span></span><br></pre></td></tr></table></figure>
-
-      
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <img class="cover-img" src="https://shuoit.net/images/cover-day.jpg" alt="cover-img" loading="lazy" />
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">说IT</h1>
+        <h3 class="cover-siteTitle">用代码摇滚这个世界</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-telegram">
+        <a href="https://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+            <i class="fa fa-telegram"></i>
+        </a>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/typora/code/go/module/" data-id="cl4mjzkhn000ohli9997vd0cr" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+
+    &nbsp;&nbsp;<div class="btn btn-twitter">
+        <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-stack-overflow">
+        <a href="https://stackoverflow.com/users/6133063/tangkunyin" target="_blank" title="stack-overflow" ref="friend">
+            <i class="fa fa-stack-overflow"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li class="active">
+            <a href="/" data-name="Recent Posts">Recent Posts</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/tech" data-name="技术">技术</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/huma" data-name="人文">人文</a>
+        </li>
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text"
+               readonly="readonly"
+               id="local-search-input-tip"
+               placeholder="click to search..." />
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <!-- default get newest -->
+    
+        
+<article class="post">
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/typora/code/go/module/" target="_blank" title=""></a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        
+    </div>
 </article>
 
 
 
-  
-    <article id="post-typora/code/go/name_guide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/typora/code/go/name_guide/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+        
+<article class="post">
     
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>0. 简单的哲学</strong></p>
-<p>Go 的设计哲学之一就是追求简单，因此在命名上一样秉承着简单的总体原则<strong>。</strong>要想做好 Go 标识符命名（包括 package 命名)，至少要遵循两个原则：</p>
-<ul>
-<li><strong>简单且一致</strong></li>
-<li><strong>利用上下文辅助命名</strong></li>
-</ul>
-<ol>
-<li><strong>区分大小写的语言</strong></li>
-</ol>
-<p>命名规则涉及变量、常量、全局函数、结构、接口、方法等的命名。 Go语言从语法层面进行了以下限定：<strong>任何需要对外暴露的名字必须以大写字母开头，不需要对外暴露的则应该以小写字母开头</strong>。</p>
-<p>当命名（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：SetupRouter，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出。</p>
-<p>命名如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的。</p>
-<p><strong>2. 包名称</strong></p>
-<blockquote>
-<p>The rule of thumb I follow is not, “what types should I put in this  package?”. Instead the question I ask “what does service does package  provide?”</p>
-</blockquote>
-<ul>
-<li>最好保持 package 的名字和目录保持一致。</li>
-<li>尽量采取有意义的包名，简短，有意义，尽量和标准库不要冲突。</li>
-<li>包名应该为小写单词，尽量不要使用下划线或者混合大小写。</li>
-<li>包名以及包所在的目录名，不要使用复数，例如，是net&#x2F;utl，而不是net&#x2F;urls。</li>
-<li>不要用 common、util、shared 或者 lib 这类宽泛的、无意义的包名。</li>
-<li>包名要简单明了，例如 net、time、log。</li>
-</ul>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> controller</span><br></pre></td></tr></table></figure>
-
-<p><strong>3. 文件命名</strong></p>
-<p>尽量采取有意义的文件名，简短，有意义，应该为小写单词，使用下划线分隔各个单词。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">routers.<span class="keyword">go</span></span><br><span class="line">user_controller.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>4. 结构体命名</strong></p>
-<p>采用驼峰命名法，首字母根据访问控制大写或者小写。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> UserInfo <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name      <span class="type">string</span> <span class="string">`gorm:&quot;type:varchar(20);not null&quot;`</span></span><br><span class="line">	Telephone <span class="type">string</span> <span class="string">`gorm:&quot;type:varchar(11);not null;unique&quot;`</span></span><br><span class="line">	Password  <span class="type">string</span> <span class="string">`gorm:&quot;size:255;not null&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>5. 接口命名</strong></p>
-<p>在 Go 语言中 interface  名字仍然以单个词为优先。命名规则基本和上面的结构体类型类似。对于拥有唯一方法或通过多个拥有唯一方法的接口组合而成的接口，Go  语言的惯例是一般用”方法名+er”的方式为 interface 命名，例如 Reader , Writer 。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Writer <span class="keyword">interface</span> &#123;</span><br><span class="line">    Write(p []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Reader <span class="keyword">interface</span> &#123;</span><br><span class="line">    Read(p []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Closer <span class="keyword">interface</span> &#123;</span><br><span class="line">    Close() <span class="type">error</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> ReadWriteCloser <span class="keyword">interface</span> &#123;</span><br><span class="line">    Reader</span><br><span class="line">    Writer</span><br><span class="line">    Closer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>6. 变量命名</strong></p>
-<p>和结构体类似，变量名称一般遵循驼峰法，首字母根据访问控制原则大写或者小写，但遇到特有名词时，需要遵循以下规则：</p>
-<p>如果变量为私有，且特有名词为首个单词，则使用小写，如 appService；</p>
-<p>若变量类型为 bool 类型，则名称应以 Has, Is, Can 或 Allow 开头。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isExist <span class="type">bool</span></span><br><span class="line"><span class="keyword">var</span> hasConflict <span class="type">bool</span></span><br><span class="line"><span class="keyword">var</span> canManage <span class="type">bool</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>7. 方法的接收器命名</strong></p>
-<p>下面的代码里那个附加的参数p，叫做方法的接收器（receiver）</p>
-<p>在Go语言中，我们并不会像其它语言那样用this或者self作为接收器；我们可以任意的选择接收器的名字。由于接收器的名字经常会被使用到，所以保持其在方法间传递时的一致性和简短性是不错的主意。这里的建议是可以使用其类型的第一个字母，比如这里使用了Point的首字母p。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Point <span class="keyword">struct</span>&#123; X, Y <span class="type">float64</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p Point)</span></span> Distance(q Point) <span class="type">float64</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> math.Hypot(q.X-p.X, q.Y-p.Y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>8. 变量名字中不要带有类型信息</strong></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userSlice []*User         <span class="comment">// bad</span></span><br><span class="line">users     []*User         <span class="comment">// good</span></span><br></pre></td></tr></table></figure>
-
-<p>不过可能会有这样的质疑：userSlice 中的类型信息可以告诉我们变量所代表的底层存储是一个切片，这样便可以在 userSlice 上应用切片的各种操作了。提出这样质疑的开发者显然忘记了一条编程语言命名的通用惯例：<strong>保持变量声明与使用之间的距离越近越好或者说将变量声明在第一次使用该变量之前</strong>。这个惯例与 Go 核心团队的安德鲁·杰拉德曾提到的一种说法：<strong>“一个名字的声明和使用之间的距离越大，这个名字的长度就越长”</strong>异曲同工。如果在一屏之内能看到 users 的声明，那 Slice 这个类型信息显然是不必放在变量的名称中了。</p>
-<p><strong>9. 保持简短命名变量含义上的一致性</strong></p>
-<p>Go 语言中有大量的单字母或单个词或缩写命名的简短命名变量，有人可能会质疑简短命名变量会带来可读性上的下降。Go 语言建议通过保持一致性来维持可读性。一致意味着代码中相同或相似的命名所传达的含义是相同或相似的，这样便于代码阅读者或维护者猜测出变量的用途。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">变量v, k, i的常用含义：</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 循环语句中的变量</span></span><br><span class="line">	<span class="keyword">for</span> i, v := <span class="keyword">range</span> s &#123; ... &#125; <span class="comment">// i: 下标变量； v：元素值</span></span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="keyword">range</span> m &#123; ... &#125; <span class="comment">// k: key变量；v: 元素值</span></span><br><span class="line">	<span class="keyword">for</span> v := <span class="keyword">range</span> r &#123; <span class="comment">// channel ... &#125; // v: 元素值</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// if、switch/case分支语句中的变量</span></span><br><span class="line">	<span class="keyword">if</span> v := mimeTypes[ext]; v != <span class="string">&quot;&quot;</span> &#123; &#125; <span class="comment">// v: 元素值</span></span><br><span class="line">	<span class="keyword">switch</span> v := ptr.Elem(); v.Kind() &#123;  </span><br><span class="line">		... ...</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> v := &lt;-c: <span class="comment">// v: 元素值</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 反射的结果值</span></span><br><span class="line">	v := reflect.ValueOf(x)</span><br><span class="line"></span><br><span class="line">变量t的常用含义：</span><br><span class="line"></span><br><span class="line">	t := time.Now() <span class="comment">// 时间</span></span><br><span class="line">	t := &amp;Timer&#123;&#125;<span class="comment">// 定时器</span></span><br><span class="line">	<span class="keyword">if</span> t := md.typemap[off]; t != <span class="literal">nil</span> &#123; &#125;<span class="comment">// 类型</span></span><br><span class="line"></span><br><span class="line">变量b的常用含义：</span><br><span class="line"></span><br><span class="line">	b := <span class="built_in">make</span>([]<span class="type">byte</span>, n) <span class="comment">// byte切片</span></span><br><span class="line">	b := <span class="built_in">new</span>(bytes.Buffer) <span class="comment">// byte缓存</span></span><br></pre></td></tr></table></figure>
-
-<p>Go 中的变量名应该短而不是长。对于作用域有限的局部变量尤其如此。更喜欢 c 而不是 lineCount。更喜欢 i 而不是 sliceIndex。</p>
-<p>在相对简单（对象数量少、针对性强）的环境中，可以将一些名称由完整单词简写为单个字母，例如：user 可以简写为 u；userID 可以简写 uid。</p>
-<p><strong>10. Error 的命名</strong></p>
-<p>Error 类型应该写成 FooError 的形式。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ExitError <span class="keyword">struct</span> &#123;  </span><br><span class="line"> <span class="comment">// ....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Error 变量写成 ErrFoo 的形式。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ErrFormat = errors.New(<span class="string">&quot;unknown format&quot;</span>)</span><br></pre></td></tr></table></figure>
-      
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/typora/code/go/name_guide/" target="_blank" title=""></a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/typora/code/go/name_guide/" data-id="cl4mjzkhn000phli9foysaggw" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <div class="post-desc">
+        
+    </div>
 </article>
 
 
 
-  
-    <article id="post-typora/code/go/parameter" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/typora/code/go/parameter/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+        
+<article class="post">
     
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h1><h2 id="GO中参数传递只有值传递，没有参数传递"><a href="#GO中参数传递只有值传递，没有参数传递" class="headerlink" title="GO中参数传递只有值传递，没有参数传递"></a>GO中参数传递只有值传递，没有参数传递</h2><h3 id="slice-map-chan-在使用时都是指针类型"><a href="#slice-map-chan-在使用时都是指针类型" class="headerlink" title="slice map chan  在使用时都是指针类型"></a>slice map chan  在使用时都是指针类型</h3><p>主函数调用test函数，在函数传递参数时，<code>func test( sliceA  []int)</code>，sliceA就是指针，它和原切片的指针不是同一个东西，两个指针指向同一个slice，但所在的位置不同。由于slice创建时，自身就有cap和len两个参数。如果只是对原有slice中数值进行修改，那么是没有问题的，主函数中slice也会修改。但如果进行扩容操作，如append，如果cap改变了，那么就会在新的slice上进行操作，返回新的slice地址。主函数中的slice地址就不会修改。</p>
-<p>如果传递的参数是slice的地址，<code> func test ( sliceA *[]int)</code>。在进行扩容操作后，新的slice地址也会赋值给slice，相当于主函数中slice指针指向了新的slice地址。</p>
-<p>所以 __在GO中没有按参数传递，只有指针的副本传递和值的副本传递__。</p>
-
-      
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/typora/code/go/parameter/" target="_blank" title=""></a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/typora/code/go/parameter/" data-id="cl4mjzkhn000qhli9b02y35oh" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <div class="post-desc">
+        
+    </div>
 </article>
 
 
 
-  
-    <article id="post-typora/code/go/reflect" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/typora/code/go/reflect/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+        
+<article class="post">
     
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="reflect"><a href="#reflect" class="headerlink" title="reflect"></a>reflect</h1><p>反射是指在程序运行时对程序本身的进行访问和修改的能力。</p>
-<h2 id="type和value"><a href="#type和value" class="headerlink" title="type和value"></a>type和value</h2><p>在golang中对所有的接口反射，都可以得到type和value。而golang中任意数据结构都实现了空接口,也就是说任意数据结构都有reflectt.type和reflect.value。<br>reflect.type表示一个数据结构的类型，这个类型的各种基本信息。reflect.value则表示了运行过程中，该数据结构类型的一个具体实现的值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type test struct&#123;</span><br><span class="line">	a int</span><br><span class="line">	b string</span><br><span class="line">	c map[int]int</span><br><span class="line">	d *test</span><br><span class="line">&#125;</span><br><span class="line">a := new(test)</span><br><span class="line">aT := reflect.Typeof(a)</span><br><span class="line">aV := reflect.Valueof(a)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*main.test</span><br><span class="line">0x47e1c0</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://pkg.go.dev/reflect@go1.18.3#Type">type接口的函数</a></p>
-<p><a target="_blank" rel="noopener" href="https://cs.opensource.google/go/go/+/refs/tags/go1.18.3:src/reflect/value.go;l=39">value结构体定义</a></p>
-<p>type和value的相关函数都在前面两处文档中有详细说明，这里不在赘述。</p>
-
-      
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/typora/code/go/reflect/" target="_blank" title=""></a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/typora/code/go/reflect/" data-id="cl4mjzkhn000rhli96p4cg47q" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <div class="post-desc">
+        
+    </div>
 </article>
 
 
 
-  
-    <article id="post-typora/code/go/goroutie/basic_usage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/typora/code/go/goroutie/basic_usage/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+        
+<article class="post">
     
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="协程的基本使用"><a href="#协程的基本使用" class="headerlink" title="协程的基本使用"></a>协程的基本使用</h1><h3 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">    <span class="string">&quot;runtime&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    runtime.GOMAXPROCS(<span class="number">16</span>)</span><br><span class="line">    <span class="comment">//共计有14个task 协程在执行</span></span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">select</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">task</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行后，top命令如下，test命令占用了1401%的CPU，这里是因为top是只计算单核的，也可以说有14个逻辑cpu是占用满的</p>
-<p><img src="D:\typora\code\go\goroutie\top.png" alt="top"></p>
-<p>下面用top查看单个cpu的情况</p>
-<p><img src="D:\typora\code\go\goroutie\top_onecore.png" alt="top单核"></p>
-<p>可以看到里面有14个逻辑核心使用率几乎都达到了100%。</p>
-<p>然后可以从系统管理器查看使用情况</p>
-<p><img src="D:\typora\code\go\goroutie\system_control.png" alt="系统管理"></p>
-<h3 id="协程的基本使用与控制"><a href="#协程的基本使用与控制" class="headerlink" title="协程的基本使用与控制"></a>协程的基本使用与控制</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func A(i int) &#123;</span><br><span class="line">	fmt.Println(&quot;A function&quot;)</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(&quot;main function&quot;)</span><br><span class="line">	go A(1)</span><br><span class="line">    fmt.Println(&quot;main function is over&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./test</span><br><span class="line">main function</span><br><span class="line">main function is over</span><br></pre></td></tr></table></figure>
-
-<p>在默认情况下，每个独立的 Go 应用运行时就创建了一个 Go 协程，其 <code>main</code> 函数就在这个 Go 协程中运行，这个 Go 协程就被称为 <code>go 主协程（main Goroutine)</code>。Go调度器在主协程执行完之前不会将控制权移交给A协程。同时一旦主协程执行完毕，整个程序就会终止，调度器就没有时间留给A协程去运行。</p>
-<p>在main函数末尾加上<code>fmt.Println(&#39;main function is over&#39;)</code>前面加上<code>time.Sleep(10*time.Millisecond)</code>后再编译执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test</span></span><br><span class="line">main function</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test</span></span><br><span class="line">main function</span><br><span class="line">A function</span><br><span class="line">main function is over</span><br></pre></td></tr></table></figure>
-
-<p>然后在A函数中加入<code>time.Sleep(1*time.Millisecond)</code>编译执行，发现结果没有变化。但如果将休眠时间改为<code>time.Sleep(10*time.Millisecond)</code>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test</span></span><br><span class="line">main function</span><br><span class="line">main function is over</span><br></pre></td></tr></table></figure>
-
-<p>一般子协程的执行时间是无法事先估计的，所以实际要达到上述效果，一般通过三种方式实现</p>
-<ol>
-<li>sync.WaitGroup的三个方法Add(),Done(),Wait()</li>
-<li>带buffer的channel来控制</li>
-<li>sync.Cond</li>
-</ol>
-
-      
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/typora/code/go/goroutie/basic_usage/" target="_blank" title=""></a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/typora/code/go/goroutie/basic_usage/" data-id="cl4mjzkhp0010hli96s409ge6" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <div class="post-desc">
+        
+    </div>
 </article>
 
 
 
-  
-    <article id="post-typora/README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/typora/README/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:35:35.761Z" itemprop="datePublished">2022-06-20</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+        
+<article class="post">
     
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>typora markdown学习笔记</p>
-
-      
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/typora/README/" target="_blank" title=""></a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/typora/README/" data-id="cl4mjzkhe0001hli9f7s6ef76" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <div class="post-desc">
+        
+    </div>
 </article>
 
 
 
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-06-20T09:33:55.308Z" itemprop="datePublished">2022-06-20</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
+<article class="post">
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://about.tangkunyin.com" target="_blank">
+                <strong>托码思</strong>
+            </a>
+            <em>·</em>2022-06-20
+            
+        </div>
+        <a class="post-title" href="/2022/06/20/hello-world/" target="_blank" title="Hello World">Hello World</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/20/hello-world/" data-id="cl4mjzkhc0000hli92rsieggw" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+    <div class="post-desc">
+        Hello World
+    </div>
 </article>
 
 
 
-  
+    
+</div>
+
+<div id="btn-pager">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+</div>
 
 
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: left">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="Links">Links</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="SiteMap">SiteMap</a>
+        </p>
+        <p>
+            Has been established&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbspDays，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a><br/>
+            ©2017-<span id="cpYear"></span> Based on&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，Theme by&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，Author&nbsp<a href="https://about.tangkunyin.com" target="_blank" rel="friend">托码思</a>
+            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+            
+        </p>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/06/20/typora/use_guide/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/20/typora/algorithm/leetcode_algorithm_39/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/20/typora/algorithm/monotonic_stack/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/20/typora/project/nirvana/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/20/typora/code/go/ellipsis.../">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
-
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input"
+                   spellcheck="false"
+                   type="text"
+                   autocomplete="off"
+                   placeholder="Input query keywords here..."/>
+        </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
 </html>
