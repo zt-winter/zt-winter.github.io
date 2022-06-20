@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="内置函数参考文章 universe.go源文件定义了go内置函数列表，Main函数调用initUniverse，进而调用lexinit对builtinpkg进行了初始化。SetSubOp调用会将Node结构(下文给出)中的Op设置为对应的值，用于标识该Node结构为内置函数。 builtinFuncs 12345678910111213141516171819202122232425262728v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/06/20/typora/code/go/build-in_function/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="内置函数参考文章 universe.go源文件定义了go内置函数列表，Main函数调用initUniverse，进而调用lexinit对builtinpkg进行了初始化。SetSubOp调用会将Node结构(下文给出)中的Op设置为对应的值，用于标识该Node结构为内置函数。 builtinFuncs 12345678910111213141516171819202122232425262728v">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:modified_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-typora/code/go/build-in_function" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/20/typora/code/go/build-in_function/" class="article-date">
+  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76524813">参考文章</a></p>
+<p>universe.go源文件定义了go内置函数列表，Main函数调用initUniverse，进而调用lexinit对builtinpkg进行了初始化。SetSubOp调用会将Node结构(下文给出)中的Op设置为对应的值，用于标识该Node结构为内置函数。</p>
+<figure class="highlight plaintext"><figcaption><span>builtinFuncs </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var builtinFuncs = [...]struct &#123;</span><br><span class="line">    name string</span><br><span class="line">    op   Op</span><br><span class="line">&#125;&#123;</span><br><span class="line">    &#123;&quot;append&quot;, OAPPEND&#125;,</span><br><span class="line">    &#123;&quot;cap&quot;, OCAP&#125;,</span><br><span class="line">    &#123;&quot;close&quot;, OCLOSE&#125;,</span><br><span class="line">    &#123;&quot;complex&quot;, OCOMPLEX&#125;,</span><br><span class="line">    &#123;&quot;copy&quot;, OCOPY&#125;,</span><br><span class="line">    &#123;&quot;delete&quot;, ODELETE&#125;,</span><br><span class="line">    &#123;&quot;imag&quot;, OIMAG&#125;,</span><br><span class="line">    &#123;&quot;len&quot;, OLEN&#125;,</span><br><span class="line">    &#123;&quot;make&quot;, OMAKE&#125;,</span><br><span class="line">    &#123;&quot;new&quot;, ONEW&#125;,</span><br><span class="line">    &#123;&quot;panic&quot;, OPANIC&#125;,</span><br><span class="line">    &#123;&quot;print&quot;, OPRINT&#125;,</span><br><span class="line">    &#123;&quot;println&quot;, OPRINTN&#125;,</span><br><span class="line">    &#123;&quot;real&quot;, OREAL&#125;,</span><br><span class="line">    &#123;&quot;recover&quot;, ORECOVER&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func lexinit()&#123;</span><br><span class="line">    for _, s := range builtinFuncs &#123;</span><br><span class="line">        s2 := builtinpkg.Lookup(s.name)</span><br><span class="line">        s2.Def = asTypesNode(newname(s2))</span><br><span class="line">        asNode(s2.Def).SetSubOp(s.op)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>make</code> 的作用是初始化内置的数据结构，也就是我们在前面提到的切片、哈希表和 Channel<a target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:2">2</a>；</li>
+<li><code>new</code> 的作用是根据传入的类型分配一片内存空间并返回指向这片内存空间的指针<a target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:3">3</a>；</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">100</span>)</span><br><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>)</span><br><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>, <span class="built_in">cap</span>)</span><br><span class="line">hash := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">bool</span>, <span class="number">10</span>)</span><br><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>slice</code> 是一个包含 <code>data</code>、<code>cap</code> 和 <code>len</code> 的结构体 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/reflect.SliceHeader"><code>reflect.SliceHeader</code></a>；</li>
+<li><code>hash</code> 是一个指向 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hmap"><code>runtime.hmap</code></a> 结构体的指针；</li>
+<li><code>ch</code> 是一个指向 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hchan"><code>runtime.hchan</code></a> 结构体的指针；</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i := <span class="built_in">new</span>(<span class="type">int</span>)</span><br><span class="line">=============</span><br><span class="line"><span class="keyword">var</span> v <span class="type">int</span></span><br><span class="line">i := &amp;v</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/20/typora/code/go/build-in_function/" data-id="cl4mjn1y1000hc6i96lzrgqux" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/20/typora/code/go/append/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/20/typora/code/go/data_struct/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/20/typora/use_guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/leetcode_algorithm_39/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/monotonic_stack/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/project/nirvana/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/code/go/ellipsis.../">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="archlinux clash proxychainarchlinux系统更新源中clash使用困难，pacman -S clash 直接去github下载官方版本安装，管理界面可以在浏览器中访问clash.razord.top&#x2F;#&#x2F;proxies中设置 archlinux kde中系统设置-&gt;网络代理设置并不起作用，firefox可以在浏览器中直接设置代理 1234ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/06/20/typora/archlinux/clashProxychain/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="archlinux clash proxychainarchlinux系统更新源中clash使用困难，pacman -S clash 直接去github下载官方版本安装，管理界面可以在浏览器中访问clash.razord.top&#x2F;#&#x2F;proxies中设置 archlinux kde中系统设置-&gt;网络代理设置并不起作用，firefox可以在浏览器中直接设置代理 1234ma">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:modified_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-typora/archlinux/clashProxychain" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/20/typora/archlinux/clashProxychain/" class="article-date">
+  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="archlinux-clash-proxychain"><a href="#archlinux-clash-proxychain" class="headerlink" title="archlinux clash proxychain"></a>archlinux clash proxychain</h1><p>archlinux系统更新源中clash使用困难，pacman -S clash</p>
+<p>直接去github下载官方版本安装，管理界面可以在浏览器中访问clash.razord.top&#x2F;#&#x2F;proxies中设置</p>
+<p>archlinux kde中系统设置-&gt;网络代理设置并不起作用，firefox可以在浏览器中直接设置代理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">manual proxy configuration</span><br><span class="line">	http proxy 127.0.0.1:7890</span><br><span class="line">	https proxy 127.0.0.1:7890</span><br><span class="line">	socks host 127.0.0.1:7891</span><br></pre></td></tr></table></figure>
+
+<p>对于需要应用程序需要使用代理的，可以使用proxychain</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//在/etc/proxychains.conf中修改</span><br><span class="line"># vim /etc/proxychains.conf</span><br><span class="line">[ProxyList]</span><br><span class="line">http 127.0.0.1 7890</span><br><span class="line">socks5 127.0.0.1 7891</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//使用方法</span><br><span class="line">proxychains yarn add coc-go</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://clash.gitbook.io/doc/restful-api/proxies">clash restful api使用</a></p>
+<p><a target="_blank" rel="noopener" href="http://machbbs.com/hostloc/337458">相关讨论</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//clash restful api接口 终端使用</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zt @ zt-zjh <span class="keyword">in</span> ~ [10:35:26]</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl 127.0.0.1:9090/proxies</span></span><br><span class="line">&#123;&quot;proxies&quot;:&#123;&quot;DIRECT&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;DIRECT&quot;,&quot;type&quot;:&quot;Direct&quot;,&quot;udp&quot;:true&#125;,&quot;GLOBAL&quot;:&#123;&quot;all&quot;:[&quot;DIRECT&quot;,&quot;REJECT&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;,&quot;� 节点选择&quot;,&quot;� 国外媒体&quot;,&quot;� 电报信息&quot;,&quot;Ⓜ️ 微软服务&quot;,&quot;� 苹果服务&quot;,&quot;� 谷歌FCM&quot;,&quot;� 全球直连&quot;,&quot;� 全球拦截&quot;,&quot;� 应用净化&quot;,&quot;� 漏网之鱼&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;GLOBAL&quot;,&quot;now&quot;:&quot;DIRECT&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;REJECT&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;REJECT&quot;,&quot;type&quot;:&quot;Reject&quot;,&quot;udp&quot;:true&#125;,&quot;Ⓜ️ 微软服务&quot;:&#123;&quot;all&quot;:[&quot;� 全球直连&quot;,&quot;�节点选择&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加</span><br><span class="line">坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;Ⓜ️ 微软服务&quot;,&quot;now&quot;:&quot;� 全球直连&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;加拿大 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;加拿大 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;印度 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;印度 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;印度尼西亚 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;印度尼西01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;台湾 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;台湾 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;台湾 02&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;台湾 02&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;台湾 03&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;台湾 03&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;巴西 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;巴西 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;德国 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;德国 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;意大利 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;意大利 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 02&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 02&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 03&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 03&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 04&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 04&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 05&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 05&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 06&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 06&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 07&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 07&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;新加坡 08&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;新加坡 08&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 02&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 02&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 03&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 03&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 04&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 04&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 05&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 05&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 06&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 06&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 07&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 07&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;日本 08&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;日本 08&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;法国 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;法国</span><br><span class="line">01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;澳大利亚 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;澳大利亚 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美国 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 02&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美国 02&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 03&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美国 03&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 04&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美</span><br><span class="line">国 04&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 05&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美国 05&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 06&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美国 06&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;美国 07&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;美国 07&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;英国 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;英国 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;荷兰 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;荷兰 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;越南 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;越南 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 01&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 01&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港</span><br><span class="line">02&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 02&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 03&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 03&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 04&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 04&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 05&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 05&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 06&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 06&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 07&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 07&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 08&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 08&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 09&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 09&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;香港 10&quot;:&#123;&quot;history&quot;:[],&quot;name&quot;:&quot;香港 10&quot;,&quot;type&quot;:&quot;Shadowsocks&quot;,&quot;udp&quot;:true&#125;,&quot;� 国外媒体&quot;:&#123;&quot;all&quot;:[&quot;� 节点选择&quot;,&quot;� 全球直连&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 国外媒体&quot;,&quot;now&quot;:&quot;� 节点选择&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 应用净化&quot;:&#123;&quot;all&quot;</span><br><span class="line">:[&quot;REJECT&quot;,&quot;DIRECT&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 应用净化&quot;,&quot;now&quot;:&quot;R</span><br><span class="line">EJECT&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 苹果服务&quot;:&#123;&quot;all&quot;:[&quot;� 节点选择&quot;,&quot;� 全球直连&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 苹果服务&quot;,&quot;now&quot;:&quot;� 节点选择&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 全球直连&quot;&#123;&quot;all&quot;:[&quot;DIRECT&quot;,&quot;� 节点选择&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加</span><br><span class="line">坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 全球直连&quot;,&quot;now&quot;:&quot;DIRECT&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 漏网之鱼&quot;:&#123;&quot;all</span><br><span class="line">&quot;:[&quot;� 节点选择&quot;,&quot;� 全球直连&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 漏网之鱼</span><br><span class="line">&quot;,&quot;now&quot;:&quot;� 节点选择&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 谷歌FCM&quot;:&#123;&quot;all&quot;:[&quot;� 节点选择&quot;,&quot;� 全</span><br><span class="line">球直连&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 谷歌FCM&quot;,&quot;now&quot;:&quot;� 节点选择&quot;,&quot;</span><br><span class="line">type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 电报信息&quot;:&#123;&quot;all&quot;:[&quot;� 节点选择&quot;,&quot;� 全球直连&quot;,&quot;香港 01&quot;,&quot;香港</span><br><span class="line"> 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美</span><br><span class="line">国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国</span><br><span class="line"> 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 电报信息&quot;,&quot;now&quot;:&quot;� 节点选择&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:</span><br><span class="line">true&#125;,&quot;� 节点选择&quot;:&#123;&quot;all&quot;:[&quot;DIRECT&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新</span><br><span class="line">加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南</span><br><span class="line"> 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香</span><br><span class="line">港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新</span><br><span class="line">加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 节</span><br><span class="line">点选择&quot;,&quot;now&quot;:&quot;DIRECT&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;,&quot;� 全球拦截&quot;:&#123;&quot;all&quot;:[&quot;REJECT&quot;,&quot;DIRECT&quot;,&quot;</span><br><span class="line">香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台</span><br><span class="line">湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度</span><br><span class="line"> 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利</span><br><span class="line">亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;� 全球拦截&quot;,&quot;now&quot;:&quot;REJECT&quot;,&quot;type&quot;:&quot;Selecto</span><br><span class="line">r&quot;,&quot;udp&quot;:true&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zt @ zt-zjh <span class="keyword">in</span> ~ [10:36:13]</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl -X GET http://127.0.0.1:9090/proxies/GLOBAL</span></span><br><span class="line">&#123;&quot;all&quot;:[&quot;DIRECT&quot;,&quot;REJECT&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;</span><br><span class="line">日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国</span><br><span class="line"> 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香</span><br><span class="line">港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;,&quot;� 节点选择&quot;,&quot;� 国外媒体&quot;,&quot;� 电报</span><br><span class="line">信息&quot;,&quot;Ⓜ️ 微软服务&quot;,&quot;� 苹果服务&quot;,&quot;� 谷歌FCM&quot;,&quot;� 全球直连&quot;,&quot;� 全球拦截&quot;,&quot;� 应用净化&quot;,&quot;�</span><br><span class="line"> 漏网之鱼&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;GLOBAL&quot;,&quot;now&quot;:&quot;DIRECT&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zt @ zt-zjh <span class="keyword">in</span> ~ [11:08:49] C:2</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl -X GET http://127.0.0.1:9090/configs</span></span><br><span class="line">&#123;&quot;port&quot;:7890,&quot;socks-port&quot;:7891,&quot;redir-port&quot;:0,&quot;tproxy-port&quot;:0,&quot;mixed-port&quot;:0,&quot;authentication&quot;:[],&quot;allow-lan&quot;:true,&quot;bind-address&quot;:&quot;*&quot;,&quot;mode&quot;:&quot;rule&quot;,&quot;log-level&quot;:&quot;info&quot;,&quot;ipv6&quot;:false&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># zt @ zt-zjh in ~ [11:32:23]</span><br><span class="line">$ curl -X GET http://127.0.0.1:9090/proxies/GLOBAL</span><br><span class="line">&#123;&quot;all&quot;:[&quot;DIRECT&quot;,&quot;REJECT&quot;,&quot;香港 01&quot;,&quot;香港 02&quot;,&quot;香港 03&quot;,&quot;新加坡 01&quot;,&quot;新加坡 02&quot;,&quot;新加坡 03&quot;,&quot;</span><br><span class="line">日本 01&quot;,&quot;日本 02&quot;,&quot;日本 03&quot;,&quot;美国 01&quot;,&quot;美国 02&quot;,&quot;美国 03&quot;,&quot;台湾 01&quot;,&quot;台湾 02&quot;,&quot;越南 01&quot;,&quot;德国</span><br><span class="line"> 01&quot;,&quot;香港 04&quot;,&quot;香港 05&quot;,&quot;台湾 03&quot;,&quot;日本 04&quot;,&quot;日本 05&quot;,&quot;日本 06&quot;,&quot;印度尼西亚 01&quot;,&quot;香港 06&quot;,&quot;香</span><br><span class="line">港 07&quot;,&quot;香港 08&quot;,&quot;香港 09&quot;,&quot;香港 10&quot;,&quot;美国 04&quot;,&quot;美国 05&quot;,&quot;新加坡 04&quot;,&quot;新加坡 05&quot;,&quot;新加坡 06&quot;,&quot;新加坡 07&quot;,&quot;新加坡 08&quot;,&quot;印度 01&quot;,&quot;日本 07&quot;,&quot;日本 08&quot;,&quot;美国 06&quot;,&quot;美国 07&quot;,&quot;巴西 01&quot;,&quot;意大利 01&quot;,&quot;荷兰 01&quot;,&quot;英国 01&quot;,&quot;澳大利亚 01&quot;,&quot;法国 01&quot;,&quot;加拿大 01&quot;,&quot;� 节点选择&quot;,&quot;� 国外媒体&quot;,&quot;� 电报</span><br><span class="line">信息&quot;,&quot;Ⓜ️ 微软服务&quot;,&quot;� 苹果服务&quot;,&quot;� 谷歌FCM&quot;,&quot;� 全球直连&quot;,&quot;� 全球拦截&quot;,&quot;� 应用净化&quot;,&quot;�</span><br><span class="line"> 漏网之鱼&quot;],&quot;history&quot;:[],&quot;name&quot;:&quot;GLOBAL&quot;,&quot;now&quot;:&quot;DIRECT&quot;,&quot;type&quot;:&quot;Selector&quot;,&quot;udp&quot;:true&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># zt @ zt-zjh in ~ [11:35:34]</span><br><span class="line">$ curl -XPATCH 127.0.0.1:9090/configs -d &#x27;&#123; &quot;mode&quot;: &quot;rule&quot; &#125;&#x27;</span><br><span class="line"></span><br><span class="line"># zt @ zt-zjh in ~ [11:41:02]</span><br><span class="line">$ curl  127.0.0.1:9090/configs</span><br><span class="line">&#123;&quot;port&quot;:7890,&quot;socks-port&quot;:7891,&quot;redir-port&quot;:0,&quot;tproxy-port&quot;:0,&quot;mixed-port&quot;:0,&quot;authentication&quot;:[],&quot;allow-lan&quot;:true,&quot;bind-address&quot;:&quot;*&quot;,&quot;mode&quot;:&quot;rule&quot;,&quot;log-level&quot;:&quot;info&quot;,&quot;ipv6&quot;:false&#125;</span><br><span class="line"></span><br><span class="line"># zt @ zt-zjh in ~ [11:42:20] C:130</span><br><span class="line">$ curl -XPATCH 127.0.0.1:9090/configs -d &#x27;&#123; &quot;mode&quot;: &quot;rule&quot; &#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/20/typora/archlinux/clashProxychain/" data-id="cl4mjn1xy0006c6i9310c4m9q" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/20/typora/archlinux/archlinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/20/typora/archlinux/hdmiFontSetting/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/20/typora/use_guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/leetcode_algorithm_39/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/monotonic_stack/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/project/nirvana/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/code/go/ellipsis.../">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

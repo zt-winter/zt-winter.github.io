@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="TCP重组开源项目中相关代码  gopacket中关于TCP重组有两个库，一个是tcpassembly，另一个是reassembly。tcpassembly功能不完善，bug比较多，并且已经很久没有维护。reassembly非常完善，因此在TCP重组实现时选择使用reassembly  一般实现TCP重组过程中基本变量初始化为steamFacotry -&gt; streamPool -&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/06/20/typora/code/go/gopacket_reassembly/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="TCP重组开源项目中相关代码  gopacket中关于TCP重组有两个库，一个是tcpassembly，另一个是reassembly。tcpassembly功能不完善，bug比较多，并且已经很久没有维护。reassembly非常完善，因此在TCP重组实现时选择使用reassembly  一般实现TCP重组过程中基本变量初始化为steamFacotry -&gt; streamPool -&gt;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:modified_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-typora/code/go/gopacket_reassembly" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/20/typora/code/go/gopacket_reassembly/" class="article-date">
+  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="TCP重组"><a href="#TCP重组" class="headerlink" title="TCP重组"></a>TCP重组</h1><p><a href="github.com/asmcos/sniffer/blob/master/sniffer.go#L1056">开源项目中相关代码</a></p>
+<ul>
+<li><p>gopacket中关于TCP重组有两个库，一个是tcpassembly，另一个是reassembly。tcpassembly功能不完善，bug比较多，并且已经很久没有维护。reassembly非常完善，因此在TCP重组实现时选择使用reassembly</p>
+</li>
+<li><p>一般实现TCP重组过程中基本变量初始化为steamFacotry -&gt; streamPool -&gt; assembler -&gt; AssembleWithContext -&gt; FlushWithOptions</p>
+</li>
+<li><p>AssembleWithContext在函数执行过程调用三个重要的函数StreamFactory.New(Creating a stream)	ReassembledSG(on a single stream)	ReassemblyComplete(on the same stream)</p>
+</li>
+<li><p>其中StreamFactory.New函数，由接口StreamFactory定义,AssembleWithContext函数调用getConnection函数，getConnection函数会调用StreamFactory.New()。StreamFactory接口定义New方法，需要使用者自己去构造New函数，新建的stream就可以在New函数中进行操作。<a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/reassembly/memory.go#L233">getConnection函数位置</a></p>
+</li>
+<li><p>ReassembledSG函数，在接口Stream中定义，AssembleWithContext函数调用sendToConnection函数，再调用ReassembledSG。同样需要使用者自己去构造ReassembledSG函数。<a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/reassembly/tcpassembly.go#L1101">sendToConnection函数位置</a></p>
+</li>
+<li><p>ReassemblyComplete函数，在接口Stream中定义，AssembleWithContext函数调用sendToConnection函数，再调用closeHalfConnection函数，再调用ReassemblyComplete函数。<a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/reassembly/tcpassembly.go#L1198">closeHalfConnection函数位置</a></p>
+</li>
+<li><p>在接口stream中还定义了Accept函数，由该函数可以实现如何选择正确的TCP数据包加入到流中</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">// AssembleWithContext reassembles the given TCP packet into its appropriate</span><br><span class="line">// stream.</span><br><span class="line">//</span><br><span class="line">// The timestamp passed in must be the timestamp the packet was seen.</span><br><span class="line">// For packets read off the wire, time.Now() should be fine.  For packets read</span><br><span class="line">// from PCAP files, CaptureInfo.Timestamp should be passed in.  This timestamp</span><br><span class="line">// will affect which streams are flushed by a call to FlushCloseOlderThan.</span><br><span class="line">//</span><br><span class="line">// Each AssembleWithContext call results in, in order:</span><br><span class="line">//</span><br><span class="line">//    zero or one call to StreamFactory.New, creating a stream</span><br><span class="line">//    zero or one call to ReassembledSG on a single stream</span><br><span class="line">//    zero or one call to ReassemblyComplete on the same stream</span><br><span class="line">func (a *Assembler) AssembleWithContext(netFlow gopacket.Flow, t *layers.TCP, ac AssemblerContext) &#123;</span><br><span class="line">	var conn *connection</span><br><span class="line">	var half *halfconnection</span><br><span class="line">	var rev *halfconnection</span><br><span class="line"></span><br><span class="line">	a.ret = a.ret[:0]</span><br><span class="line">	key := key&#123;netFlow, t.TransportFlow()&#125;</span><br><span class="line">	ci := ac.GetCaptureInfo()</span><br><span class="line">	timestamp := ci.Timestamp</span><br><span class="line"></span><br><span class="line">	conn, half, rev = a.connPool.getConnection(key, false, timestamp, t, ac)</span><br><span class="line">	if conn == nil &#123;</span><br><span class="line">		if *debugLog &#123;</span><br><span class="line">			log.Printf(&quot;%v got empty packet on otherwise empty connection&quot;, key)</span><br><span class="line">		&#125;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	conn.mu.Lock()</span><br><span class="line">	defer conn.mu.Unlock()</span><br><span class="line">	if half.lastSeen.Before(timestamp) &#123;</span><br><span class="line">		half.lastSeen = timestamp</span><br><span class="line">	&#125;</span><br><span class="line">	a.start = half.nextSeq == invalidSequence &amp;&amp; t.SYN</span><br><span class="line">	if *debugLog &#123;</span><br><span class="line">		if half.nextSeq &lt; rev.ackSeq &#123;</span><br><span class="line">			log.Printf(&quot;Delay detected on %v, data is acked but not assembled yet (acked %v, nextSeq %v)&quot;, key, rev.ackSeq, half.nextSeq)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if !half.stream.Accept(t, ci, half.dir, half.nextSeq, &amp;a.start, ac) &#123;</span><br><span class="line">		if *debugLog &#123;</span><br><span class="line">			log.Printf(&quot;Ignoring packet&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	if half.closed &#123;</span><br><span class="line">		// this way is closed</span><br><span class="line">		if *debugLog &#123;</span><br><span class="line">			log.Printf(&quot;%v got packet on closed half&quot;, key)</span><br><span class="line">		&#125;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	seq, ack, bytes := Sequence(t.Seq), Sequence(t.Ack), t.Payload</span><br><span class="line">	if t.ACK &#123;</span><br><span class="line">		half.ackSeq = ack</span><br><span class="line">	&#125;</span><br><span class="line">	// TODO: push when Ack is seen ??</span><br><span class="line">	action := assemblerAction&#123;</span><br><span class="line">		nextSeq: Sequence(invalidSequence),</span><br><span class="line">		queue:   true,</span><br><span class="line">	&#125;</span><br><span class="line">	a.dump(&quot;AssembleWithContext()&quot;, half)</span><br><span class="line">	if half.nextSeq == invalidSequence &#123;</span><br><span class="line">		if t.SYN &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v saw first SYN packet, returning immediately, seq=%v&quot;, key, seq)</span><br><span class="line">			&#125;</span><br><span class="line">			seq = seq.Add(1)</span><br><span class="line">			half.nextSeq = seq</span><br><span class="line">			action.queue = false</span><br><span class="line">		&#125; else if a.start &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v start forced&quot;, key)</span><br><span class="line">			&#125;</span><br><span class="line">			half.nextSeq = seq</span><br><span class="line">			action.queue = false</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v waiting for start, storing into connection&quot;, key)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		diff := half.nextSeq.Difference(seq)</span><br><span class="line">		if diff &gt; 0 &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v gap in sequence numbers (%v, %v) diff %v, storing into connection&quot;, key, half.nextSeq, seq, diff)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v found contiguous data (%v, %v), returning immediately: len:%d&quot;, key, seq, half.nextSeq, len(bytes))</span><br><span class="line">			&#125;</span><br><span class="line">			action.queue = false</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	action = a.handleBytes(bytes, seq, half, t.SYN, t.RST || t.FIN, action, ac)</span><br><span class="line">	if len(a.ret) &gt; 0 &#123;</span><br><span class="line">		action.nextSeq = a.sendToConnection(conn, half, ac)</span><br><span class="line">	&#125;</span><br><span class="line">	if action.nextSeq != invalidSequence &#123;</span><br><span class="line">		half.nextSeq = action.nextSeq</span><br><span class="line">		if t.FIN &#123;</span><br><span class="line">			half.nextSeq = half.nextSeq.Add(1)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if *debugLog &#123;</span><br><span class="line">		log.Printf(&quot;%v nextSeq:%d&quot;, key, half.nextSeq)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type StreamFactory interface &#123;</span><br><span class="line">	// New should return a new stream for the given TCP key.</span><br><span class="line">	New(netFlow, tcpFlow gopacket.Flow, tcp *layers.TCP, ac AssemblerContext) Stream</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// Stream is implemented by the caller to handle incoming reassembled</span><br><span class="line">// TCP data.  Callers create a StreamFactory, then StreamPool uses</span><br><span class="line">// it to create a new Stream for every TCP stream.</span><br><span class="line">//</span><br><span class="line">// assembly will, in order:</span><br><span class="line">//    1) Create the stream via StreamFactory.New</span><br><span class="line">//    2) Call ReassembledSG 0 or more times, passing in reassembled TCP data in order</span><br><span class="line">//    3) Call ReassemblyComplete one time, after which the stream is dereferenced by assembly.</span><br><span class="line">type Stream interface &#123;</span><br><span class="line">	// Tell whether the TCP packet should be accepted, start could be modified to force a start even if no SYN have been seen</span><br><span class="line">	Accept(tcp *layers.TCP, ci gopacket.CaptureInfo, dir TCPFlowDirection, nextSeq Sequence, start *bool, ac AssemblerContext) bool</span><br><span class="line"></span><br><span class="line">	// ReassembledSG is called zero or more times.</span><br><span class="line">	// ScatterGather is reused after each Reassembled call,</span><br><span class="line">	// so it&#x27;s important to copy anything you need out of it,</span><br><span class="line">	// especially bytes (or use KeepFrom())</span><br><span class="line">	ReassembledSG(sg ScatterGather, ac AssemblerContext)</span><br><span class="line"></span><br><span class="line">	// ReassemblyComplete is called when assembly decides there is</span><br><span class="line">	// no more data for this Stream, either because a FIN or RST packet</span><br><span class="line">	// was seen, or because the stream has timed out without any new</span><br><span class="line">	// packet data (due to a call to FlushCloseOlderThan).</span><br><span class="line">	// It should return true if the connection should be removed from the pool</span><br><span class="line">	// It can return false if it want to see subsequent packets with Accept(), e.g. to</span><br><span class="line">	// see FIN-ACK, for deeper state-machine analysis.</span><br><span class="line">	ReassemblyComplete(ac AssemblerContext) bool</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/20/typora/code/go/gopacket_reassembly/" data-id="cl4mjn1y3000nc6i9efv24go3" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/20/typora/code/go/gopacket_layer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/20/typora/code/go/module/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/20/typora/use_guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/leetcode_algorithm_39/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/monotonic_stack/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/project/nirvana/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/code/go/ellipsis.../">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

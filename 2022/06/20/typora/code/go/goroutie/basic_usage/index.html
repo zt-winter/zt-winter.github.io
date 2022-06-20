@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="协程的基本使用简单的例子12345678910111213141516171819202122232425262728293031package mainimport(    &quot;runtime&quot;)func main() &amp;#123;    runtime.GOMAXPROCS(16)    &#x2F;&#x2F;共计有14个task 协程在执行    go task()    go task()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/06/20/typora/code/go/goroutie/basic_usage/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="协程的基本使用简单的例子12345678910111213141516171819202122232425262728293031package mainimport(    &quot;runtime&quot;)func main() &amp;#123;    runtime.GOMAXPROCS(16)    &#x2F;&#x2F;共计有14个task 协程在执行    go task()    go task()">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/typora/code/go/goroutie/top.png">
+<meta property="og:image" content="d:/typora/code/go/goroutie/top_onecore.png">
+<meta property="og:image" content="d:/typora/code/go/goroutie/system_control.png">
+<meta property="article:published_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:modified_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/typora/code/go/goroutie/top.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-typora/code/go/goroutie/basic_usage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/20/typora/code/go/goroutie/basic_usage/" class="article-date">
+  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="协程的基本使用"><a href="#协程的基本使用" class="headerlink" title="协程的基本使用"></a>协程的基本使用</h1><h3 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">    <span class="string">&quot;runtime&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    runtime.GOMAXPROCS(<span class="number">16</span>)</span><br><span class="line">    <span class="comment">//共计有14个task 协程在执行</span></span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    <span class="keyword">go</span> task()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">select</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">task</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行后，top命令如下，test命令占用了1401%的CPU，这里是因为top是只计算单核的，也可以说有14个逻辑cpu是占用满的</p>
+<p><img src="D:\typora\code\go\goroutie\top.png" alt="top"></p>
+<p>下面用top查看单个cpu的情况</p>
+<p><img src="D:\typora\code\go\goroutie\top_onecore.png" alt="top单核"></p>
+<p>可以看到里面有14个逻辑核心使用率几乎都达到了100%。</p>
+<p>然后可以从系统管理器查看使用情况</p>
+<p><img src="D:\typora\code\go\goroutie\system_control.png" alt="系统管理"></p>
+<h3 id="协程的基本使用与控制"><a href="#协程的基本使用与控制" class="headerlink" title="协程的基本使用与控制"></a>协程的基本使用与控制</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func A(i int) &#123;</span><br><span class="line">	fmt.Println(&quot;A function&quot;)</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(&quot;main function&quot;)</span><br><span class="line">	go A(1)</span><br><span class="line">    fmt.Println(&quot;main function is over&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./test</span><br><span class="line">main function</span><br><span class="line">main function is over</span><br></pre></td></tr></table></figure>
+
+<p>在默认情况下，每个独立的 Go 应用运行时就创建了一个 Go 协程，其 <code>main</code> 函数就在这个 Go 协程中运行，这个 Go 协程就被称为 <code>go 主协程（main Goroutine)</code>。Go调度器在主协程执行完之前不会将控制权移交给A协程。同时一旦主协程执行完毕，整个程序就会终止，调度器就没有时间留给A协程去运行。</p>
+<p>在main函数末尾加上<code>fmt.Println(&#39;main function is over&#39;)</code>前面加上<code>time.Sleep(10*time.Millisecond)</code>后再编译执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test</span></span><br><span class="line">main function</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test</span></span><br><span class="line">main function</span><br><span class="line">A function</span><br><span class="line">main function is over</span><br></pre></td></tr></table></figure>
+
+<p>然后在A函数中加入<code>time.Sleep(1*time.Millisecond)</code>编译执行，发现结果没有变化。但如果将休眠时间改为<code>time.Sleep(10*time.Millisecond)</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test</span></span><br><span class="line">main function</span><br><span class="line">main function is over</span><br></pre></td></tr></table></figure>
+
+<p>一般子协程的执行时间是无法事先估计的，所以实际要达到上述效果，一般通过三种方式实现</p>
+<ol>
+<li>sync.WaitGroup的三个方法Add(),Done(),Wait()</li>
+<li>带buffer的channel来控制</li>
+<li>sync.Cond</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/20/typora/code/go/goroutie/basic_usage/" data-id="cl4mjn1y60010c6i9ft1y3a0m" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/20/typora/code/go/reflect/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/20/typora/README/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/20/typora/use_guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/leetcode_algorithm_39/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/monotonic_stack/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/project/nirvana/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/code/go/ellipsis.../">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

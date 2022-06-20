@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="os,ioutil文件读取通过文件名直接读取文件，一次性将文件读到内存中 ioutil: func ReadFile(filename string) ([]byte, error) os: func ReadFile(filename string) ([]byte, error)  通过文件名获取文件的句柄 os: func OpenFile(name string, flag int, pe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/06/20/typora/code/go/fileIO/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="os,ioutil文件读取通过文件名直接读取文件，一次性将文件读到内存中 ioutil: func ReadFile(filename string) ([]byte, error) os: func ReadFile(filename string) ([]byte, error)  通过文件名获取文件的句柄 os: func OpenFile(name string, flag int, pe">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:modified_time" content="2022-06-20T09:35:35.791Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-typora/code/go/fileIO" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/20/typora/code/go/fileIO/" class="article-date">
+  <time class="dt-published" datetime="2022-06-20T09:35:35.791Z" itemprop="datePublished">2022-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="os-ioutil文件读取"><a href="#os-ioutil文件读取" class="headerlink" title="os,ioutil文件读取"></a>os,ioutil文件读取</h1><h2 id="通过文件名直接读取文件，一次性将文件读到内存中"><a href="#通过文件名直接读取文件，一次性将文件读到内存中" class="headerlink" title="通过文件名直接读取文件，一次性将文件读到内存中"></a>通过文件名直接读取文件，一次性将文件读到内存中</h2><ul>
+<li>ioutil: <code>func ReadFile(filename string) ([]byte, error)</code></li>
+<li>os: <code>func ReadFile(filename string) ([]byte, error)</code></li>
+</ul>
+<h2 id="通过文件名获取文件的句柄"><a href="#通过文件名获取文件的句柄" class="headerlink" title="通过文件名获取文件的句柄"></a>通过文件名获取文件的句柄</h2><ul>
+<li>os: <code>func OpenFile(name string, flag int, perm FileMode) (*File, error)</code> flag用于指定文件句柄的操作范围，当打开的文件不存在，而flag有os.O_CREATE属性时，就会创建文件，文件的所有者、组、其他人的权限由perm设定</li>
+<li>os: <code>func Open(name string) (*File, error)</code>  Open是OpenFile的简化版，直接读取文件，flag设置为os.O_RDONLY。</li>
+</ul>
+<h2 id="通过文件句柄读取文件"><a href="#通过文件句柄读取文件" class="headerlink" title="通过文件句柄读取文件"></a>通过文件句柄读取文件</h2><ul>
+<li>os: <code>func (*File) Read(b []byte) (n int, err error)</code> 从文件中读取长度为len(b)的字节到b中，返回读取的字节数大小，如果读到文件末尾，则返回0和io.EOF</li>
+<li>os: <code>func (*File) ReadAt(b []byte, off int64) (n int, err error)</code> 从文件开头起偏移off个字节的地方开始，读取长度为len(b)的字节到b中。</li>
+</ul>
+<h1 id="io-bufio文件读取"><a href="#io-bufio文件读取" class="headerlink" title="io,bufio文件读取"></a>io,bufio文件读取</h1><h2 id="io-Reader-io-Writer接口"><a href="#io-Reader-io-Writer接口" class="headerlink" title="io.Reader, io.Writer接口"></a>io.Reader, io.Writer接口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type Reader interface &#123;</span><br><span class="line">	Read(p []byte) (n int, err error)</span><br><span class="line">&#125;</span><br><span class="line">type Writer interface &#123;</span><br><span class="line">	Write(p []byte) (n int, err error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>io库，定义了这两个接口，并实现了这两个接口的相关函数如<code>func LimitReader(r Reader, n int64) Reader</code> n指定要读取的字节数</p>
+<h2 id="bufio在io的基础上实现了带有缓冲的IO"><a href="#bufio在io的基础上实现了带有缓冲的IO" class="headerlink" title="bufio在io的基础上实现了带有缓冲的IO"></a>bufio在io的基础上实现了带有缓冲的IO</h2><p><code>func NewReader(rd io.Reader) *Reader</code> <code>func (b *Reader) Read(p []byte) (n int, err error)</code> 先由NewReader创建*Reader，在调用Read进行读取<br>NewReader的参数rd io.Reader说明NewReader需要结构体满足实现Read方法。<br>实现Read方法的有：os.File, strings.Read, net.conn, net.Buffers<br>os.File 可以通过os.Open()得到<br>strings.Read 可以通过strings.NewReader得到<br>net.conn 可以通过net.Dail()得到</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/20/typora/code/go/fileIO/" data-id="cl4mjn1y2000kc6i94b0q29ev" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/20/typora/code/go/data_struct/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/20/typora/code/go/go_network/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/20/typora/use_guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/leetcode_algorithm_39/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/algorithm/monotonic_stack/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/project/nirvana/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/typora/code/go/ellipsis.../">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
