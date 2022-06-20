@@ -20,23 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+    <meta name="description" content="0. 简单的哲学 Go 的设计哲学之一就是追求简单，因此在命名上一样秉承着简单的总体原则。要想做好 Go 标识符命名（包括 package 命名)，至少要遵循两个原则：  简单且一致 利用上下文辅助命名   区分大小写的语言  命名规则涉及变量、常量、全局函数、结构、接口、方法等的命名。 Go语言从语法层面进行了以下限定：任何需要对外暴露的名字必须以大写字母开头，不需要对外暴露的则应该以小写字母开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令规则">
+<meta property="og:url" content="http://example.com/2022/04/19/name_guide/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0. 简单的哲学 Go 的设计哲学之一就是追求简单，因此在命名上一样秉承着简单的总体原则。要想做好 Go 标识符命名（包括 package 命名)，至少要遵循两个原则：  简单且一致 利用上下文辅助命名   区分大小写的语言  命名规则涉及变量、常量、全局函数、结构、接口、方法等的命名。 Go语言从语法层面进行了以下限定：任何需要对外暴露的名字必须以大写字母开头，不需要对外暴露的则应该以小写字母开">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-20T15:48:24.140Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="slice">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/page/2/">
+<link rel="canonical" href="http://example.com/2022/04/19/name_guide/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/04/19/name_guide/","path":"2022/04/19/name_guide/","title":"命令规则"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+<title>命令规则 | Hexo</title>
   
 
 
@@ -66,7 +71,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <p class="site-title">Hexo</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -165,104 +170,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/go_network/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/19/go_network/" class="post-title-link" itemprop="url">goproxy</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-19T00:00:00+08:00">2022-04-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-20 23:42:38" itemprop="dateModified" datetime="2022-06-20T23:42:38+08:00">2022-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="goproxy"><a href="#goproxy" class="headerlink" title="goproxy"></a>goproxy</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// gopls等插件无法下载</span><br><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br><span class="line">//就该代理地址，google被墙</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//vim coc-nvim插件中coc-go无法在vim界面安装 CocInstall coc-go</span><br><span class="line">cd ~/.config/coc/extensions</span><br><span class="line">//手动进入插件扩展目录，然后使用代理下载</span><br><span class="line">proxychains yarn add coc-go</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/name_guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -276,13 +194,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="name" content="命令规则 | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/19/name_guide/" class="post-title-link" itemprop="url">命令规则</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          命令规则
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -321,7 +239,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><strong>0. 简单的哲学</strong></p>
+        <p><strong>0. 简单的哲学</strong></p>
 <p>Go 的设计哲学之一就是追求简单，因此在命名上一样秉承着简单的总体原则<strong>。</strong>要想做好 Go 标识符命名（包括 package 命名)，至少要遵循两个原则：</p>
 <ul>
 <li><strong>简单且一致</strong></li>
@@ -387,7 +305,6 @@
 <p>Error 变量写成 ErrFoo 的形式。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ErrFormat = errors.New(<span class="string">&quot;unknown format&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -395,8 +312,24 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/slice/" rel="tag"># slice</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/19/system_command/" rel="prev" title="系统命令调用">
+                  <i class="fa fa-chevron-left"></i> 系统命令调用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/04/19/go_network/" rel="next" title="goproxy">
+                  goproxy <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -404,96 +337,7 @@
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/system_command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/19/system_command/" class="post-title-link" itemprop="url">系统命令调用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-19T00:00:00+08:00">2022-04-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-20 23:51:36" itemprop="dateModified" datetime="2022-06-20T23:51:36+08:00">2022-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="调用系统命令"><a href="#调用系统命令" class="headerlink" title="调用系统命令"></a>调用系统命令</h1><p>cmd数据结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">type Cmd struct &#123;</span><br><span class="line">	// Path is the path of the command to run.</span><br><span class="line">	//</span><br><span class="line">	// This is the only field that must be set to a non-zero</span><br><span class="line">	// value. If Path is relative, it is evaluated relative</span><br><span class="line">	// to Dir.</span><br><span class="line">	Path string</span><br><span class="line"></span><br><span class="line">	// Args holds command line arguments, including the command as Args[0].</span><br><span class="line">	// If the Args field is empty or nil, Run uses &#123;Path&#125;.</span><br><span class="line">	//</span><br><span class="line">	// In typical use, both Path and Args are set by calling Command.</span><br><span class="line">	Args []string</span><br><span class="line"></span><br><span class="line">	// Env specifies the environment of the process.</span><br><span class="line">	// Each entry is of the form &quot;key=value&quot;.</span><br><span class="line">	// If Env is nil, the new process uses the current process&#x27;s</span><br><span class="line">	// environment.</span><br><span class="line">	// If Env contains duplicate environment keys, only the last</span><br><span class="line">	// value in the slice for each duplicate key is used.</span><br><span class="line">	// As a special case on Windows, SYSTEMROOT is always added if</span><br><span class="line">	// missing and not explicitly set to the empty string.</span><br><span class="line">	Env []string</span><br><span class="line"></span><br><span class="line">	// Dir specifies the working directory of the command.</span><br><span class="line">	// If Dir is the empty string, Run runs the command in the</span><br><span class="line">	// calling process&#x27;s current directory.</span><br><span class="line">	Dir string</span><br><span class="line"></span><br><span class="line">	// Stdin specifies the process&#x27;s standard input.</span><br><span class="line">	//</span><br><span class="line">	// If Stdin is nil, the process reads from the null device (os.DevNull).</span><br><span class="line">	//</span><br><span class="line">	// If Stdin is an *os.File, the process&#x27;s standard input is connected</span><br><span class="line">	// directly to that file.</span><br><span class="line">	//</span><br><span class="line">	// Otherwise, during the execution of the command a separate</span><br><span class="line">	// goroutine reads from Stdin and delivers that data to the command</span><br><span class="line">	// over a pipe. In this case, Wait does not complete until the goroutine</span><br><span class="line">	// stops copying, either because it has reached the end of Stdin</span><br><span class="line">	// (EOF or a read error) or because writing to the pipe returned an error.</span><br><span class="line">	Stdin io.Reader</span><br><span class="line"></span><br><span class="line">	// Stdout and Stderr specify the process&#x27;s standard output and error.</span><br><span class="line">	//</span><br><span class="line">	// If either is nil, Run connects the corresponding file descriptor</span><br><span class="line">	// to the null device (os.DevNull).</span><br><span class="line">	//</span><br><span class="line">	// If either is an *os.File, the corresponding output from the process</span><br><span class="line">	// is connected directly to that file.</span><br><span class="line">	//</span><br><span class="line">	// Otherwise, during the execution of the command a separate goroutine</span><br><span class="line">	// reads from the process over a pipe and delivers that data to the</span><br><span class="line">	// corresponding Writer. In this case, Wait does not complete until the</span><br><span class="line">	// goroutine reaches EOF or encounters an error.</span><br><span class="line">	//</span><br><span class="line">	// If Stdout and Stderr are the same writer, and have a type that can</span><br><span class="line">	// be compared with ==, at most one goroutine at a time will call Write.</span><br><span class="line">	Stdout io.Writer</span><br><span class="line">	Stderr io.Writer</span><br><span class="line"></span><br><span class="line">	// ExtraFiles specifies additional open files to be inherited by the</span><br><span class="line">	// new process. It does not include standard input, standard output, or</span><br><span class="line">	// standard error. If non-nil, entry i becomes file descriptor 3+i.</span><br><span class="line">	//</span><br><span class="line">	// ExtraFiles is not supported on Windows.</span><br><span class="line">	ExtraFiles []*os.File</span><br><span class="line"></span><br><span class="line">	// SysProcAttr holds optional, operating system-specific attributes.</span><br><span class="line">	// Run passes it to os.StartProcess as the os.ProcAttr&#x27;s Sys field.</span><br><span class="line">	SysProcAttr *syscall.SysProcAttr</span><br><span class="line"></span><br><span class="line">	// Process is the underlying process, once started.</span><br><span class="line">	Process *os.Process</span><br><span class="line"></span><br><span class="line">	// ProcessState contains information about an exited process,</span><br><span class="line">	// available after a call to Wait or Run.</span><br><span class="line">	ProcessState *os.ProcessState</span><br><span class="line">	// contains filtered or unexported fields</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
 
 </div>
   </main>
