@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zt-winter.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="f2fs的基本数据结构 sector: 扇区 block: F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为4KB的大小，这是因为很多flash设备单次IO的读写都是基于4KB的倍数进行。 segment: segment是管理block的结构，一个segment的大小是512个block，也就是2MB。 sect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="f2fstool函数说明">
+<meta property="og:url" content="http://zt-winter.github.io/2022/06/21/f2fstool/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="f2fs的基本数据结构 sector: 扇区 block: F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为4KB的大小，这是因为很多flash设备单次IO的读写都是基于4KB的倍数进行。 segment: segment是管理block的结构，一个segment的大小是512个block，也就是2MB。 sect">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-21T07:41:31.950Z">
+<meta property="article:author" content="月的奏鸣曲">
+<meta property="article:tag" content="f2fs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zt-winter.github.io/2022/06/21/f2fstool/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://zt-winter.github.io/2022/06/21/f2fstool/","path":"2022/06/21/f2fstool/","title":"f2fstool函数说明"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>f2fstool函数说明 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section">分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#f2fs%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">f2fs的基本数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#f2fs-configuration%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">f2fs_configuration结构体</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">月的奏鸣曲</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/06/21/f2fstool/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="f2fstool函数说明 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          f2fstool函数说明
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-06-21 00:00:00 / 修改时间：15:41:31" itemprop="dateCreated datePublished" datetime="2022-06-21T00:00:00+08:00">2022-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/f2fs/" itemprop="url" rel="index"><span itemprop="name">f2fs</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="f2fs的基本数据结构"><a href="#f2fs的基本数据结构" class="headerlink" title="f2fs的基本数据结构"></a>f2fs的基本数据结构</h1><ul>
+<li>sector: 扇区</li>
+<li>block: F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为4KB的大小，这是因为很多flash设备单次IO的读写都是基于4KB的倍数进行。</li>
+<li>segment: segment是管理block的结构，一个segment的大小是512个block，也就是2MB。</li>
+<li>section: 默认情况下一个segment等于一个section，section是GC的基本操作单位，每次GC都会从section中选出特定的segment进行回收。F2FS将section分为了6类，分别是hot-node，warm-node，cold-node，hot-data，warm-data，cold-data，hot-&gt;cold表示了数据的从高到低的修改频率，通过不同类型的section，进行gc的时候可针对使用hot的section进行gc，以降低gc的时间开销。</li>
+<li>zone: 默认情况一个zone等于一个section，与物理设备有关，大部分情况下用不上</li>
+</ul>
+<h1 id="f2fs-configuration结构体"><a href="#f2fs-configuration结构体" class="headerlink" title="f2fs_configuration结构体"></a>f2fs_configuration结构体</h1><p>f2fs_configuration结构体在include&#x2F;f2fs_fs.h文件中定义，f2fs文件系统初始化时默认参数也在include&#x2F;f2fs_fs.h文件中定义。在lib&#x2F;libf2fs.c的f2fs_init_configuration函数中进行初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">struct f2fs_configuration &#123;</span><br><span class="line">	uint32_t reserved_segments;</span><br><span class="line">	uint32_t new_reserved_segments;</span><br><span class="line">	int sparse_mode;</span><br><span class="line">	int zoned_mode;</span><br><span class="line">	int zoned_model;</span><br><span class="line">	size_t zone_blocks;</span><br><span class="line">	double overprovision;</span><br><span class="line">	double new_overprovision;</span><br><span class="line">	uint32_t cur_seg[6];</span><br><span class="line">	//一个section几个segment，默认为1个</span><br><span class="line">	uint32_t segs_per_sec;</span><br><span class="line">	//默认为1</span><br><span class="line">	uint32_t secs_per_zone;</span><br><span class="line">	//默认为1</span><br><span class="line">	uint32_t segs_per_zone;</span><br><span class="line">	uint32_t start_sector;</span><br><span class="line">	uint32_t total_segments;</span><br><span class="line">	uint32_t sector_size;</span><br><span class="line">	uint64_t device_size;</span><br><span class="line">	uint64_t total_sectors;</span><br><span class="line">	uint64_t wanted_total_sectors;</span><br><span class="line">	uint64_t wanted_sector_size;</span><br><span class="line">	uint64_t target_sectors;</span><br><span class="line">	uint64_t max_size;</span><br><span class="line">	//一个block包含多少个扇区sector</span><br><span class="line">	uint32_t sectors_per_blk;</span><br><span class="line">	//一个segment包含多少个block</span><br><span class="line">	uint32_t blks_per_seg;</span><br><span class="line">	__u8 init_version[VERSION_LEN + 1];</span><br><span class="line">	__u8 sb_version[VERSION_LEN + 1];</span><br><span class="line">	__u8 version[VERSION_LEN + 1];</span><br><span class="line">	char *vol_label;</span><br><span class="line">	char *vol_uuid;</span><br><span class="line">	uint16_t s_encoding;</span><br><span class="line">	uint16_t s_encoding_flags;</span><br><span class="line">	int heap;</span><br><span class="line">	int32_t kd;</span><br><span class="line">	int32_t dump_fd;</span><br><span class="line">	//设备列表</span><br><span class="line">	struct device_info devices[MAX_DEVICES];</span><br><span class="line">	int ndevs;</span><br><span class="line">	char *extension_list[2];</span><br><span class="line">	const char *rootdev_name;</span><br><span class="line">	int dbg_lv;</span><br><span class="line">	int show_dentry;</span><br><span class="line">	int trim;</span><br><span class="line">	int trimmed;</span><br><span class="line">	int func;</span><br><span class="line">	void *private;</span><br><span class="line">	int dry_run;</span><br><span class="line">	//andorid 非内核运行检查</span><br><span class="line">	int no_kernel_check;</span><br><span class="line">	int fix_on;</span><br><span class="line">	int force;</span><br><span class="line">	int defset;</span><br><span class="line">	int bug_on;</span><br><span class="line">	int bug_nat_bits;</span><br><span class="line">	bool quota_fixed;</span><br><span class="line">	int alloc_failed;</span><br><span class="line">	int auto_fix;</span><br><span class="line">	int layout;</span><br><span class="line">	int show_file_map;</span><br><span class="line">	u64 show_file_map_max_offset;</span><br><span class="line">	int quota_fix;</span><br><span class="line">	int preen_mode;</span><br><span class="line">	int ro;</span><br><span class="line">	//andorid</span><br><span class="line">	int preserve_limits;		/* preserve quota limits */</span><br><span class="line">	int large_nat_bitmap;</span><br><span class="line">	int fix_chksum;			/* fix old cp.chksum position */</span><br><span class="line">	__le32 feature;			/* defined features */</span><br><span class="line">	unsigned int quota_bits;	/* quota bits */</span><br><span class="line">	time_t fixed_time;</span><br><span class="line"></span><br><span class="line">	/* mkfs parameters */</span><br><span class="line">	int fake_seed;</span><br><span class="line">	uint32_t next_free_nid;</span><br><span class="line">	uint32_t quota_inum;</span><br><span class="line">	uint32_t quota_dnum;</span><br><span class="line">	uint32_t lpf_inum;</span><br><span class="line">	uint32_t lpf_dnum;</span><br><span class="line">	uint32_t lpf_ino;</span><br><span class="line">	uint32_t root_uid;</span><br><span class="line">	uint32_t root_gid;</span><br><span class="line"></span><br><span class="line">	/* defragmentation parameters */</span><br><span class="line">	int defrag_shrink;</span><br><span class="line">	uint64_t defrag_start;</span><br><span class="line">	uint64_t defrag_len;</span><br><span class="line">	uint64_t defrag_target;</span><br><span class="line"></span><br><span class="line">	/* sload parameters */</span><br><span class="line">	char *from_dir;</span><br><span class="line">	char *mount_point;</span><br><span class="line">	char *target_out_dir;</span><br><span class="line">	char *fs_config_file;</span><br><span class="line">#ifdef HAVE_LIBSELINUX</span><br><span class="line">	struct selinux_opt seopt_file[8];</span><br><span class="line">	int nr_opt;</span><br><span class="line">#endif</span><br><span class="line">	int preserve_perms;</span><br><span class="line"></span><br><span class="line">	/* resize parameters */</span><br><span class="line">	int safe_resize;</span><br><span class="line"></span><br><span class="line">	/* precomputed fs UUID checksum for seeding other checksums */</span><br><span class="line">	uint32_t chksum_seed;</span><br><span class="line"></span><br><span class="line">	/* cache parameters */</span><br><span class="line">	dev_cache_config_t cache_config;</span><br><span class="line"></span><br><span class="line">	/* compression support for sload.f2fs */</span><br><span class="line">	compress_config_t compress;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/f2fs/" rel="tag"># f2fs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/21/%E5%86%85%E5%AD%98/" rel="prev" title="内存管理">
+                  <i class="fa fa-chevron-left"></i> 内存管理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/22/container/" rel="next" title="container库">
+                  container库 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">月的奏鸣曲</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
