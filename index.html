@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,6 +166,121 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/" class="post-title-link" itemprop="url">f2fs文件目录存储结构</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-13 00:00:00 / 修改时间：16:23:32" itemprop="dateCreated datePublished" datetime="2022-07-13T00:00:00+08:00">2022-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/f2fs/" itemprop="url" rel="index"><span itemprop="name">f2fs</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="f2f2文件目录存储结构"><a href="#f2f2文件目录存储结构" class="headerlink" title="f2f2文件目录存储结构"></a>f2f2文件目录存储结构</h1><p>当前目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ tree mnt/f2fs</span><br><span class="line">mnt/f2fs</span><br><span class="line">├── dir</span><br><span class="line">│   ├── 6.29.cfx.pcap</span><br><span class="line">│   └── testone</span><br><span class="line">└── test</span><br><span class="line"></span><br><span class="line">1 directory, 3 files</span><br></pre></td></tr></table></figure>
+
+<p>文件内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mnt/f2fs/test:</span><br><span class="line">hello world</span><br><span class="line">mnt/f2fs/dir/testone</span><br><span class="line">hellow zt</span><br><span class="line">mnt/f2fs/dir/6.29.cfx.pcap 一个27MB的数据包文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="NAT信息"><a href="#NAT信息" class="headerlink" title="NAT信息"></a>NAT信息</h3><p>查看inode信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dump.f2fs -n 0~-1 /dev/loop0</span><br><span class="line">$ nvim dump_nat</span><br><span class="line">  1 nid:    3   ino:    3   offset:    0    blkaddr:      4101  pack:2</span><br><span class="line">  2 nid:    4   ino:    4   offset:    0    blkaddr:      4105  pack:2</span><br><span class="line">  3 nid:    5   ino:    5   offset:    0    blkaddr:      4609  pack:2</span><br><span class="line">  4 nid:    6   ino:    6   offset:    0    blkaddr:      4610  pack:2</span><br><span class="line">  5 nid:    7   ino:    7   offset:    0    blkaddr:      4611  pack:2</span><br><span class="line">  6 nid:    8   ino:    7   offset:    1    blkaddr:      4612  pack:2</span><br><span class="line">  7 nid:    9   ino:    7   offset:    2    blkaddr:      4613  pack:2</span><br><span class="line">  8 nid:   10   ino:    7   offset:    3    blkaddr:      5120  pack:2</span><br><span class="line">  9 nid:   11   ino:    7   offset:    4    blkaddr:      4614  pack:2</span><br><span class="line"> 10 nid:   12   ino:    7   offset:    5    blkaddr:      4615  pack:2</span><br><span class="line"> 11 nid:   13   ino:    7   offset:    6    blkaddr:      4616  pack:2</span><br><span class="line"> 12 nid:   14   ino:    7   offset:    7    blkaddr:      4617  pack:2</span><br><span class="line"> 13 nid:   15   ino:    7   offset:    8    blkaddr:      4618  pack:2</span><br><span class="line"> 14 nid:   16   ino:    7   offset:    9    blkaddr:      4619  pack:2</span><br></pre></td></tr></table></figure>
+
+<p>从super block中可以得到信息，NAT的地址0xa00000，CP中的NAT journal地址在0x201000<br>00000400  10 20 f5 f2 01 00 0f 00  09 00 00 00 03 00 00 00  |. …………..|<br>00000410  0c 00 00 00 09 00 00 00  01 00 00 00 01 00 00 00  |…………….|<br>00000420  00 00 00 00 00 64 00 00  00 00 00 00 2a 00 00 00  |…..d……<em>…|<br>00000430  31 00 00 00 02 00 00 00  02 00 00 00 02 00 00 00  |1……………|<br>00000440  01 00 00 00 2a 00 00 00  00 02 00 00 00 02 00 00  |….</em>………..|<br>00000450  00 06 00 00 <font color=red><strong>00 0a 00 00</strong></font>  00 0e 00 00 00 10 00 00  |…………….|<br>00000460  03 00 00 00 01 00 00 00  02 00 00 00 83 8f 92 2c  |……………,|<br>00000470  60 18 4d 2e 85 c3 d4 8e  56 29 d9 dc 00 00 00 00  |&#96;.M…..V)……|<br>00000480  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
+<p>查看NAT，红色是node的序号，蓝色是node的地址，绿色是版本号，接下来是下一个节点。</p>
+<p>在这里3号node是根目录，4号node是dir目录，5号node是test文件，6号文件是testone，7号文件是6.29.cap</p>
+<p>00a00000  00 00 00 00 00 00 00 00  00 00 01 00 00 00 01 00  |…………….|<br>00a00010  00 00 00 02 00 00 00 01  00 00 00 <font color=green><strong>00</strong></font> <font color=red><strong>03 00 00 00</strong></font>  |…………….|<br>00a00020  <font color=blue><strong>05 10 00 00</strong></font> 00 04 00 00  00 08 10 00 00 00 05 00  |…………….|<br>00a00030  00 00 01 12 00 00 00 06  00 00 00 02 12 00 00 00  |…………….|<br>00a00040  07 00 00 00 03 12 00 00  00 07 00 00 00 04 12 00  |…………….|<br>00a00050  00 00 07 00 00 00 05 12  00 00 00 07 00 00 00 00  |…………….|<br>00a00060  14 00 00 00 07 00 00 00  06 12 00 00 00 07 00 00  |…………….|<br>00a00070  00 07 12 00 00 00 07 00  00 00 08 12 00 00 00 07  |…………….|<br>00a00080  00 00 00 09 12 00 00 00  07 00 00 00 0a 12 00 00  |…………….|<br>00a00090  00 07 00 00 00 0b 12 00  00 00 00 00 00 00 00 00  |…………….|<br>00a000a0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
+<ul>
+<li><strong>当文件系统修改比较小时，会将修改数据保存在nat journal中，而不直接写入到SIT和NAT中，减少读写次数。</strong></li>
+</ul>
+<h3 id="node-inode-文件存储"><a href="#node-inode-文件存储" class="headerlink" title="node   inode  文件存储"></a>node   inode  文件存储</h3><p>从下图的f2fs_node数据结构可以看出，f2fs_node分为三种inode、direct_node、indirect。第一种，node存储指向data的指针；第二种，direct_node存储指向node的指针，然后再由node存储指向data的指针</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1081 struct f2fs_node &#123;</span><br><span class="line">1082     /* can be one of three types: inode, direct, and indirect types */</span><br><span class="line">1083     union &#123;</span><br><span class="line">1084         struct f2fs_inode i;</span><br><span class="line">1085         struct direct_node dn;</span><br><span class="line">1086         struct indirect_node in;</span><br><span class="line">1087     &#125;;</span><br><span class="line">1088     struct node_footer footer;</span><br><span class="line">1089 &#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"> 994 struct f2fs_inode &#123;</span><br><span class="line"> 995     __le16 i_mode;          /* file mode */</span><br><span class="line"> 996     __u8 i_advise;          /* file hints */</span><br><span class="line"> 997     __u8 i_inline;          /* file inline flags */</span><br><span class="line"> 998     __le32 i_uid;           /* user ID */</span><br><span class="line"> 999     __le32 i_gid;           /* group ID */</span><br><span class="line">1000     __le32 i_links;         /* links count */</span><br><span class="line">1001     __le64 i_size;          /* file size in bytes */</span><br><span class="line">1002     __le64 i_blocks;        /* file size in blocks */</span><br><span class="line">1003     __le64 i_atime;         /* access time */</span><br><span class="line">1004     __le64 i_ctime;         /* change time */</span><br><span class="line">1005     __le64 i_mtime;         /* modification time */</span><br><span class="line">1006     __le32 i_atime_nsec;        /* access time in nano scale */</span><br><span class="line">1007     __le32 i_ctime_nsec;        /* change time in nano scale */</span><br><span class="line">1008     __le32 i_mtime_nsec;        /* modification time in nano scale */</span><br><span class="line">1009     __le32 i_generation;        /* file version (for NFS) */</span><br><span class="line">1010     union &#123;</span><br><span class="line">1011         __le32 i_current_depth; /* only for directory depth */</span><br><span class="line">1012         __le16 i_gc_failures;   /*</span><br><span class="line">1013                      * # of gc failures on pinned file.</span><br><span class="line">1014                      * only for regular files.</span><br><span class="line">1015                      */</span><br><span class="line">1016     &#125;;</span><br><span class="line">1017     __le32 i_xattr_nid;     /* nid to save xattr */</span><br><span class="line">1018     __le32 i_flags;         /* file attributes */</span><br><span class="line">1019     __le32 i_pino;          /* parent inode number */</span><br><span class="line">1020     __le32 i_namelen;       /* file name length */</span><br><span class="line">1021     __u8 i_name[F2FS_NAME_LEN]; /* file name for SPOR */</span><br><span class="line">1022     __u8 i_dir_level;       /* dentry_level for large dir */</span><br><span class="line">1023</span><br><span class="line">1024     struct f2fs_extent i_ext __attribute__((packed));   /* caching a largest extent */</span><br><span class="line">1025</span><br><span class="line">1026     union &#123;</span><br><span class="line">1027         struct &#123;</span><br><span class="line">1028             __le16 i_extra_isize;   /* extra inode attribute size */</span><br><span class="line">1029             __le16 i_inline_xattr_size; /* inline xattr size, unit: 4 bytes */</span><br><span class="line">1030             __le32 i_projid;    /* project id */</span><br><span class="line">1031             __le32 i_inode_checksum;/* inode meta checksum */</span><br><span class="line">1032             __le64 i_crtime;    /* creation time */</span><br><span class="line">1033             __le32 i_crtime_nsec;   /* creation time in nano scale */</span><br><span class="line">1034             __le64 i_compr_blocks;  /* # of compressed blocks */</span><br><span class="line">1035             __u8 i_compress_algrithm;   /* compress algrithm */</span><br><span class="line">1036             __u8 i_log_cluster_size;    /* log of cluster size */</span><br><span class="line">1037             __le16 i_padding;       /* padding */</span><br><span class="line">1038             __le32 i_extra_end[0];  /* for attribute size calculation */</span><br><span class="line">1039         &#125; __attribute__((packed));</span><br><span class="line">1040         __le32 i_addr[DEF_ADDRS_PER_INODE]; /* Pointers to data blocks */</span><br><span class="line">1041     &#125;;</span><br><span class="line">1042     __le32 i_nid[5];        /* direct(2), indirect(2),</span><br><span class="line">1043                         double_indirect(1) node id */</span><br><span class="line">1044 &#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1071 struct node_footer &#123;</span><br><span class="line">1072     __le32 nid;     /* node id */</span><br><span class="line">1073     __le32 ino;     /* inode nunmber */</span><br><span class="line">1074     __le32 flag;        /* include cold/fsync/dentry marks and offset */</span><br><span class="line">1075     __le64 cp_ver __attribute__((packed));      /* checkpoint version */</span><br><span class="line">1076     __le32 next_blkaddr;    /* next node page block address */</span><br><span class="line">1077 &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>红色部分对应inode的i_name[F2FS_NAME_LEN]和i_dir_level，占256字节；蓝色部分对应inode的f2fs_extent i_ext，占12个字节。黑色部分对应inode的__len32  i_addr[DEF_ADDRS_PER_INODE]的部分。</p>
+<p>__attribute__((paecked)) : 表示编译时不按照内存对齐的方式，以节约内存</p>
+<p>0120c000  a4 81 00 01 00 00 00 00  00 00 00 00 01 00 00 00  |…………….|<br>0120c010  06 28 18 02 00 00 00 00  8d 21 00 00 00 00 00 00  |.(…….!……|<br>0120c020  06 48 c4 62 00 00 00 00  86 32 c4 62 00 00 00 00  |.H.b…..2.b….|<br>0120c030  86 32 c4 62 00 00 00 00  cc 71 67 0c 33 04 62 2c  |.2.b…..qg.3.b,|<br>0120c040  33 04 62 2c 9c 01 92 e4  00 00 00 00 00 00 00 00  |3.b,…………|<br>0120c050  00 00 00 00 04 00 00 00  0d 00 00 00 <font color=red>36 2e 32 39</font>  |…………6.29|<br>0120c060  <font color=red>2e 63 66 78 2e 70 63 61  70 00 00 00 00 00 00 00</font>  |.cfx.pcap…….|<br>0120c070  <font color=red>00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00</font>  |…………….|<br>*<br>0120c150  <font color=red>00 00 00 00 00 00 00 00  00 00 00 00</font> <font color=blue>00 0c 00 00</font>  |…………….|<br>0120c160  <font color=blue>00 24 00 00 00 14 00 00</font>  <strong>00 38 00 00 01 38 00 00</strong>  |.$…….8…8..|<br>0120c170  <strong>02 38 00 00 03 38 00 00  04 38 00 00 05 38 00 00</strong>  |.8…8…8…8..|<br>0120c180  <strong>06 38 00 00 07 38 00 00  08 38 00 00 09 38 00 00</strong>  |.8…8…8…8..|<br>0120c190  0a 38 00 00 0b 38 00 00  0c 38 00 00 0d 38 00 00  |.8…8…8…8..|<br>0120c1a0  0e 38 00 00 0f 38 00 00  10 38 00 00 11 38 00 00  |.8…8…8…8..|<br>0120c1b0  12 38 00 00 13 38 00 00  14 38 00 00 15 38 00 00  |.8…8…8…8..|<br>0120c1c0  16 38 00 00 17 38 00 00  18 38 00 00 19 38 00 00  |.8…8…8…8..|<br>0120c1d0  1a 38 00 00 1b 38 00 00  1c 38 00 00 1d 38 00 00  |.8…8…8…8..|<br>0120c1e0  1e 38 00 00 1f 38 00 00  20 38 00 00 21 38 00 00  |.8…8.. 8..!8..|<br>0120c1f0  22 38 00 00 23 38 00 00  24 38 00 00 25 38 00 00  |”8..#8..$8..%8..|<br>0120c200  26 38 00 00 27 38 00 00  28 38 00 00 29 38 00 00  |&amp;8..’8..(8..)8..|</p>
+<p>可以看一看0x3801000的内存，是6.29.cfx.pcap的文件数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">03801000  00 01 50 64 2b 95 5d 3d  c0 a8 0c 02 00 00 00 00  |..Pd+.]=........|</span><br><span class="line">03801010  00 00 c0 a8 0c 80 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">03801020  00 00 00 00 00 00 00 00  22 1d bc 62 f5 bf 03 00  |........&quot;..b....|</span><br><span class="line">03801030  3c 00 00 00 3c 00 00 00  ff ff ff ff ff ff 2c 97  |&lt;...&lt;.........,.|</span><br><span class="line">03801040  b1 c3 58 10 99 98 00 01  00 00 00 1d 00 00 00 04  |..X.............|</span><br><span class="line">03801050  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">*</span><br><span class="line">03801070  00 00 00 00 22 1d bc 62  8e 04 04 00 3c 00 00 00  |....&quot;..b....&lt;...|</span><br><span class="line">03801080  3c 00 00 00 ff ff ff ff  ff ff 00 22 46 2c 42 58  |&lt;..........&quot;F,BX|</span><br><span class="line">03801090  08 06 00 01 08 00 06 04  00 01 00 22 46 2c 42 58  |...........&quot;F,BX|</span><br><span class="line">038010a0  c0 a8 0a 59 00 00 00 00  00 00 c0 a8 0a 8a 00 00  |...Y............|</span><br><span class="line">038010b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">038010c0  22 1d bc 62 17 07 04 00  3c 00 00 00 3c 00 00 00  |&quot;..b....&lt;...&lt;...|</span><br><span class="line">038010d0  ff ff ff ff ff ff 50 64  2b 95 5d 3d 08 06 00 01  |......Pd+.]=....|</span><br><span class="line">038010e0  08 00 06 04 00 01 50 64  2b 95 5d 3d c0 a8 0c 02  |......Pd+.]=....|</span><br></pre></td></tr></table></figure>
+
+<p>可以说，6.29.cfx的文件数据的索引保存在node7 ~ 16中。每一个node的offset  0x16c开始是文件数据的block地址。同时每个node的结尾都标注了该node的inode，都是inode7，同时标注offset，为还原文件做好了工作。</p>
+<h3 id="目录的结构"><a href="#目录的结构" class="headerlink" title="目录的结构"></a>目录的结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1325 /* One directory entry slot representing F2FS_SLOT_LEN-sized file name */</span><br><span class="line">1326 struct f2fs_dir_entry &#123;</span><br><span class="line">1327     __le32 hash_code;   /* hash code of file name */</span><br><span class="line">1328     __le32 ino;     /* inode number */</span><br><span class="line">1329     __le16 name_len;    /* lengh of file name */</span><br><span class="line">1330     __u8 file_type;     /* file type */</span><br><span class="line">1331 &#125; __attribute__((packed));</span><br><span class="line">1332</span><br><span class="line">1333 static_assert(sizeof(struct f2fs_dir_entry) == 11, &quot;&quot;);</span><br><span class="line">1334</span><br><span class="line">1335 /* 4KB-sized directory entry block */</span><br><span class="line">1336 struct f2fs_dentry_block &#123;</span><br><span class="line">1337     /* validity bitmap for directory entries in each block */</span><br><span class="line">1338     /* (214 + 8 - 1) / 8 = 27 */</span><br><span class="line">1339     __u8 dentry_bitmap[SIZE_OF_DENTRY_BITMAP];</span><br><span class="line">1340     /* pagsize - (( size_of_dir_entry + f2fs_slot_len)*nr_entry_in_block + size_of_dir_entry_bitmap) */</span><br><span class="line">1341     /* 4096 - (( 11 + 8) * 214 + 27) = 3 */</span><br><span class="line">1342     __u8 reserved[SIZE_OF_RESERVED];</span><br><span class="line">1343     /* f2fs_dir_entry[214] len(32+32+16+8) */</span><br><span class="line">1344     struct f2fs_dir_entry dentry[NR_DENTRY_IN_BLOCK];</span><br><span class="line">1345     /* filename[214][8] */</span><br><span class="line">1346     __u8 filename[NR_DENTRY_IN_BLOCK][F2FS_SLOT_LEN];</span><br><span class="line">1347 &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>目前目录对应的nid：</p>
+<ul>
+<li>&#x2F; 根目录对应：nid3，对应的地址0x01005000。在0x01005168开始是data block pointer，指向的地址是0x1602000。红色部分是f2fs_dir_entry的hash_code，蓝色是ino(inode number)，绿色是文件名长度name_len，橘色是file_type。</li>
+</ul>
+<p>01602000  0f 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>01602010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>01602020  00 00 03 00 00 00 01 00  02 00 00 00 00 03 00 00  |…………….|<br>01602030  00 02 00 02 <font color=red><strong>2a 8b 40 64</strong></font>  <font color=blue><strong>04 00 00 00</strong></font> <font color=green><strong>03 00</strong></font> <font color=orange><strong>02</strong></font> c9  |....*.@d……..|<br>01602040  7c b4 e4 05 00 00 00 04  00 01 00 00 00 00 00 00  ||……………|<br>01602050  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>*<br>01602950  2e 00 00 00 00 00 00 00  2e 2e 00 00 00 00 00 00  |…………….|<br>01602960  64 69 72 00 00 00 00 00  74 65 73 74 00 00 00 00  |dir…..test….|<br>01602970  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1043,7 +1158,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-21 10:29:13" itemprop="dateModified" datetime="2022-06-21T10:29:13+08:00">2022-06-21</time>
+      <time title="修改时间：2022-07-13 16:23:33" itemprop="dateModified" datetime="2022-07-13T16:23:33+08:00">2022-07-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1081,115 +1196,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//程序输出</span><br><span class="line">go中一个字节8位</span><br><span class="line">字节数为8</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0 0xc00000e168</span><br><span class="line">0xc00000e168 0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br></pre></td></tr></table></figure>
 
 <p>0xc0000160a0 + </p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/28/gopacket_layer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/28/gopacket_layer/" class="post-title-link" itemprop="url">gopacket_layer</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-28T00:00:00+08:00">2022-04-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-20 23:45:39" itemprop="dateModified" datetime="2022-06-20T23:45:39+08:00">2022-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="在使用gopacket时部分学习思考"><a href="#在使用gopacket时部分学习思考" class="headerlink" title="在使用gopacket时部分学习思考"></a>在使用gopacket时部分学习思考</h1><h3 id="layer总体结构"><a href="#layer总体结构" class="headerlink" title="layer总体结构"></a>layer总体结构</h3><p>Layer(interface) -&gt; TCP(struct) -&gt; BaseLayer(struct)<br>Layer(interface):定义三个方法 LayerType(),LayerContents(),LayerPayload()<br>TCP(struct):定义LayerType()<br>BaseLayer(struct):定义LayerContents(),LayerPayload()</p>
-<h3 id="接口的使用，动态类型推断"><a href="#接口的使用，动态类型推断" class="headerlink" title="接口的使用，动态类型推断"></a>接口的使用，动态类型推断</h3><p>layers，也就是tcp&#x2F;ip协议中各层，主要是链路层、网络层、传输层、应用层，在gopacket中具体指向流量数据某一层的协议。</p>
-<p>在gopacket的说明文档中可以看到type Layer的定义</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/base.go#L19">https://github.com/google/gopacket/blob/v1.1.19/base.go#L19</a></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Layer <span class="keyword">interface</span> &#123;</span><br><span class="line">	<span class="comment">// LayerType is the gopacket type for this layer.</span></span><br><span class="line">	LayerType() LayerType</span><br><span class="line">	<span class="comment">// LayerContents returns the set of bytes that make up this layer.</span></span><br><span class="line">	LayerContents() []<span class="type">byte</span></span><br><span class="line">	<span class="comment">// LayerPayload returns the set of bytes contained within this layer, not</span></span><br><span class="line">	<span class="comment">// including the layer itself.</span></span><br><span class="line">	LayerPayload() []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在实际使用时，可以看到下面的列子，**ethernetLayer.(*layers.Ethernet)**，需要对接口类型进行断言和转化。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ethernetLayer := packet.Layer(layers.LayerTypeEthernet)</span><br><span class="line"><span class="keyword">if</span> ethernetLayer != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Ethernet layer detected.&quot;</span>)</span><br><span class="line">    ethernetPacket, _ := ethernetLayer.(*layers.Ethernet)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Source MAC: &quot;</span>, ethernetPacket.SrcMAC)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Destination MAC: &quot;</span>, ethernetPacket.DstMAC)</span><br><span class="line">    <span class="comment">// Ethernet type is typically IPv4 but could be ARP or other</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Ethernet type: &quot;</span>, ethernetPacket.EthernetType)</span><br><span class="line">    fmt.Println()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/layers/base.go">https://github.com/google/gopacket/blob/v1.1.19/layers/base.go</a> 中可以看到BaseLayer的定义</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BaseLayer is a convenience struct which implements the LayerData and</span></span><br><span class="line"><span class="comment">// LayerPayload functions of the Layer interface.</span></span><br><span class="line"><span class="keyword">type</span> BaseLayer <span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="comment">// Contents is the set of bytes that make up this layer.  IE: for an</span></span><br><span class="line">	<span class="comment">// Ethernet packet, this would be the set of bytes making up the</span></span><br><span class="line">	<span class="comment">// Ethernet frame.</span></span><br><span class="line">	Contents []<span class="type">byte</span></span><br><span class="line">	<span class="comment">// Payload is the set of bytes contained by (but not part of) this</span></span><br><span class="line">	<span class="comment">// Layer.  Again, to take Ethernet as an example, this would be the</span></span><br><span class="line">	<span class="comment">// set of bytes encapsulated by the Ethernet protocol.</span></span><br><span class="line">	Payload []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在BaseLayer的基础上，对不同层的不同协议进行</p>
-<p>ipv4 layer的定义 <a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/layers/ip4.go#L43">https://github.com/google/gopacket/blob/v1.1.19/layers/ip4.go#L43</a> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">type IPv4 struct &#123;</span><br><span class="line">	BaseLayer</span><br><span class="line">	Version    uint8</span><br><span class="line">	IHL        uint8</span><br><span class="line">	TOS        uint8</span><br><span class="line">	Length     uint16</span><br><span class="line">	Id         uint16</span><br><span class="line">	Flags      IPv4Flag</span><br><span class="line">	FragOffset uint16</span><br><span class="line">	TTL        uint8</span><br><span class="line">	Protocol   IPProtocol</span><br><span class="line">	   uint16</span><br><span class="line">	SrcIP      net.IP</span><br><span class="line">	DstIP      net.IP</span><br><span class="line">	Options    []IPv4Option</span><br><span class="line">	Padding    []byte</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在Layer接口的实现中还缺少了LayerType()函数，具体实现可以参考下文</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/layers/layertypes.go#L24">https://github.com/google/gopacket/blob/v1.1.19/layers/layertypes.go#L24</a> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LayerTypeIPv4 = gopacket.RegisterLayerType(20, gopacket.LayerTypeMetadata&#123;Name: &quot;IPv4&quot;, Decoder: gopacket.DecodeFunc(decodeIPv4)&#125;)</span><br><span class="line">LayerTypeIPv6 = gopacket.RegisterLayerType(21, gopacket.LayerTypeMetadata&#123;Name: &quot;IPv6&quot;, Decoder: gopacket.DecodeFunc(decodeIPv6)&#125;)</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/a9779d139771f6a06fc983b18e0efd23ca30222f/layertype.go#L53">https://github.com/google/gopacket/blob/a9779d139771f6a06fc983b18e0efd23ca30222f/layertype.go#L53</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func RegisterLayerType(num int, meta LayerTypeMetadata) LayerType &#123;</span><br><span class="line">	if 0 &lt;= num &amp;&amp; num &lt; maxLayerType &#123;</span><br><span class="line">		if ltMeta[num].inUse &#123;</span><br><span class="line">			panic(&quot;Layer type already exists&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		if ltMetaMap[LayerType(num)].inUse &#123;</span><br><span class="line">			panic(&quot;Layer type already exists&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return OverrideLayerType(num, meta)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>​	</p>
 
       
     </div>

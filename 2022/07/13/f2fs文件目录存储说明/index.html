@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zt-winter.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="f2f2文件目录存储结构当前目录结构： 12345678$ tree mnt&#x2F;f2fsmnt&#x2F;f2fs├── dir│   ├── 6.29.cfx.pcap│   └── testone└── test1 directory, 3 files  文件内容 12345mnt&#x2F;f2fs&#x2F;test:hello worldmnt&#x2F;f2fs&#x2F;dir&#x2F;testonehellow ztmnt&#x2F;f2fs&#x2F;dir">
+<meta property="og:type" content="article">
+<meta property="og:title" content="f2fs文件目录存储结构">
+<meta property="og:url" content="http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="f2f2文件目录存储结构当前目录结构： 12345678$ tree mnt&#x2F;f2fsmnt&#x2F;f2fs├── dir│   ├── 6.29.cfx.pcap│   └── testone└── test1 directory, 3 files  文件内容 12345mnt&#x2F;f2fs&#x2F;test:hello worldmnt&#x2F;f2fs&#x2F;dir&#x2F;testonehellow ztmnt&#x2F;f2fs&#x2F;dir">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-13T08:23:32.244Z">
+<meta property="article:author" content="月的奏鸣曲">
+<meta property="article:tag" content="f2fs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/","path":"2022/07/13/f2fs文件目录存储说明/","title":"f2fs文件目录存储结构"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>f2fs文件目录存储结构 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section">分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#f2f2%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">f2f2文件目录存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NAT%E4%BF%A1%E6%81%AF"><span class="nav-number">1.0.1.</span> <span class="nav-text">NAT信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-inode-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">1.0.2.</span> <span class="nav-text">node   inode  文件存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.0.3.</span> <span class="nav-text">目录的结构</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">月的奏鸣曲</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="f2fs文件目录存储结构 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          f2fs文件目录存储结构
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-13 00:00:00 / 修改时间：16:23:32" itemprop="dateCreated datePublished" datetime="2022-07-13T00:00:00+08:00">2022-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/f2fs/" itemprop="url" rel="index"><span itemprop="name">f2fs</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="f2f2文件目录存储结构"><a href="#f2f2文件目录存储结构" class="headerlink" title="f2f2文件目录存储结构"></a>f2f2文件目录存储结构</h1><p>当前目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ tree mnt/f2fs</span><br><span class="line">mnt/f2fs</span><br><span class="line">├── dir</span><br><span class="line">│   ├── 6.29.cfx.pcap</span><br><span class="line">│   └── testone</span><br><span class="line">└── test</span><br><span class="line"></span><br><span class="line">1 directory, 3 files</span><br></pre></td></tr></table></figure>
+
+<p>文件内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mnt/f2fs/test:</span><br><span class="line">hello world</span><br><span class="line">mnt/f2fs/dir/testone</span><br><span class="line">hellow zt</span><br><span class="line">mnt/f2fs/dir/6.29.cfx.pcap 一个27MB的数据包文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="NAT信息"><a href="#NAT信息" class="headerlink" title="NAT信息"></a>NAT信息</h3><p>查看inode信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dump.f2fs -n 0~-1 /dev/loop0</span><br><span class="line">$ nvim dump_nat</span><br><span class="line">  1 nid:    3   ino:    3   offset:    0    blkaddr:      4101  pack:2</span><br><span class="line">  2 nid:    4   ino:    4   offset:    0    blkaddr:      4105  pack:2</span><br><span class="line">  3 nid:    5   ino:    5   offset:    0    blkaddr:      4609  pack:2</span><br><span class="line">  4 nid:    6   ino:    6   offset:    0    blkaddr:      4610  pack:2</span><br><span class="line">  5 nid:    7   ino:    7   offset:    0    blkaddr:      4611  pack:2</span><br><span class="line">  6 nid:    8   ino:    7   offset:    1    blkaddr:      4612  pack:2</span><br><span class="line">  7 nid:    9   ino:    7   offset:    2    blkaddr:      4613  pack:2</span><br><span class="line">  8 nid:   10   ino:    7   offset:    3    blkaddr:      5120  pack:2</span><br><span class="line">  9 nid:   11   ino:    7   offset:    4    blkaddr:      4614  pack:2</span><br><span class="line"> 10 nid:   12   ino:    7   offset:    5    blkaddr:      4615  pack:2</span><br><span class="line"> 11 nid:   13   ino:    7   offset:    6    blkaddr:      4616  pack:2</span><br><span class="line"> 12 nid:   14   ino:    7   offset:    7    blkaddr:      4617  pack:2</span><br><span class="line"> 13 nid:   15   ino:    7   offset:    8    blkaddr:      4618  pack:2</span><br><span class="line"> 14 nid:   16   ino:    7   offset:    9    blkaddr:      4619  pack:2</span><br></pre></td></tr></table></figure>
+
+<p>从super block中可以得到信息，NAT的地址0xa00000，CP中的NAT journal地址在0x201000<br>00000400  10 20 f5 f2 01 00 0f 00  09 00 00 00 03 00 00 00  |. …………..|<br>00000410  0c 00 00 00 09 00 00 00  01 00 00 00 01 00 00 00  |…………….|<br>00000420  00 00 00 00 00 64 00 00  00 00 00 00 2a 00 00 00  |…..d……<em>…|<br>00000430  31 00 00 00 02 00 00 00  02 00 00 00 02 00 00 00  |1……………|<br>00000440  01 00 00 00 2a 00 00 00  00 02 00 00 00 02 00 00  |….</em>………..|<br>00000450  00 06 00 00 <font color=red><strong>00 0a 00 00</strong></font>  00 0e 00 00 00 10 00 00  |…………….|<br>00000460  03 00 00 00 01 00 00 00  02 00 00 00 83 8f 92 2c  |……………,|<br>00000470  60 18 4d 2e 85 c3 d4 8e  56 29 d9 dc 00 00 00 00  |&#96;.M…..V)……|<br>00000480  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
+<p>查看NAT，红色是node的序号，蓝色是node的地址，绿色是版本号，接下来是下一个节点。</p>
+<p>在这里3号node是根目录，4号node是dir目录，5号node是test文件，6号文件是testone，7号文件是6.29.cap</p>
+<p>00a00000  00 00 00 00 00 00 00 00  00 00 01 00 00 00 01 00  |…………….|<br>00a00010  00 00 00 02 00 00 00 01  00 00 00 <font color=green><strong>00</strong></font> <font color=red><strong>03 00 00 00</strong></font>  |…………….|<br>00a00020  <font color=blue><strong>05 10 00 00</strong></font> 00 04 00 00  00 08 10 00 00 00 05 00  |…………….|<br>00a00030  00 00 01 12 00 00 00 06  00 00 00 02 12 00 00 00  |…………….|<br>00a00040  07 00 00 00 03 12 00 00  00 07 00 00 00 04 12 00  |…………….|<br>00a00050  00 00 07 00 00 00 05 12  00 00 00 07 00 00 00 00  |…………….|<br>00a00060  14 00 00 00 07 00 00 00  06 12 00 00 00 07 00 00  |…………….|<br>00a00070  00 07 12 00 00 00 07 00  00 00 08 12 00 00 00 07  |…………….|<br>00a00080  00 00 00 09 12 00 00 00  07 00 00 00 0a 12 00 00  |…………….|<br>00a00090  00 07 00 00 00 0b 12 00  00 00 00 00 00 00 00 00  |…………….|<br>00a000a0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
+<ul>
+<li><strong>当文件系统修改比较小时，会将修改数据保存在nat journal中，而不直接写入到SIT和NAT中，减少读写次数。</strong></li>
+</ul>
+<h3 id="node-inode-文件存储"><a href="#node-inode-文件存储" class="headerlink" title="node   inode  文件存储"></a>node   inode  文件存储</h3><p>从下图的f2fs_node数据结构可以看出，f2fs_node分为三种inode、direct_node、indirect。第一种，node存储指向data的指针；第二种，direct_node存储指向node的指针，然后再由node存储指向data的指针</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1081 struct f2fs_node &#123;</span><br><span class="line">1082     /* can be one of three types: inode, direct, and indirect types */</span><br><span class="line">1083     union &#123;</span><br><span class="line">1084         struct f2fs_inode i;</span><br><span class="line">1085         struct direct_node dn;</span><br><span class="line">1086         struct indirect_node in;</span><br><span class="line">1087     &#125;;</span><br><span class="line">1088     struct node_footer footer;</span><br><span class="line">1089 &#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"> 994 struct f2fs_inode &#123;</span><br><span class="line"> 995     __le16 i_mode;          /* file mode */</span><br><span class="line"> 996     __u8 i_advise;          /* file hints */</span><br><span class="line"> 997     __u8 i_inline;          /* file inline flags */</span><br><span class="line"> 998     __le32 i_uid;           /* user ID */</span><br><span class="line"> 999     __le32 i_gid;           /* group ID */</span><br><span class="line">1000     __le32 i_links;         /* links count */</span><br><span class="line">1001     __le64 i_size;          /* file size in bytes */</span><br><span class="line">1002     __le64 i_blocks;        /* file size in blocks */</span><br><span class="line">1003     __le64 i_atime;         /* access time */</span><br><span class="line">1004     __le64 i_ctime;         /* change time */</span><br><span class="line">1005     __le64 i_mtime;         /* modification time */</span><br><span class="line">1006     __le32 i_atime_nsec;        /* access time in nano scale */</span><br><span class="line">1007     __le32 i_ctime_nsec;        /* change time in nano scale */</span><br><span class="line">1008     __le32 i_mtime_nsec;        /* modification time in nano scale */</span><br><span class="line">1009     __le32 i_generation;        /* file version (for NFS) */</span><br><span class="line">1010     union &#123;</span><br><span class="line">1011         __le32 i_current_depth; /* only for directory depth */</span><br><span class="line">1012         __le16 i_gc_failures;   /*</span><br><span class="line">1013                      * # of gc failures on pinned file.</span><br><span class="line">1014                      * only for regular files.</span><br><span class="line">1015                      */</span><br><span class="line">1016     &#125;;</span><br><span class="line">1017     __le32 i_xattr_nid;     /* nid to save xattr */</span><br><span class="line">1018     __le32 i_flags;         /* file attributes */</span><br><span class="line">1019     __le32 i_pino;          /* parent inode number */</span><br><span class="line">1020     __le32 i_namelen;       /* file name length */</span><br><span class="line">1021     __u8 i_name[F2FS_NAME_LEN]; /* file name for SPOR */</span><br><span class="line">1022     __u8 i_dir_level;       /* dentry_level for large dir */</span><br><span class="line">1023</span><br><span class="line">1024     struct f2fs_extent i_ext __attribute__((packed));   /* caching a largest extent */</span><br><span class="line">1025</span><br><span class="line">1026     union &#123;</span><br><span class="line">1027         struct &#123;</span><br><span class="line">1028             __le16 i_extra_isize;   /* extra inode attribute size */</span><br><span class="line">1029             __le16 i_inline_xattr_size; /* inline xattr size, unit: 4 bytes */</span><br><span class="line">1030             __le32 i_projid;    /* project id */</span><br><span class="line">1031             __le32 i_inode_checksum;/* inode meta checksum */</span><br><span class="line">1032             __le64 i_crtime;    /* creation time */</span><br><span class="line">1033             __le32 i_crtime_nsec;   /* creation time in nano scale */</span><br><span class="line">1034             __le64 i_compr_blocks;  /* # of compressed blocks */</span><br><span class="line">1035             __u8 i_compress_algrithm;   /* compress algrithm */</span><br><span class="line">1036             __u8 i_log_cluster_size;    /* log of cluster size */</span><br><span class="line">1037             __le16 i_padding;       /* padding */</span><br><span class="line">1038             __le32 i_extra_end[0];  /* for attribute size calculation */</span><br><span class="line">1039         &#125; __attribute__((packed));</span><br><span class="line">1040         __le32 i_addr[DEF_ADDRS_PER_INODE]; /* Pointers to data blocks */</span><br><span class="line">1041     &#125;;</span><br><span class="line">1042     __le32 i_nid[5];        /* direct(2), indirect(2),</span><br><span class="line">1043                         double_indirect(1) node id */</span><br><span class="line">1044 &#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1071 struct node_footer &#123;</span><br><span class="line">1072     __le32 nid;     /* node id */</span><br><span class="line">1073     __le32 ino;     /* inode nunmber */</span><br><span class="line">1074     __le32 flag;        /* include cold/fsync/dentry marks and offset */</span><br><span class="line">1075     __le64 cp_ver __attribute__((packed));      /* checkpoint version */</span><br><span class="line">1076     __le32 next_blkaddr;    /* next node page block address */</span><br><span class="line">1077 &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>红色部分对应inode的i_name[F2FS_NAME_LEN]和i_dir_level，占256字节；蓝色部分对应inode的f2fs_extent i_ext，占12个字节。黑色部分对应inode的__len32  i_addr[DEF_ADDRS_PER_INODE]的部分。</p>
+<p>__attribute__((paecked)) : 表示编译时不按照内存对齐的方式，以节约内存</p>
+<p>0120c000  a4 81 00 01 00 00 00 00  00 00 00 00 01 00 00 00  |…………….|<br>0120c010  06 28 18 02 00 00 00 00  8d 21 00 00 00 00 00 00  |.(…….!……|<br>0120c020  06 48 c4 62 00 00 00 00  86 32 c4 62 00 00 00 00  |.H.b…..2.b….|<br>0120c030  86 32 c4 62 00 00 00 00  cc 71 67 0c 33 04 62 2c  |.2.b…..qg.3.b,|<br>0120c040  33 04 62 2c 9c 01 92 e4  00 00 00 00 00 00 00 00  |3.b,…………|<br>0120c050  00 00 00 00 04 00 00 00  0d 00 00 00 <font color=red>36 2e 32 39</font>  |…………6.29|<br>0120c060  <font color=red>2e 63 66 78 2e 70 63 61  70 00 00 00 00 00 00 00</font>  |.cfx.pcap…….|<br>0120c070  <font color=red>00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00</font>  |…………….|<br>*<br>0120c150  <font color=red>00 00 00 00 00 00 00 00  00 00 00 00</font> <font color=blue>00 0c 00 00</font>  |…………….|<br>0120c160  <font color=blue>00 24 00 00 00 14 00 00</font>  <strong>00 38 00 00 01 38 00 00</strong>  |.$…….8…8..|<br>0120c170  <strong>02 38 00 00 03 38 00 00  04 38 00 00 05 38 00 00</strong>  |.8…8…8…8..|<br>0120c180  <strong>06 38 00 00 07 38 00 00  08 38 00 00 09 38 00 00</strong>  |.8…8…8…8..|<br>0120c190  0a 38 00 00 0b 38 00 00  0c 38 00 00 0d 38 00 00  |.8…8…8…8..|<br>0120c1a0  0e 38 00 00 0f 38 00 00  10 38 00 00 11 38 00 00  |.8…8…8…8..|<br>0120c1b0  12 38 00 00 13 38 00 00  14 38 00 00 15 38 00 00  |.8…8…8…8..|<br>0120c1c0  16 38 00 00 17 38 00 00  18 38 00 00 19 38 00 00  |.8…8…8…8..|<br>0120c1d0  1a 38 00 00 1b 38 00 00  1c 38 00 00 1d 38 00 00  |.8…8…8…8..|<br>0120c1e0  1e 38 00 00 1f 38 00 00  20 38 00 00 21 38 00 00  |.8…8.. 8..!8..|<br>0120c1f0  22 38 00 00 23 38 00 00  24 38 00 00 25 38 00 00  |”8..#8..$8..%8..|<br>0120c200  26 38 00 00 27 38 00 00  28 38 00 00 29 38 00 00  |&amp;8..’8..(8..)8..|</p>
+<p>可以看一看0x3801000的内存，是6.29.cfx.pcap的文件数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">03801000  00 01 50 64 2b 95 5d 3d  c0 a8 0c 02 00 00 00 00  |..Pd+.]=........|</span><br><span class="line">03801010  00 00 c0 a8 0c 80 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">03801020  00 00 00 00 00 00 00 00  22 1d bc 62 f5 bf 03 00  |........&quot;..b....|</span><br><span class="line">03801030  3c 00 00 00 3c 00 00 00  ff ff ff ff ff ff 2c 97  |&lt;...&lt;.........,.|</span><br><span class="line">03801040  b1 c3 58 10 99 98 00 01  00 00 00 1d 00 00 00 04  |..X.............|</span><br><span class="line">03801050  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">*</span><br><span class="line">03801070  00 00 00 00 22 1d bc 62  8e 04 04 00 3c 00 00 00  |....&quot;..b....&lt;...|</span><br><span class="line">03801080  3c 00 00 00 ff ff ff ff  ff ff 00 22 46 2c 42 58  |&lt;..........&quot;F,BX|</span><br><span class="line">03801090  08 06 00 01 08 00 06 04  00 01 00 22 46 2c 42 58  |...........&quot;F,BX|</span><br><span class="line">038010a0  c0 a8 0a 59 00 00 00 00  00 00 c0 a8 0a 8a 00 00  |...Y............|</span><br><span class="line">038010b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">038010c0  22 1d bc 62 17 07 04 00  3c 00 00 00 3c 00 00 00  |&quot;..b....&lt;...&lt;...|</span><br><span class="line">038010d0  ff ff ff ff ff ff 50 64  2b 95 5d 3d 08 06 00 01  |......Pd+.]=....|</span><br><span class="line">038010e0  08 00 06 04 00 01 50 64  2b 95 5d 3d c0 a8 0c 02  |......Pd+.]=....|</span><br></pre></td></tr></table></figure>
+
+<p>可以说，6.29.cfx的文件数据的索引保存在node7 ~ 16中。每一个node的offset  0x16c开始是文件数据的block地址。同时每个node的结尾都标注了该node的inode，都是inode7，同时标注offset，为还原文件做好了工作。</p>
+<h3 id="目录的结构"><a href="#目录的结构" class="headerlink" title="目录的结构"></a>目录的结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1325 /* One directory entry slot representing F2FS_SLOT_LEN-sized file name */</span><br><span class="line">1326 struct f2fs_dir_entry &#123;</span><br><span class="line">1327     __le32 hash_code;   /* hash code of file name */</span><br><span class="line">1328     __le32 ino;     /* inode number */</span><br><span class="line">1329     __le16 name_len;    /* lengh of file name */</span><br><span class="line">1330     __u8 file_type;     /* file type */</span><br><span class="line">1331 &#125; __attribute__((packed));</span><br><span class="line">1332</span><br><span class="line">1333 static_assert(sizeof(struct f2fs_dir_entry) == 11, &quot;&quot;);</span><br><span class="line">1334</span><br><span class="line">1335 /* 4KB-sized directory entry block */</span><br><span class="line">1336 struct f2fs_dentry_block &#123;</span><br><span class="line">1337     /* validity bitmap for directory entries in each block */</span><br><span class="line">1338     /* (214 + 8 - 1) / 8 = 27 */</span><br><span class="line">1339     __u8 dentry_bitmap[SIZE_OF_DENTRY_BITMAP];</span><br><span class="line">1340     /* pagsize - (( size_of_dir_entry + f2fs_slot_len)*nr_entry_in_block + size_of_dir_entry_bitmap) */</span><br><span class="line">1341     /* 4096 - (( 11 + 8) * 214 + 27) = 3 */</span><br><span class="line">1342     __u8 reserved[SIZE_OF_RESERVED];</span><br><span class="line">1343     /* f2fs_dir_entry[214] len(32+32+16+8) */</span><br><span class="line">1344     struct f2fs_dir_entry dentry[NR_DENTRY_IN_BLOCK];</span><br><span class="line">1345     /* filename[214][8] */</span><br><span class="line">1346     __u8 filename[NR_DENTRY_IN_BLOCK][F2FS_SLOT_LEN];</span><br><span class="line">1347 &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>目前目录对应的nid：</p>
+<ul>
+<li>&#x2F; 根目录对应：nid3，对应的地址0x01005000。在0x01005168开始是data block pointer，指向的地址是0x1602000。红色部分是f2fs_dir_entry的hash_code，蓝色是ino(inode number)，绿色是文件名长度name_len，橘色是file_type。</li>
+</ul>
+<p>01602000  0f 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>01602010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>01602020  00 00 03 00 00 00 01 00  02 00 00 00 00 03 00 00  |…………….|<br>01602030  00 02 00 02 <font color=red><strong>2a 8b 40 64</strong></font>  <font color=blue><strong>04 00 00 00</strong></font> <font color=green><strong>03 00</strong></font> <font color=orange><strong>02</strong></font> c9  |....*.@d……..|<br>01602040  7c b4 e4 05 00 00 00 04  00 01 00 00 00 00 00 00  ||……………|<br>01602050  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>*<br>01602950  2e 00 00 00 00 00 00 00  2e 2e 00 00 00 00 00 00  |…………….|<br>01602960  64 69 72 00 00 00 00 00  74 65 73 74 00 00 00 00  |dir…..test….|<br>01602970  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/f2fs/" rel="tag"># f2fs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/22/container/" rel="prev" title="container库">
+                  <i class="fa fa-chevron-left"></i> container库
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">月的奏鸣曲</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
