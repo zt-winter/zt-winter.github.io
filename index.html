@@ -123,18 +123,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -166,6 +166,100 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/15/monotonic_stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/15/monotonic_stack/" class="post-title-link" itemprop="url">单调栈</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-15 00:00:00 / 修改时间：16:23:33" itemprop="dateCreated datePublished" datetime="2022-07-15T00:00:00+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><p>leetcode 84题</p>
+<p>给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+<p>​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果向左扩展，那么要求 i &lt; j ，同时heights[i] &gt; heights[j]。然后是边界如何重复利用的问题。 x &lt; y &lt; z ，当我们知道 y 的边界是 x 后，能否能过比较 y 和 z 来判断 z 的边界。对于任意的 i ， x &lt; i &lt; y ，可以说 heights[i] &gt; heights[y] ，如果 heights[y] &gt; heights[z] ，所有的 heights[i] &gt; heights[z] ，所以 z 的边界可以从 x 开始推。这种数据进出模式类似栈。所以可以尝试用栈试试。</p>
+<p>​		例子 [6,7,5,2,4,5,9,3] ：</p>
+<p> 6 进栈，栈开始为空，无出栈，栈长为1，6的边界height数组第一个数。</p>
+<p>7 进栈， 7 &gt; 6 ，无出栈，栈长为2，7的边界为height数组的第二个数。</p>
+<p>5 进栈，5 比 6、7小，所以6 、7 出栈，栈长为1，5的边界为height数组的第一个数。</p>
+<p>2 进栈，2 &lt; 5，所以5出栈，栈长为1，2的边界为height数组的第一个数。</p>
+<p>依次类推。由于数组索引第一个为0，所以可以将所以数字减一。</p>
+<p>同理可以得到柱子的右边界。</p>
+<p>使用一个栈和两个数组，可以保存数组中任意元素的左右边界。然后比较求值。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">largestRectangleArea</span><span class="params">(heights []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    n := <span class="built_in">len</span>(heights)</span><br><span class="line">    left, right := <span class="built_in">make</span>([]<span class="type">int</span>, n), <span class="built_in">make</span>([]<span class="type">int</span>, n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        right[i] = n</span><br><span class="line">    &#125;</span><br><span class="line">    mono_stack := []<span class="type">int</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">len</span>(mono_stack) &gt; <span class="number">0</span> &amp;&amp; heights[mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]] &gt;= heights[i] &#123;</span><br><span class="line">            right[mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]] = i</span><br><span class="line">            mono_stack = mono_stack[:<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(mono_stack) == <span class="number">0</span> &#123;</span><br><span class="line">            left[i] = <span class="number">-1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            left[i] = mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        mono_stack = <span class="built_in">append</span>(mono_stack, i)</span><br><span class="line">    &#125;</span><br><span class="line">    ans := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        ans = max(ans, (right[i] - left[i] - <span class="number">1</span>) * heights[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(x, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> x &gt; y &#123;</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1096,106 +1190,6 @@
           <h1 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h1><h2 id="GO中参数传递只有值传递，没有参数传递"><a href="#GO中参数传递只有值传递，没有参数传递" class="headerlink" title="GO中参数传递只有值传递，没有参数传递"></a>GO中参数传递只有值传递，没有参数传递</h2><h3 id="slice-map-chan-在使用时都是指针类型"><a href="#slice-map-chan-在使用时都是指针类型" class="headerlink" title="slice map chan  在使用时都是指针类型"></a>slice map chan  在使用时都是指针类型</h3><p>主函数调用test函数，在函数传递参数时，<code>func test( sliceA  []int)</code>，sliceA就是指针，它和原切片的指针不是同一个东西，两个指针指向同一个slice，但所在的位置不同。由于slice创建时，自身就有cap和len两个参数。如果只是对原有slice中数值进行修改，那么是没有问题的，主函数中slice也会修改。但如果进行扩容操作，如append，如果cap改变了，那么就会在新的slice上进行操作，返回新的slice地址。主函数中的slice地址就不会修改。</p>
 <p>如果传递的参数是slice的地址，<code> func test ( sliceA *[]int)</code>。在进行扩容操作后，新的slice地址也会赋值给slice，相当于主函数中slice指针指向了新的slice地址。</p>
 <p>所以 __在GO中没有按参数传递，只有指针的副本传递和值的副本传递__。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/28/append/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/28/append/" class="post-title-link" itemprop="url">append与切片</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-28T00:00:00+08:00">2022-04-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-13 16:23:33" itemprop="dateModified" datetime="2022-07-13T16:23:33+08:00">2022-07-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="append函数"><a href="#append函数" class="headerlink" title="append函数"></a>append函数</h1><p>append函数原型</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">append</span><span class="params">(slice []Type, elems ...Type)</span></span> []Type</span><br></pre></td></tr></table></figure>
-
-<p>内置函数append可以在切片末尾添加元素。如果切片有足够的空间，后面的空间会分配给新的元素。如果没有足够空间，就会一个新的隐含数组会被分配出来，然后将所有的元素复制到新的隐含数组中，然后返回这个隐含数组的头部指针（或者说新的切片）。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;unsafe&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> slice []<span class="type">int</span> = []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">	<span class="keyword">var</span> slices [][]<span class="type">int</span> = [][]<span class="type">int</span>&#123;&#123;<span class="number">3</span>, <span class="number">4</span>&#125;, &#123;<span class="number">5</span>, <span class="number">6</span>&#125;, &#123;<span class="number">7</span>, <span class="number">8</span>&#125;&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;go中一个字节8位\n&quot;</span>)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;字节数为%d\n&quot;</span>, unsafe.Sizeof(slice[<span class="number">0</span>]))</span><br><span class="line">    fmt.Printf(<span class="string">&quot;slices的空间为%d\n&quot;</span>, <span class="built_in">cap</span>(slices[<span class="number">0</span>]))</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%p %p %p\n&quot;</span>, slices[<span class="number">0</span>], slices[<span class="number">1</span>], slices[<span class="number">2</span>])</span><br><span class="line">	slices = <span class="built_in">append</span>(slices, slice)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%p %p %p %p\n&quot;</span>, slices[<span class="number">0</span>], slices[<span class="number">1</span>], slices[<span class="number">2</span>], slices[<span class="number">3</span>])</span><br><span class="line">	<span class="keyword">var</span> slicesTwo [][]<span class="type">int</span> = <span class="built_in">append</span>([][]<span class="type">int</span>&#123;slice&#125;, slices...)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%p %p %p %p\n&quot;</span>, slicesTwo[<span class="number">0</span>], slicesTwo[<span class="number">1</span>], slicesTwo[<span class="number">2</span>], slicesTwo[<span class="number">3</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面是append正确的使用方法。<code> slices = append(slices, slice)</code>是将slice切片添加到slices二维切片的后面。如果要将slice添加到slices的前面，应该是</p>
-<p><code> var sliceTwo [][]int = append([][]int&#123;slice&#125;, slices...)</code></p>
-<p><code> [][]int&#123;slice&#125;</code>是新建了一个二维切片，然后切片的初始化了一个元素（一个一维切片）。</p>
-<p><code> slices...</code>是将slices中每一个元素全部列出来作为参数，也就是<code> elem ...Type</code>。</p>
-<p>最后slices和sliceTwo的值为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">slices-&gt;</span><br><span class="line">[0]:[3,4]</span><br><span class="line">[1]:[5,6]</span><br><span class="line">[2]:[7,8]</span><br><span class="line">[3]:[1,2,3]</span><br><span class="line">sliceTwo-&gt;</span><br><span class="line">[0]:[1,2,3]</span><br><span class="line">[1]:[3,4]</span><br><span class="line">[2]:[5,6]</span><br><span class="line">[3]:[7,8]</span><br><span class="line">[4]:[1,2,3]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//程序输出</span><br><span class="line">go中一个字节8位</span><br><span class="line">字节数为8</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0 0xc00000e168</span><br><span class="line">0xc00000e168 0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br></pre></td></tr></table></figure>
-
-<p>0xc0000160a0 + </p>
 
       
     </div>

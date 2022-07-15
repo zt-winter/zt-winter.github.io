@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zt-winter.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="单调栈leetcode 84题 给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。 求在该柱状图中，能够勾勒出来的矩形的最大面积。 ​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单调栈">
+<meta property="og:url" content="http://zt-winter.github.io/2022/07/15/monotonic_stack/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="单调栈leetcode 84题 给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。 求在该柱状图中，能够勾勒出来的矩形的最大面积。 ​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-15T08:23:33.048Z">
+<meta property="article:author" content="月的奏鸣曲">
+<meta property="article:tag" content="monotonic_stack">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zt-winter.github.io/2022/07/15/monotonic_stack/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://zt-winter.github.io/2022/07/15/monotonic_stack/","path":"2022/07/15/monotonic_stack/","title":"单调栈"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>单调栈 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section">分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-number">1.</span> <span class="nav-text">单调栈</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">月的奏鸣曲</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/15/monotonic_stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="单调栈 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          单调栈
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-15 00:00:00 / 修改时间：16:23:33" itemprop="dateCreated datePublished" datetime="2022-07-15T00:00:00+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><p>leetcode 84题</p>
+<p>给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+<p>​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果向左扩展，那么要求 i &lt; j ，同时heights[i] &gt; heights[j]。然后是边界如何重复利用的问题。 x &lt; y &lt; z ，当我们知道 y 的边界是 x 后，能否能过比较 y 和 z 来判断 z 的边界。对于任意的 i ， x &lt; i &lt; y ，可以说 heights[i] &gt; heights[y] ，如果 heights[y] &gt; heights[z] ，所有的 heights[i] &gt; heights[z] ，所以 z 的边界可以从 x 开始推。这种数据进出模式类似栈。所以可以尝试用栈试试。</p>
+<p>​		例子 [6,7,5,2,4,5,9,3] ：</p>
+<p> 6 进栈，栈开始为空，无出栈，栈长为1，6的边界height数组第一个数。</p>
+<p>7 进栈， 7 &gt; 6 ，无出栈，栈长为2，7的边界为height数组的第二个数。</p>
+<p>5 进栈，5 比 6、7小，所以6 、7 出栈，栈长为1，5的边界为height数组的第一个数。</p>
+<p>2 进栈，2 &lt; 5，所以5出栈，栈长为1，2的边界为height数组的第一个数。</p>
+<p>依次类推。由于数组索引第一个为0，所以可以将所以数字减一。</p>
+<p>同理可以得到柱子的右边界。</p>
+<p>使用一个栈和两个数组，可以保存数组中任意元素的左右边界。然后比较求值。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">largestRectangleArea</span><span class="params">(heights []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    n := <span class="built_in">len</span>(heights)</span><br><span class="line">    left, right := <span class="built_in">make</span>([]<span class="type">int</span>, n), <span class="built_in">make</span>([]<span class="type">int</span>, n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        right[i] = n</span><br><span class="line">    &#125;</span><br><span class="line">    mono_stack := []<span class="type">int</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">len</span>(mono_stack) &gt; <span class="number">0</span> &amp;&amp; heights[mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]] &gt;= heights[i] &#123;</span><br><span class="line">            right[mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]] = i</span><br><span class="line">            mono_stack = mono_stack[:<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(mono_stack) == <span class="number">0</span> &#123;</span><br><span class="line">            left[i] = <span class="number">-1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            left[i] = mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        mono_stack = <span class="built_in">append</span>(mono_stack, i)</span><br><span class="line">    &#125;</span><br><span class="line">    ans := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        ans = max(ans, (right[i] - left[i] - <span class="number">1</span>) * heights[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(x, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> x &gt; y &#123;</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/monotonic-stack/" rel="tag"># monotonic_stack</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/" rel="prev" title="f2fs文件目录存储结构">
+                  <i class="fa fa-chevron-left"></i> f2fs文件目录存储结构
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">月的奏鸣曲</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
