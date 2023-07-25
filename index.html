@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="月的奏鸣曲"><meta name="copyright" content="月的奏鸣曲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://zt-winter.github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="月的奏鸣曲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zt-winter.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-25 13:43:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/picture/2em38y.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/25/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/" title="天气预报">天气预报</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-24T16:00:00.000Z" title="发表于 2023-07-25 00:00:00">2023-07-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">
+  9abc167685c141e079bf3cb66a52d85633b48b310d02339f2dc2cbc8ad9a69c0079d8d9d2872727e2e7c7f3f1003fdd4ddc68757e09cfb48ef9051e8c934766345a49b4092e0171f4c8ecda56b06b13cf1923236e01de082d7900db36660264e9ae8a598425c20dd0e1f2ce2181d931a8714477a49348291dcff99f3205e08d5a62feb783598fdf0f0afa2cd443d054f5942c8a70dad75078e6f8261d73c17a12cf87702462caae38ec7e76b90b88ae1d1a6ac9d56a484deb7186460f13ee462dc412fe50c7d6b9d6f06c8db386e0c095bb0be0434b0452cd89570356b3679bb6ae63ae30eca85c2c8d0d7227efe6f08724a879067dd41294 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/10/%E9%9B%B6%E5%80%BCnil%E7%A9%BA%E5%80%BC/" title="golang中的零值、nil与空值">golang中的零值、nil与空值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-09T16:00:00.000Z" title="发表于 2023-04-10 00:00:00">2023-04-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">零值零值是指声明变量（分配内存时）并未显示初始化时，编译器为你的变量自动设置一个默认初始值。零值官方说明零值默认初始值可以分为两大类：
+
+值类型：int默认值为0，bool默认值为false，float64的默认值为0.000000，byte默认值为0，string默认值是“”,对于数组和结构体，会递归初始化其元素或者字段，取决于其类型。
+引用类型：均为nil，包括指针pointer，函数func，接口interface，切片slice，管道channel，哈希表map。注意testNum := 0已经完成了初始化，不属于零值。
+
+nil最初接触nil，是错误处理时，通过返回的error是否为nil判断是否出现错误。nil是go中预先声明的标识符，主要用来表示引用类型的零值，表示它们未被初始化。
+1234567\\nil经典问题var p *intvar i interface&#123;&#125;var p1 *[3]intfmt.Println(p1 == p) \\编译不通过，因为类型不一致fmt.Println(i == p) \\返回结果为True
+上述结果的原因在于，in ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/05/ssh/" title="ssh配置">ssh配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-04T16:00:00.000Z" title="发表于 2023-02-05 00:00:00">2023-02-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ssh/">ssh</a></span></div><div class="content">ssh配置与相关错误解决
+错误信息:git@github.com: Permission denied (publickey,password,keyboard-interactive)环境:linux,在一个星期前,原本github配置还能够使用,突然需要输入密码,且在输入密码后依然无法连接原因:连接github无法找到对应的密钥排查过程:使用ssh -Tv git@github.com报错依然是该信息,重新生成密钥后再次添加到github.com的ssh公钥管理中,依然报错.怀疑是ssh配置出现问题,查看~&#x2F;.ssh&#x2F;config文件,相关信息如下所示1234Host github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github
+解决方法:在stackoverflow中找到解决方法,将github.com(HostName)改为ssh.github.com. 尝试后解决.怀疑github关于https与ssh两种连接方式更新后,ssh需要单独指向 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/12/12/linux-wifi/" title="linux-wifi">linux-wifi</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-12T02:43:00.945Z" title="发表于 2022-12-12 10:43:00">2022-12-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">主机上装了双系统，昨天晚上使用windows10打完游戏后，今天进入Linux发现没有无线网卡设备，报错信息为kernel iwlwifi: probe of failed with error -110。
+搜索相关报错信息后发现原因为windows10为了快速启动，即使关闭windows也不会释放网卡设备，以便下次启动时不用再次加载网卡驱动，但这导致linux启动时发现网卡设备被占用，无法使用网卡设备。
+解决方法：windows10进入控制面板，打开电源设置，关闭快速启动。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/20/error/" title="error处理">error处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-19T16:00:00.000Z" title="发表于 2022-09-20 00:00:00">2022-09-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go-java/">go, java</a></span></div><div class="content">error处理机制
+用golang写网络流量处理代码时，因为网络协议很多内容字段解析依靠前面的规定的长度，而应用层的具体协议在传输层不会指出，因此依靠一些简单字段判断协议会将协议识别错误，导致slice越界。因此在每次读取字符流都要做错误判断，同时gopacket大量协议解析函数返回值都存在error，都需要做错误判断。在写的时候觉得非常麻烦。觉得try{}catch{}的处理方式可能更好。
+最近维护的一个java的代码，在上线测试出现问题，排查问题时代码在最上层使用try catch，所有的错误都在最上层的几个函数抛出，导致需要自己在各处下判断，需找错误。
+try catch这种错误处理模式，就是直接将所有错误全部甩出，导致后期维护困难，而每个错误做具体处理导致前期开发困难，各有优劣。
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/08/20/leetcode207/" title="dfs">dfs</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-20T12:55:20.404Z" title="发表于 2022-08-20 20:55:20">2022-08-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">深度优先搜索算法一般用于树或者图的结构中，在写代码时有下面几个注意的地方。
+leetcode 207题首先读懂题目，课程只有0~crousenum-1门，如果没有课程相互前置，是一定能够学完的。题目就是判断是否有循环依赖。可以使用广度+深度搜索，遍历一个节点所依赖节点，如果所依赖节点也有依赖则继续判断。
+这里每个节点在遍历时赋予了属性：未检索、正在检索、已经完成检索。为什么不是设置未检索和已经完成检索两个值。主要原因是需要判断是否有相互依赖。设置已经完成检索需要在完成该节点的依赖遍历后，但遍历的节点如果依赖正在的遍历的节点，那只设置两个值的话，就会检测不出来。
+12345678910111213141516171819202122232425262728293031canFinish(numCourses int, prerequisites [][]int) bool &#123;    depend := make([][]int, numCourses)	flag := make([]int, numCourses)	for i := 0; i &lt; len(prerequi ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/25/%E5%89%8D%E7%BC%80/" title="前缀及其优化">前缀及其优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-25T08:17:51.761Z" title="发表于 2022-07-25 16:17:51">2022-07-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">有些问题可以转化为两个前缀进行简单计算得到结果，如：一个数组子数组的和为K的个数，子数组的和，可以转化为两个前缀数组相减。类似题目有：leetcode 209leetcode 560leetcode 862
+以leetcode 560题为例subsum &#x3D; sum[i] - sum[j]因此可以使用两次循环遍历获得，这么做时间复杂度为O(n2)。
+可以在此基础上，进一步优化。在第一次循环中，我们已知sum[i]，subsum的目标值k，同时j&lt;i。因此可以使用map，来检索是否存在sum[j]。时间复杂度降为O(n)。
+12345678910111213141516171819202122232425func subarraySum(nums []int, k int) int &#123;    length := len(nums)    sum := make([]int, length)    sum[0] = nums[0]    for i := 1; i &lt; length; i++ &#123;        sum[i] = sum[i-1] +  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/21/%E9%97%AD%E5%8C%85/" title="闭包">闭包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-20T16:00:00.000Z" title="发表于 2022-07-21 00:00:00">2022-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">相关参考文章这篇文章说的很详细，可以自己动手从汇编的角度看看底层实现
+闭包的定义闭包 是由函数及其相关引用环境组合而成的实体(即：闭包&#x3D;函数+引用环境)。“官方”的解释是：所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。
+12345678910111213141516171819202122232425262728293031323334353637383940package mainimport (	&quot;fmt&quot;	&quot;reflect&quot;)func chain(a string) int &#123;	fmt.Printf(&quot;%s&quot;, a)	return 0&#125;func chain2() &#123;	fmt.Println(&quot;test2&quot;)&#125;// fib函数的返回值是一个函数func() intfunc fib() func() int &#123;	a, b := 0, 1	return func() int  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/15/monotonic_stack/" title="单调栈">单调栈</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-14T16:00:00.000Z" title="发表于 2022-07-15 00:00:00">2022-07-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">单调栈leetcode 84题
+给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。
+求在该柱状图中，能够勾勒出来的矩形的最大面积。
+​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果向左扩展，那么要求 i &lt; j ，同时heights[i] &gt; heights[j]。然后是边界如何重复利用的问题。 x &lt; y &lt; z ，当我们知道 y 的边界是 x 后，能否能过比较 y 和 z 来判断 z 的边界。对于任意的 i ， x &lt; i &lt; y ，可以说 heights[i] &gt; heights[y] ，如果 heights[y] &gt; heights[z] ，所有的 heights[i] &gt; heights[z] ，所以 z 的边界可以从 x 开始推。这种数据进出模式类似栈。所以可以尝试用栈试试。
+​		例子 [6,7,5,2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/" title="f2fs文件目录存储结构">f2fs文件目录存储结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-12T16:00:00.000Z" title="发表于 2022-07-13 00:00:00">2022-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/f2fs/">f2fs</a></span></div><div class="content">f2f2文件目录存储结构当前目录结构：
+12345678$ tree mnt/f2fsmnt/f2fs├── dir│   ├── 6.29.cfx.pcap│   └── testone└── test1 directory, 3 files
+
+文件内容
+12345mnt/f2fs/test:hello worldmnt/f2fs/dir/testonehellow ztmnt/f2fs/dir/6.29.cfx.pcap 一个27MB的数据包文件
+
+NAT信息查看inode信息
+12345678910111213141516$ sudo dump.f2fs -n 0~-1 /dev/loop0$ nvim dump_nat  1 nid:    3   ino:    3   offset:    0    blkaddr:      4101  pack:2  2 nid:    4   ino:    4   offset:    0    blkaddr:      4105  pack:2  3 nid:    5   ino:    5   offset:    0    ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">月的奏鸣曲</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/25/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/" title="天气预报">天气预报</a><time datetime="2023-07-24T16:00:00.000Z" title="发表于 2023-07-25 00:00:00">2023-07-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/10/%E9%9B%B6%E5%80%BCnil%E7%A9%BA%E5%80%BC/" title="golang中的零值、nil与空值">golang中的零值、nil与空值</a><time datetime="2023-04-09T16:00:00.000Z" title="发表于 2023-04-10 00:00:00">2023-04-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/05/ssh/" title="ssh配置">ssh配置</a><time datetime="2023-02-04T16:00:00.000Z" title="发表于 2023-02-05 00:00:00">2023-02-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/12/linux-wifi/" title="linux-wifi">linux-wifi</a><time datetime="2022-12-12T02:43:00.945Z" title="发表于 2022-12-12 10:43:00">2022-12-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/09/20/error/" title="error处理">error处理</a><time datetime="2022-09-19T16:00:00.000Z" title="发表于 2022-09-20 00:00:00">2022-09-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/f2fs/"><span class="card-category-list-name">f2fs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go-java/"><span class="card-category-list-name">go, java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ssh/"><span class="card-category-list-name">ssh</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="card-category-list-name">生活</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/gopacket/" style="font-size: 1.3em; color: #99a1ac">gopacket</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">拓扑排序</a> <a href="/tags/systemcommand/" style="font-size: 1.1em; color: #999">systemcommand</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 1.3em; color: #99a1ac">内存</a> <a href="/tags/%E5%A4%A9%E6%B0%94/" style="font-size: 1.1em; color: #999">天气</a> <a href="/tags/stack/" style="font-size: 1.1em; color: #999">stack</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">基本数据结构</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/dfs/" style="font-size: 1.1em; color: #999">dfs</a> <a href="/tags/monotonic-stack/" style="font-size: 1.1em; color: #999">monotonic_stack</a> <a href="/tags/reflect/" style="font-size: 1.1em; color: #999">reflect</a> <a href="/tags/file/" style="font-size: 1.1em; color: #999">file</a> <a href="/tags/container/" style="font-size: 1.1em; color: #999">container</a> <a href="/tags/nil/" style="font-size: 1.1em; color: #999">nil</a> <a href="/tags/hash/" style="font-size: 1.1em; color: #999">hash</a> <a href="/tags/linux/" style="font-size: 1.3em; color: #99a1ac">linux</a> <a href="/tags/error/" style="font-size: 1.1em; color: #999">error</a> <a href="/tags/slice/" style="font-size: 1.5em; color: #99a9bf">slice</a> <a href="/tags/parameter/" style="font-size: 1.1em; color: #999">parameter</a> <a href="/tags/f2fs/" style="font-size: 1.3em; color: #99a1ac">f2fs</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/golang/" style="font-size: 1.1em; color: #999">golang</a> <a href="/tags/list/" style="font-size: 1.1em; color: #999">list</a> <a href="/tags/zero-value/" style="font-size: 1.1em; color: #999">zero value</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">26</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-25T05:43:26.887Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 月的奏鸣曲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
