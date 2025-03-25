@@ -6,7 +6,7 @@
   <link href="http://zt-winter.github.io/atom.xml" rel="self"/>
   
   <link href="http://zt-winter.github.io/"/>
-  <updated>2023-07-25T03:04:49.381Z</updated>
+  <updated>2025-03-25T08:32:27.677Z</updated>
   <id>http://zt-winter.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>证券分析阅读笔记</title>
+    <link href="http://zt-winter.github.io/2025/03/25/securites-analysis/"/>
+    <id>http://zt-winter.github.io/2025/03/25/securites-analysis/</id>
+    <published>2025-03-24T16:00:00.000Z</published>
+    <updated>2025-03-25T08:32:27.677Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="证券分析阅读笔记"><a href="#证券分析阅读笔记" class="headerlink" title="证券分析阅读笔记"></a>证券分析阅读笔记</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;证券分析阅读笔记&quot;&gt;&lt;a href=&quot;#证券分析阅读笔记&quot; class=&quot;headerlink&quot; title=&quot;证券分析阅读笔记&quot;&gt;&lt;/a&gt;证券分析阅读笔记&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="readnote" scheme="http://zt-winter.github.io/categories/readnote/"/>
+    
+    
+    <category term="economy" scheme="http://zt-winter.github.io/tags/economy/"/>
+    
+    <category term="readnote" scheme="http://zt-winter.github.io/tags/readnote/"/>
+    
+  </entry>
   
   <entry>
     <title>天气预报</title>
@@ -508,30 +534,6 @@
     
     
     <category term="slice" scheme="http://zt-winter.github.io/tags/slice/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gopacket_layer</title>
-    <link href="http://zt-winter.github.io/2022/04/28/gopacket_layer/"/>
-    <id>http://zt-winter.github.io/2022/04/28/gopacket_layer/</id>
-    <published>2022-04-27T16:00:00.000Z</published>
-    <updated>2022-06-20T15:45:39.261Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="在使用gopacket时部分学习思考"><a href="#在使用gopacket时部分学习思考" class="headerlink" title="在使用gopacket时部分学习思考"></a>在使用gopacket时部分学习思考</h1><h3 id="layer总体结构"><a href="#layer总体结构" class="headerlink" title="layer总体结构"></a>layer总体结构</h3><p>Layer(interface) -&gt; TCP(struct) -&gt; BaseLayer(struct)<br>Layer(interface):定义三个方法 LayerType(),LayerContents(),LayerPayload()<br>TCP(struct):定义LayerType()<br>BaseLayer(struct):定义LayerContents(),LayerPayload()</p><h3 id="接口的使用，动态类型推断"><a href="#接口的使用，动态类型推断" class="headerlink" title="接口的使用，动态类型推断"></a>接口的使用，动态类型推断</h3><p>layers，也就是tcp&#x2F;ip协议中各层，主要是链路层、网络层、传输层、应用层，在gopacket中具体指向流量数据某一层的协议。</p><p>在gopacket的说明文档中可以看到type Layer的定义</p><p><a href="https://github.com/google/gopacket/blob/v1.1.19/base.go#L19">https://github.com/google/gopacket/blob/v1.1.19/base.go#L19</a></p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Layer <span class="keyword">interface</span> &#123;</span><br><span class="line"><span class="comment">// LayerType is the gopacket type for this layer.</span></span><br><span class="line">LayerType() LayerType</span><br><span class="line"><span class="comment">// LayerContents returns the set of bytes that make up this layer.</span></span><br><span class="line">LayerContents() []<span class="type">byte</span></span><br><span class="line"><span class="comment">// LayerPayload returns the set of bytes contained within this layer, not</span></span><br><span class="line"><span class="comment">// including the layer itself.</span></span><br><span class="line">LayerPayload() []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在实际使用时，可以看到下面的列子，**ethernetLayer.(*layers.Ethernet)**，需要对接口类型进行断言和转化。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ethernetLayer := packet.Layer(layers.LayerTypeEthernet)</span><br><span class="line"><span class="keyword">if</span> ethernetLayer != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Ethernet layer detected.&quot;</span>)</span><br><span class="line">    ethernetPacket, _ := ethernetLayer.(*layers.Ethernet)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Source MAC: &quot;</span>, ethernetPacket.SrcMAC)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Destination MAC: &quot;</span>, ethernetPacket.DstMAC)</span><br><span class="line">    <span class="comment">// Ethernet type is typically IPv4 but could be ARP or other</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Ethernet type: &quot;</span>, ethernetPacket.EthernetType)</span><br><span class="line">    fmt.Println()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="https://github.com/google/gopacket/blob/v1.1.19/layers/base.go">https://github.com/google/gopacket/blob/v1.1.19/layers/base.go</a> 中可以看到BaseLayer的定义</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BaseLayer is a convenience struct which implements the LayerData and</span></span><br><span class="line"><span class="comment">// LayerPayload functions of the Layer interface.</span></span><br><span class="line"><span class="keyword">type</span> BaseLayer <span class="keyword">struct</span> &#123;</span><br><span class="line"><span class="comment">// Contents is the set of bytes that make up this layer.  IE: for an</span></span><br><span class="line"><span class="comment">// Ethernet packet, this would be the set of bytes making up the</span></span><br><span class="line"><span class="comment">// Ethernet frame.</span></span><br><span class="line">Contents []<span class="type">byte</span></span><br><span class="line"><span class="comment">// Payload is the set of bytes contained by (but not part of) this</span></span><br><span class="line"><span class="comment">// Layer.  Again, to take Ethernet as an example, this would be the</span></span><br><span class="line"><span class="comment">// set of bytes encapsulated by the Ethernet protocol.</span></span><br><span class="line">Payload []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在BaseLayer的基础上，对不同层的不同协议进行</p><p>ipv4 layer的定义 <a href="https://github.com/google/gopacket/blob/v1.1.19/layers/ip4.go#L43">https://github.com/google/gopacket/blob/v1.1.19/layers/ip4.go#L43</a> </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">type IPv4 struct &#123;</span><br><span class="line">BaseLayer</span><br><span class="line">Version    uint8</span><br><span class="line">IHL        uint8</span><br><span class="line">TOS        uint8</span><br><span class="line">Length     uint16</span><br><span class="line">Id         uint16</span><br><span class="line">Flags      IPv4Flag</span><br><span class="line">FragOffset uint16</span><br><span class="line">TTL        uint8</span><br><span class="line">Protocol   IPProtocol</span><br><span class="line">   uint16</span><br><span class="line">SrcIP      net.IP</span><br><span class="line">DstIP      net.IP</span><br><span class="line">Options    []IPv4Option</span><br><span class="line">Padding    []byte</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在Layer接口的实现中还缺少了LayerType()函数，具体实现可以参考下文</p><p><a href="https://github.com/google/gopacket/blob/v1.1.19/layers/layertypes.go#L24">https://github.com/google/gopacket/blob/v1.1.19/layers/layertypes.go#L24</a> </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LayerTypeIPv4 = gopacket.RegisterLayerType(20, gopacket.LayerTypeMetadata&#123;Name: &quot;IPv4&quot;, Decoder: gopacket.DecodeFunc(decodeIPv4)&#125;)</span><br><span class="line">LayerTypeIPv6 = gopacket.RegisterLayerType(21, gopacket.LayerTypeMetadata&#123;Name: &quot;IPv6&quot;, Decoder: gopacket.DecodeFunc(decodeIPv6)&#125;)</span><br></pre></td></tr></table></figure><p><a href="https://github.com/google/gopacket/blob/a9779d139771f6a06fc983b18e0efd23ca30222f/layertype.go#L53">https://github.com/google/gopacket/blob/a9779d139771f6a06fc983b18e0efd23ca30222f/layertype.go#L53</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func RegisterLayerType(num int, meta LayerTypeMetadata) LayerType &#123;</span><br><span class="line">if 0 &lt;= num &amp;&amp; num &lt; maxLayerType &#123;</span><br><span class="line">if ltMeta[num].inUse &#123;</span><br><span class="line">panic(&quot;Layer type already exists&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">if ltMetaMap[LayerType(num)].inUse &#123;</span><br><span class="line">panic(&quot;Layer type already exists&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return OverrideLayerType(num, meta)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;在使用gopacket时部分学习思考&quot;&gt;&lt;a href=&quot;#在使用gopacket时部分学习思考&quot; class=&quot;headerlink&quot; title=&quot;在使用gopacket时部分学习思考&quot;&gt;&lt;/a&gt;在使用gopacket时部分学习思考&lt;/h1&gt;&lt;h3 id=&quot;l</summary>
-      
-    
-    
-    
-    <category term="go" scheme="http://zt-winter.github.io/categories/go/"/>
-    
-    
-    <category term="gopacket" scheme="http://zt-winter.github.io/tags/gopacket/"/>
     
   </entry>
   
