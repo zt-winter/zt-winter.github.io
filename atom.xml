@@ -6,7 +6,7 @@
   <link href="http://zt-winter.github.io/atom.xml" rel="self"/>
   
   <link href="http://zt-winter.github.io/"/>
-  <updated>2025-03-25T08:32:27.677Z</updated>
+  <updated>2025-04-17T01:24:56.145Z</updated>
   <id>http://zt-winter.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pacman常用命令</title>
+    <link href="http://zt-winter.github.io/2025/04/17/pacman/"/>
+    <id>http://zt-winter.github.io/2025/04/17/pacman/</id>
+    <published>2025-04-16T16:00:00.000Z</published>
+    <updated>2025-04-17T01:24:56.145Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pacman常用命令"><a href="#pacman常用命令" class="headerlink" title="pacman常用命令"></a>pacman常用命令</h1><p>pacman -Rc packagename, -c &#x3D; –cascade; 删除该软件以及所有依赖该软件的软件</p><p>pacman -Rs packagename, -s &#x3D; –recursive; 删除该软件，并递归删除该软件的不需要的依赖。在安装该软件时，可能安装一些依赖软件，如果这些依赖软件没有被其他软件依赖，则递归删除。</p><p>pacman -Rsc packagename; 可以删除该软件的上下游依赖关系</p><p>pacman -S –overwrite \* packagename; 覆盖性强制安装软件，当错误删除&#x2F;var&#x2F;lib&#x2F;pacman后，导致pacman无法识别已安装的软件，可以用–overwrite \*进行强制覆盖，之后pacman会识别到重新安装的软件</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;pacman常用命令&quot;&gt;&lt;a href=&quot;#pacman常用命令&quot; class=&quot;headerlink&quot; title=&quot;pacman常用命令&quot;&gt;&lt;/a&gt;pacman常用命令&lt;/h1&gt;&lt;p&gt;pacman -Rc packagename, -c &amp;#x3D; –cas</summary>
+      
+    
+    
+    
+    <category term="pacman" scheme="http://zt-winter.github.io/categories/pacman/"/>
+    
+    
+    <category term="pacman" scheme="http://zt-winter.github.io/tags/pacman/"/>
+    
+  </entry>
+  
+  <entry>
     <title>证券分析阅读笔记</title>
     <link href="http://zt-winter.github.io/2025/03/25/securites-analysis/"/>
     <id>http://zt-winter.github.io/2025/03/25/securites-analysis/</id>
     <published>2025-03-24T16:00:00.000Z</published>
-    <updated>2025-03-25T08:32:27.677Z</updated>
+    <updated>2025-04-17T01:26:21.756Z</updated>
     
     <content type="html"><![CDATA[<h1 id="证券分析阅读笔记"><a href="#证券分析阅读笔记" class="headerlink" title="证券分析阅读笔记"></a>证券分析阅读笔记</h1>]]></content>
     
@@ -509,31 +533,6 @@
     <category term="内存" scheme="http://zt-winter.github.io/tags/%E5%86%85%E5%AD%98/"/>
     
     <category term="parameter" scheme="http://zt-winter.github.io/tags/parameter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>append与切片</title>
-    <link href="http://zt-winter.github.io/2022/04/28/append/"/>
-    <id>http://zt-winter.github.io/2022/04/28/append/</id>
-    <published>2022-04-27T16:00:00.000Z</published>
-    <updated>2023-07-25T02:56:19.297Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="append函数"><a href="#append函数" class="headerlink" title="append函数"></a>append函数</h1><p>append函数原型</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">append</span><span class="params">(slice []Type, elems ...Type)</span></span> []Type</span><br></pre></td></tr></table></figure><p>内置函数append可以在切片末尾添加元素。如果切片有足够的空间，后面的空间会分配给新的元素。如果没有足够空间，就会一个新的隐含数组会被分配出来，然后将所有的元素复制到新的隐含数组中，然后返回这个隐含数组的头部指针（或者说新的切片）。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;unsafe&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">var</span> slice []<span class="type">int</span> = []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">var</span> slices [][]<span class="type">int</span> = [][]<span class="type">int</span>&#123;&#123;<span class="number">3</span>, <span class="number">4</span>&#125;, &#123;<span class="number">5</span>, <span class="number">6</span>&#125;, &#123;<span class="number">7</span>, <span class="number">8</span>&#125;&#125;</span><br><span class="line">fmt.Printf(<span class="string">&quot;go中一个字节8位\n&quot;</span>)</span><br><span class="line">fmt.Printf(<span class="string">&quot;字节数为%d\n&quot;</span>, unsafe.Sizeof(slice[<span class="number">0</span>]))</span><br><span class="line">    fmt.Printf(<span class="string">&quot;slices的空间为%d\n&quot;</span>, <span class="built_in">cap</span>(slices[<span class="number">0</span>]))</span><br><span class="line">fmt.Printf(<span class="string">&quot;%p %p %p\n&quot;</span>, slices[<span class="number">0</span>], slices[<span class="number">1</span>], slices[<span class="number">2</span>])</span><br><span class="line">slices = <span class="built_in">append</span>(slices, slice)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%p %p %p %p\n&quot;</span>, slices[<span class="number">0</span>], slices[<span class="number">1</span>], slices[<span class="number">2</span>], slices[<span class="number">3</span>])</span><br><span class="line"><span class="keyword">var</span> slicesTwo [][]<span class="type">int</span> = <span class="built_in">append</span>([][]<span class="type">int</span>&#123;slice&#125;, slices...)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%p %p %p %p\n&quot;</span>, slicesTwo[<span class="number">0</span>], slicesTwo[<span class="number">1</span>], slicesTwo[<span class="number">2</span>], slicesTwo[<span class="number">3</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面是append正确的使用方法。<code> slices = append(slices, slice)</code>是将slice切片添加到slices二维切片的后面。如果要将slice添加到slices的前面，应该是</p><p><code> var sliceTwo [][]int = append([][]int&#123;slice&#125;, slices...)</code></p><p><code> [][]int&#123;slice&#125;</code>是新建了一个二维切片，然后切片的初始化了一个元素（一个一维切片）。</p><p><code> slices...</code>是将slices中每一个元素全部列出来作为参数，也就是<code> elem ...Type</code>。</p><p>最后slices和sliceTwo的值为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">slices-&gt;</span><br><span class="line">[0]:[3,4]</span><br><span class="line">[1]:[5,6]</span><br><span class="line">[2]:[7,8]</span><br><span class="line">[3]:[1,2,3]</span><br><span class="line">sliceTwo-&gt;</span><br><span class="line">[0]:[1,2,3]</span><br><span class="line">[1]:[3,4]</span><br><span class="line">[2]:[5,6]</span><br><span class="line">[3]:[7,8]</span><br><span class="line">[4]:[1,2,3]</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//程序输出</span><br><span class="line">go中一个字节8位</span><br><span class="line">字节数为8</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0 0xc00000e168</span><br><span class="line">0xc00000e168 0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br></pre></td></tr></table></figure><p>0xc0000160a0 + </p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;append函数&quot;&gt;&lt;a href=&quot;#append函数&quot; class=&quot;headerlink&quot; title=&quot;append函数&quot;&gt;&lt;/a&gt;append函数&lt;/h1&gt;&lt;p&gt;append函数原型&lt;/p&gt;
-&lt;figure class=&quot;highlight go&quot;&gt;&lt;t</summary>
-      
-    
-    
-    
-    <category term="go" scheme="http://zt-winter.github.io/categories/go/"/>
-    
-    
-    <category term="slice" scheme="http://zt-winter.github.io/tags/slice/"/>
     
   </entry>
   
