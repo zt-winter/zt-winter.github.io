@@ -65,6 +65,7 @@ http://zt-winter.github.io/tags/pacman/
 http://zt-winter.github.io/tags/modsecurity/
 http://zt-winter.github.io/tags/WAF/
 http://zt-winter.github.io/tags/investment/
+http://zt-winter.github.io/tags/stock/
 http://zt-winter.github.io/categories/go/
 http://zt-winter.github.io/categories/go-java/
 http://zt-winter.github.io/categories/f2fs/
@@ -75,3 +76,4 @@ http://zt-winter.github.io/categories/%E7%94%9F%E6%B4%BB/
 http://zt-winter.github.io/categories/readnote/
 http://zt-winter.github.io/categories/pacman/
 http://zt-winter.github.io/categories/security/
+http://zt-winter.github.io/categories/investment/

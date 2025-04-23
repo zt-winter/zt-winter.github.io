@@ -538,6 +538,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://zt-winter.github.io/tags/stock/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -605,6 +612,13 @@
   
   <url>
     <loc>http://zt-winter.github.io/categories/security/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zt-winter.github.io/categories/investment/</loc>
     <lastmod>2025-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
