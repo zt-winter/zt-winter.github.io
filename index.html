@@ -1,236 +1,1089 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="月的奏鸣曲"><meta name="copyright" content="月的奏鸣曲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zt-winter.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://zt-winter.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zt-winter.github.io/img/butterfly-icon.png">
 <meta property="article:author" content="月的奏鸣曲">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zt-winter.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zt-winter.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
+
+<link rel="canonical" href="http://zt-winter.github.io/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo</title>
   
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
 
-      const theme = saveToLocal.get('theme')
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section">分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">月的奏鸣曲</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/05/19/container/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/05/19/container/" class="post-title-link" itemprop="url">container库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-19 13:41:26" itemprop="dateCreated datePublished" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="container"><a href="#container" class="headerlink" title="container"></a>container</h1><pre><code>该库主要是实现三个数据结构
+</code></pre>
+<ul>
+<li>list : 双向链表</li>
+<li>heap : 最小堆</li>
+<li>ring : 环形链表</li>
+</ul>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>可以用list双向链表实现栈的操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import(</span><br><span class="line">	&quot;container/list&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">//stack初始化</span><br><span class="line">stack := list.New()</span><br><span class="line"></span><br><span class="line">//压栈操作</span><br><span class="line">stack.PushBack(value)</span><br><span class="line"></span><br><span class="line">//出栈操作</span><br><span class="line">e := stack.Back()</span><br><span class="line">if e != nil &#123;</span><br><span class="line">	stack.Remove(e)</span><br><span class="line">&#125;</span><br><span class="line">return e.Value</span><br><span class="line"></span><br><span class="line">//获取栈顶元素</span><br><span class="line">e := stack.Back()</span><br><span class="line">return e.Value</span><br><span class="line"></span><br><span class="line">//栈长度</span><br><span class="line">length := stack.Len()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/05/19/leetcode207/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/05/19/leetcode207/" class="post-title-link" itemprop="url">dfs</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-19 13:41:26" itemprop="dateCreated datePublished" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>深度优先搜索算法一般用于树或者图的结构中，在写代码时有下面几个注意的地方。</p>
+<p>leetcode 207题<br>首先读懂题目，课程只有0~crousenum-1门，如果没有课程相互前置，是一定能够学完的。题目就是判断是否有循环依赖。可以使用广度+深度搜索，遍历一个节点所依赖节点，如果所依赖节点也有依赖则继续判断。</p>
+<p>这里每个节点在遍历时赋予了属性：未检索、正在检索、已经完成检索。为什么不是设置未检索和已经完成检索两个值。主要原因是需要判断是否有相互依赖。设置已经完成检索需要在完成该节点的依赖遍历后，但遍历的节点如果依赖正在的遍历的节点，那只设置两个值的话，就会检测不出来。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">canFinish(numCourses <span class="type">int</span>, prerequisites [][]<span class="type">int</span>) <span class="type">bool</span> &#123;</span><br><span class="line">    depend := <span class="built_in">make</span>([][]<span class="type">int</span>, numCourses)</span><br><span class="line">	flag := <span class="built_in">make</span>([]<span class="type">int</span>, numCourses)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(prerequisites); i++ &#123;</span><br><span class="line">		depend[prerequisites[i][<span class="number">0</span>]] = <span class="built_in">append</span>(depend[prerequisites[i][<span class="number">0</span>]], prerequisites[i][<span class="number">1</span>])</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> dfs <span class="function"><span class="keyword">func</span><span class="params">(<span class="type">int</span>)</span></span> <span class="type">bool</span></span><br><span class="line">	dfs = <span class="function"><span class="keyword">func</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> flag[n] == <span class="number">1</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">		flag[n] = <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(depend[n]); i++ &#123;</span><br><span class="line">			<span class="keyword">if</span> flag[depend[n][i]] == <span class="number">1</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> flag[depend[n][i]] == <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">if</span> !dfs(depend[n][i]) &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		flag[n] = <span class="number">2</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; numCourses; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> flag[i] != <span class="number">2</span> &amp;&amp; !dfs(i) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/05/19/linux-wifi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/05/19/linux-wifi/" class="post-title-link" itemprop="url">linux-wifi</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-19 13:41:26" itemprop="dateCreated datePublished" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>主机上装了双系统，昨天晚上使用windows10打完游戏后，今天进入Linux发现没有无线网卡设备，报错信息为<code>kernel iwlwifi: probe of failed with error -110</code>。</p>
+<p>搜索相关报错信息后发现原因为windows10为了快速启动，即使关闭windows也不会释放网卡设备，以便下次启动时不用再次加载网卡驱动，但这导致linux启动时发现网卡设备被占用，无法使用网卡设备。</p>
+<p>解决方法：windows10进入控制面板，打开电源设置，关闭快速启动。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/05/19/%E5%89%8D%E7%BC%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/05/19/%E5%89%8D%E7%BC%80/" class="post-title-link" itemprop="url">前缀及其优化</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-19 13:41:26" itemprop="dateCreated datePublished" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有些问题可以转化为两个前缀进行简单计算得到结果，如：一个数组子数组的和为K的个数，子数组的和，可以转化为两个前缀数组相减。<br>类似题目有：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">leetcode 209</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subarray-sum-equals-k/comments/">leetcode 560</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shortest-subarray-with-sum-at-least-k/">leetcode 862</a></p>
+<p>以leetcode 560题为例<br>subsum &#x3D; sum[i] - sum[j]<br>因此可以使用两次循环遍历获得，这么做时间复杂度为O(n2)。</p>
+<p>可以在此基础上，进一步优化。在第一次循环中，我们已知sum[i]，subsum的目标值k，同时j&lt;i。因此可以使用map，来检索是否存在sum[j]。时间复杂度降为O(n)。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">subarraySum</span><span class="params">(nums []<span class="type">int</span>, k <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    length := <span class="built_in">len</span>(nums)</span><br><span class="line">    sum := <span class="built_in">make</span>([]<span class="type">int</span>, length)</span><br><span class="line">    sum[<span class="number">0</span>] = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1</span>; i &lt; length; i++ &#123;</span><br><span class="line">        sum[i] = sum[i<span class="number">-1</span>] + nums[i]</span><br><span class="line">    &#125;</span><br><span class="line">    pre := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">int</span>, <span class="number">0</span>)</span><br><span class="line">    ret := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; length; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> sum[i] == k &#123;</span><br><span class="line">            ret++</span><br><span class="line">        &#125;</span><br><span class="line">        one := sum[i] - k</span><br><span class="line">        <span class="keyword">if</span> value, ok := pre[one]; ok &#123;</span><br><span class="line">            ret += value</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> _, ok := pre[sum[i]]; ok &#123;</span><br><span class="line">            pre[sum[i]] += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            pre[sum[i]] = <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>标准答案中的代码更加简洁，也节省了时间、空间,sum已经存储到map中不必再使用[]int,节省空间,同时将sum的计算与判断是否有子数组放到一个循环里，节省了时间</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">subarraySum</span><span class="params">(nums []<span class="type">int</span>, k <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    count, pre := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    m := <span class="keyword">map</span>[<span class="type">int</span>]<span class="type">int</span>&#123;&#125;</span><br><span class="line">    m[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">        pre += nums[i]</span><br><span class="line">        <span class="keyword">if</span> _, ok := m[pre - k]; ok &#123;</span><br><span class="line">            count += m[pre - k]</span><br><span class="line">        &#125;</span><br><span class="line">        m[pre] += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>209题可以使用双指针滑动窗口，但560题则不行，因为560题中是整数，既有正数，也有负数，窗口的移动需要一步一迭代，窗口大小单调增长.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/05/19/invest2-cyclicalStock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/05/19/invest2-cyclicalStock/" class="post-title-link" itemprop="url">投资笔记与思考-周期股</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-19 00:00:00" itemprop="dateCreated datePublished" datetime="2025-05-19T00:00:00+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-20 09:01:03" itemprop="dateModified" datetime="2025-05-20T09:01:03+08:00">2025-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/investment/" itemprop="url" rel="index"><span itemprop="name">investment</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="投资笔记与思考-周期股"><a href="#投资笔记与思考-周期股" class="headerlink" title="投资笔记与思考-周期股"></a>投资笔记与思考-周期股</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/04/23/invest1-valuation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/04/23/invest1-valuation/" class="post-title-link" itemprop="url">投资笔记与思考-企业估值模型</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-23 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-23T00:00:00+08:00">2025-04-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-20 09:01:03" itemprop="dateModified" datetime="2025-05-20T09:01:03+08:00">2025-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/investment/" itemprop="url" rel="index"><span itemprop="name">investment</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="投资笔记与思考-企业估值模型"><a href="#投资笔记与思考-企业估值模型" class="headerlink" title="投资笔记与思考-企业估值模型"></a>投资笔记与思考-企业估值模型</h1><p>&amp;emsp;&amp;emsp;大部分投机者投资证券盈利的方式就是高买低卖，即使是投资者，不在乎短期股价波动，在乎企业长期发展和分红，也需要避免在企业估值过高的情况，这时股价下跌带来的亏损远高于分红和企业的营收增长。在合适甚至便宜的价格购买证券，有利于投资者控制风险，如果整体市场大幅下跌，便宜价格购买的证券下跌的空间也会减小。<br>&amp;emsp;&amp;emsp;<em>估值首先需要考虑的就是企业的营业模式。</em>不同的企业经营模式不同，这决定了企业在经营时的风险、毛利率、资本持续投入、负债率不同。最好的企业当然是企业扩张时需要的资本开支很少，即使销量没有增长，也不需要大量资本维持营收的企业。比如可口可乐，它的扩产所需设备不算昂贵，不扩张也只需要保持原有的资本支出即可。比较差的企业是扩张时需要大量的资本投入，同时市场竞争激烈，就算只是维持也需要大量资本的企业。比如半导体制造企业，半导体企业扩张需要大量的土地、贵重的设备，投入资本具体，如果扩张后市场需求发生变化，则会产生巨额亏损，同时像台积电每年都需要把大量利润投入新产品研发中，避免在技术竞争中丧失优势地位，前段时间台积电的价格飞涨主要来与AI带来的强劲需求，但即使如此，台积电在20250518的市盈率也只有25，可以想见国内市盈率到2000多的半导体制造企业被炒作到什么程度，哪怕该企业未来5年年化增长率到100%，也很难填平市盈率，更别说企业营收很难长期保持超高速增长了。<br>&amp;emsp;&amp;emsp;一般来说下消费型企业好于重型制造业企业，因为消费型企业资金回笼比较快，生意涉及的链条比较简单（需要具体看企业供应链情况），且制造业企业的设备非常昂贵，资本开支大，且上下游复杂。消费型企业可以给个基础估值12倍市盈率，然后根据企业的负债情况、营收增长情况、行业地位、管理层是否考虑小投资利益、股息率等动态调整。<br>&amp;emsp;&amp;emsp;因为企业之间千差万别，很难用一个统一的标准去衡量，通过多个不同类型企业的例子去具体分析，可以作为后续对其他企业分析的参考。<br>1.肯德基，它作为一个消费型企业，门店主要是直营或者加盟，在销售时基本是先付钱再交货，这种比制造业部分企业需要先给货，然后等买家几个月一次性结账的情况要好很多。肯德基的快餐消费品牌算的上是top级别的，在一二三线城市有大量的门店，在家乡小县城也有。从股息率上考虑，百盛中国作为运营肯德基中国（还有必胜客）的上市企业，每年有2个点的股息，同时最近一两年都有大规模回购，因为回购是注销型回购，会提高持股人权益，两者合并计算真实股息率在8%左右。需要注意的是由于经济形势问题，一二线城市的社零消费出现了下降，要关注营收增长情况。另外一点是相比于可口可乐，作为快餐店，它需要在大量商业地段的门店运营，在扩张时，需要一定的资本开支。<br>2.隆基绿能，光伏企业由于之前的产业补贴，导致疯狂扩张。在欧盟反倾销后，产能严重过剩，2024年国内的光伏招标价格甚至低于产品成本价。光伏企业在供需关系不平衡的情况下，由于产能没有出清，竞争激烈，光伏企业还在投入大量资本到技术研发中，提高光伏转化率。隆基绿能的股价（20250519）已经大幅下跌，市盈率为-14，市净率为1.94，这个时候是否有入场的机会？从风险的角度来说，尽管股价已经大幅降低，即便以后一年后产能完成出清，供需完成基本平衡，能够扭亏为盈，盈利估计也不高。同时在国际贸易衰退的情况下，不确定性更高。这个时候入场光伏，风险与收益不成正比，选择优先级不高。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/04/23/modsecurity-rule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/04/23/modsecurity-rule/" class="post-title-link" itemprop="url">modsecurity rule grammar</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-23 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-23T00:00:00+08:00">2025-04-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/security/" itemprop="url" rel="index"><span itemprop="name">security</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="modsecurity规则语法"><a href="#modsecurity规则语法" class="headerlink" title="modsecurity规则语法"></a>modsecurity规则语法</h1><p>modsecurity core rule规则可以参考<a target="_blank" rel="noopener" href="https://github.com/owasp-modsecurity/ModSecurity/wiki/Reference-Manual-(v3.x)">官方wiki文档</a><br>SecRule的基本语法<br>SecRule VARIABLES OPERATOR [ACTIONS]</p>
+<ul>
+<li>VARIABLES:一般是指定请求和响应的对象，如REQUEST_BODY、REQUEST_HEADERS、REQUEST_METHOD、REQUEST_URI(包含完整的请求URL,有请求的字符串数据，比如&#x2F;index.php?p&#x3D;x)</li>
+<li>OPERATOR:可以理解为一个操作函数，一个入参是VARIABLES，一个是操作函数后面的入参，@用于标识操作函数，比如<code>SecRule TX:DETECTION_PARANOIA_LEVEL &quot;@lt 1&quot; &quot;id:913011&quot;</code>，lt函数比较VARIABLES与1的值，如果VARIABLES小于1，,则执行action。pmFromFIle函数匹配variables与入参，不区分大小写，入参可以有多个，可以送入文件。<code>SecRule REQUEST_HEADERS:User-Agent &quot;@pmFromFile scanners-user-agents.data scanners-user-agents-1.data&quot; &quot;id:913011&quot;</code>。</li>
+<li>ACTIONS:满足OPERATOR的要求后执行的动作，有多个action时，用逗号隔开，常用的一些aciton如下：<ul>
+<li>“id:xxxx”:对规则进行分类编号</li>
+<li>“allow”:停止规则匹配，允许通信继续执行</li>
+<li>“auditlog”:标记本次通信，并记录audit log</li>
+<li>“block”:阻止通信，但没有语法支持如何阻止通信，具体使用细节参考<a target="_blank" rel="noopener" href="https://github.com/owasp-modsecurity/ModSecurity/wiki/Reference-Manual-(v3.x)#user-content-block">block说明</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="coreruleset实例"><a href="#coreruleset实例" class="headerlink" title="coreruleset实例"></a>coreruleset实例</h1><p><a target="_blank" rel="noopener" href="https://github.com/coreruleset/coreruleset">coreruleset</a>是modsecurity官方给出的一些规则集，其中有一些针对特定攻击或探测的规则，可供参考。<br>导入corerulest时，其中会有一个crs-setup.conf文件，该文件命令了一个通用变量集，在规则集中会引用这些变量，从而实现所有规则集的变量控制。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SecAction \</span><br><span class="line">  &quot;id:900990,\</span><br><span class="line">  phase:1,\</span><br><span class="line">  pass,\</span><br><span class="line">  t:none,\</span><br><span class="line">  nolog,\</span><br><span class="line">  tag:&#x27;OWASP_CRS&#x27;,\</span><br><span class="line">  ver:&#x27;OWASP_CRS/4.14.0-dev&#x27;,\</span><br><span class="line">  setvar:tx.crs_setup_version=4140,\</span><br><span class="line">  setvar:tx.detection_paranoia_level=1&quot;</span><br></pre></td></tr></table></figure>
+<p>setvar:XXX就设置了变量，后续在coreruleset识别扫描的规则集中会获取该变量，并做出不同的探测级别设置，比如REQUEST-913-SCANNER-DETECTION.conf中<code>SecRule TX:DETECTION_PARANOIA_LEVEL &quot;@lt 1&quot; &quot;id:913011&quot;</code>，会判断TX:DETECTION_PARANOIA_LEVEL是否小于1。在crs-setup.conf文件中会对通用变量的含义有详细解释。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/04/22/modsecurity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/04/22/modsecurity/" class="post-title-link" itemprop="url">modsecurity环境配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-22 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-22T00:00:00+08:00">2025-04-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 18:58:38" itemprop="dateModified" datetime="2025-05-19T18:58:38+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/security/" itemprop="url" rel="index"><span itemprop="name">security</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="modsecurity-nginx-dvwa安装配置"><a href="#modsecurity-nginx-dvwa安装配置" class="headerlink" title="modsecurity+nginx+dvwa安装配置"></a>modsecurity+nginx+dvwa安装配置</h1><p>下载nginx与modsecurity</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载modsecurity并安装</span></span><br><span class="line">git <span class="built_in">clone</span> git@github.com:owasp-modsecurity/ModSecurity.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载nginx和modsecurity的nginx插件</span></span><br><span class="line">wget http://nginx.org/download/nginx-1.26.1.tar.gz</span><br><span class="line">tar -zxvf nginx-1.26.1.tar.gz</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/SpiderLabs/ModSecurity-nginx</span><br><span class="line"><span class="built_in">cd</span> nginx-1.26.1</span><br><span class="line"><span class="comment"># 编译安装</span></span><br><span class="line">./configure --add-module=../Modsecurity-nginx --with-http_ssl_module</span><br><span class="line">make -j 8</span><br><span class="line">sudo make install </span><br></pre></td></tr></table></figure>
+<p>安装dvwa及相关依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/git</span><br><span class="line">wget https://github.com/digininja/DVWA/archive/master.zip</span><br><span class="line">unzip master.zip -d dvwa</span><br><span class="line"><span class="built_in">mv</span> dvwa /usr/local/nginx/html</span><br><span class="line">sudo pacman -S apache php php-apache mariadb php-gd php-sqlite</span><br><span class="line"><span class="comment"># 启动apache服务</span></span><br><span class="line">systemctl <span class="built_in">enable</span> httpd</span><br><span class="line">systemctl start httpd</span><br><span class="line">sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br><span class="line"><span class="comment"># 安装mariadb数据库</span></span><br><span class="line">systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line">systemctl start mariadb</span><br><span class="line">sudo mysql_secure_installation</span><br><span class="line">sudo mysql -u root -p</span><br><span class="line"><span class="comment"># 去除extension中mysqli\gd\sqlite3\pdo_mysql注释</span></span><br><span class="line">sudo vim /etc/php/php.ini</span><br><span class="line">sudo <span class="built_in">chown</span> -R http:http /usr/local/nginx/html/dvwa</span><br><span class="line">sudo <span class="built_in">chown</span> -R 755 /usr/local/nginx/html/dvwa</span><br><span class="line"><span class="comment"># 修改php的用户和分组，保持和nginx一致</span></span><br><span class="line">sudo vim /etc/php/php-fpm.d/www.conf</span><br><span class="line"><span class="comment"># 加上LoadModule php_module modules/libphp.so</span></span><br><span class="line">sudo vim /etc/httpd/conf/httpd.conf</span><br><span class="line"><span class="comment"># dvwa的配置文件，修改用户、密码、IP端口、防护级别等</span></span><br><span class="line">sudo vim /usr/local/nginx/html/dvwa/config/config.inc.php</span><br><span class="line"></span><br><span class="line"><span class="comment">#apache服务在启动时会在/var/run/中创建文件夹，可以在启动服务中添加创建目录命令，避免找不到目录和文件</span></span><br><span class="line">vim /usr/lib/systemd/system/php8.4-fpm.service</span><br><span class="line">[Service]</span><br><span class="line">ExecStartPre=/bin/install -d /var/run/php-fpm -o root -g root -m 751 </span><br></pre></td></tr></table></figure>
+<p>modsecurity规则文件整合及配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /usr/local/nginx/conf/modsec</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:coreruleset/coreruleset.git</span><br><span class="line"><span class="built_in">cd</span> coreruleset/rules</span><br><span class="line"><span class="built_in">cat</span> *.conf &gt;&gt; modsecurity-crs.conf</span><br><span class="line"><span class="built_in">cp</span> * /usr/local/nginx/conf/modsec/</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ModSecurity</span><br><span class="line"><span class="built_in">cp</span> modsecurity.conf-recommanded /usr/local/nginx/conf/modsec/</span><br><span class="line"><span class="built_in">cd</span> coreruleset</span><br><span class="line"><span class="built_in">cp</span> crs-setup.conf.example /usr/local/nginx/conf/modsec/</span><br><span class="line"><span class="built_in">cd</span> /usr/local/nginx/conf/modsec</span><br><span class="line"><span class="built_in">mv</span> modsecurity.conf-recommanded modsecurity.conf</span><br><span class="line"><span class="built_in">mv</span> crs-setup.conf.example crs-setup.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<p>nginx配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    #监控本地80端口</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name localhost;</span><br><span class="line">	modsecurity on;</span><br><span class="line">    #加载核心规则集启动配置</span><br><span class="line">	modsecurity_rules_file /usr/local/nginx/conf/modsec/crs-setup.conf;</span><br><span class="line">    #加载配置文件</span><br><span class="line">	modsecurity_rules_file /usr/local/nginx/conf/modsec/modsecurity.conf;</span><br><span class="line">	modsecurity_rules_file /usr/local/nginx/conf/modsec/modsecurity-crs.conf;</span><br><span class="line">	#nginx加载modsecurity不支持使用通配符匹配多个文件</span><br><span class="line">	#modsecurity_rules_file /usr/local/nginx/conf/modsec/crs/rules/*.conf;</span><br><span class="line">    #设置代理</span><br><span class="line">	location / &#123;</span><br><span class="line">		proxy_pass http://localhost:8080;</span><br><span class="line">		proxy_set_header Host $host;</span><br><span class="line">		proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">		proxy_set_header ModSecurity-enabled &quot;1&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/04/17/pacman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/04/17/pacman/" class="post-title-link" itemprop="url">pacman常用命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-17 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-17T00:00:00+08:00">2025-04-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/pacman/" itemprop="url" rel="index"><span itemprop="name">pacman</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="pacman常用命令"><a href="#pacman常用命令" class="headerlink" title="pacman常用命令"></a>pacman常用命令</h1><p>pacman -Rc packagename, -c &#x3D; –cascade; 删除该软件以及所有依赖该软件的软件</p>
+<p>pacman -Rs packagename, -s &#x3D; –recursive; 删除该软件，并递归删除该软件的不需要的依赖。在安装该软件时，可能安装一些依赖软件，如果这些依赖软件没有被其他软件依赖，则递归删除。</p>
+<p>pacman -Rsc packagename; 可以删除该软件的上下游依赖关系</p>
+<p>pacman -S –overwrite \* packagename; 覆盖性强制安装软件，当错误删除&#x2F;var&#x2F;lib&#x2F;pacman后，导致pacman无法识别已安装的软件，可以用–overwrite \*进行强制覆盖，之后pacman会识别到重新安装的软件</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2025/03/25/security-analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/25/security-analysis/" class="post-title-link" itemprop="url">证券分析阅读笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-25 00:00:00" itemprop="dateCreated datePublished" datetime="2025-03-25T00:00:00+08:00">2025-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/readnote/" itemprop="url" rel="index"><span itemprop="name">readnote</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          Here's something encrypted, password is required to continue reading.
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/25/security-analysis/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
       
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Hexo',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'home'
-}</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/19/container/" title="container库">container库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">container该库主要是实现三个数据结构   list : 双向链表 heap : 最小堆 ring : 环形链表  list可以用list双向链表实现栈的操作 1234567891011121314151617181920212223import(	&quot;container/list&quot;)//stack初始化stack := list.New()//压栈操作stack.PushBack(value)//出栈操作e := stack.Back()if e != nil &#123;	stack.Remove(e)&#125;return e.Value//获取栈顶元素e := stack.Back()return e.Value//栈长度length := stack.Len() </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/19/leetcode207/" title="dfs">dfs</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">深度优先搜索算法一般用于树或者图的结构中，在写代码时有下面几个注意的地方。 leetcode 207题首先读懂题目，课程只有0~crousenum-1门，如果没有课程相互前置，是一定能够学完的。题目就是判断是否有循环依赖。可以使用广度+深度搜索，遍历一个节点所依赖节点，如果所依赖节点也有依赖则继续判断。 这里每个节点在遍历时赋予了属性：未检索、正在检索、已经完成检索。为什么不是设置未检索和已经完成检索两个值。主要原因是需要判断是否有相互依赖。设置已经完成检索需要在完成该节点的依赖遍历后，但遍历的节点如果依赖正在的遍历的节点，那只设置两个值的话，就会检测不出来。 12345678910111213141516171819202122232425262728293031canFinish(numCourses int, prerequisites [][]int) bool &#123;    depend := make([][]int, numCourses)	flag := make([]int, numCourses)	for i := 0; i &lt;...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/19/linux-wifi/" title="linux-wifi">linux-wifi</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">主机上装了双系统，昨天晚上使用windows10打完游戏后，今天进入Linux发现没有无线网卡设备，报错信息为kernel iwlwifi: probe of failed with error -110。 搜索相关报错信息后发现原因为windows10为了快速启动，即使关闭windows也不会释放网卡设备，以便下次启动时不用再次加载网卡驱动，但这导致linux启动时发现网卡设备被占用，无法使用网卡设备。 解决方法：windows10进入控制面板，打开电源设置，关闭快速启动。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/19/%E5%89%8D%E7%BC%80/" title="前缀及其优化">前缀及其优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">有些问题可以转化为两个前缀进行简单计算得到结果，如：一个数组子数组的和为K的个数，子数组的和，可以转化为两个前缀数组相减。类似题目有：leetcode 209leetcode 560leetcode 862 以leetcode 560题为例subsum &#x3D; sum[i] - sum[j]因此可以使用两次循环遍历获得，这么做时间复杂度为O(n2)。 可以在此基础上，进一步优化。在第一次循环中，我们已知sum[i]，subsum的目标值k，同时j&lt;i。因此可以使用map，来检索是否存在sum[j]。时间复杂度降为O(n)。 12345678910111213141516171819202122232425func subarraySum(nums []int, k int) int &#123;    length := len(nums)    sum := make([]int, length)    sum[0] = nums[0]    for i := 1; i &lt; length; i++ &#123;        sum[i] =...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/19/invest2-cyclicalStock/" title="投资笔记与思考-周期股">投资笔记与思考-周期股</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-18T16:00:00.000Z" title="发表于 2025-05-19 00:00:00">2025-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">投资笔记与思考-周期股</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/23/invest1-valuation/" title="投资笔记与思考-企业估值模型">投资笔记与思考-企业估值模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-22T16:00:00.000Z" title="发表于 2025-04-23 00:00:00">2025-04-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/23/modsecurity-rule/" title="modsecurity rule grammar">modsecurity rule grammar</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-22T16:00:00.000Z" title="发表于 2025-04-23 00:00:00">2025-04-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/security/">security</a></span></div><div class="content">modsecurity规则语法modsecurity core rule规则可以参考官方wiki文档SecRule的基本语法SecRule VARIABLES OPERATOR [ACTIONS]  VARIABLES:一般是指定请求和响应的对象，如REQUEST_BODY、REQUEST_HEADERS、REQUEST_METHOD、REQUEST_URI(包含完整的请求URL,有请求的字符串数据，比如&#x2F;index.php?p&#x3D;x) OPERATOR:可以理解为一个操作函数，一个入参是VARIABLES，一个是操作函数后面的入参，@用于标识操作函数，比如SecRule TX:DETECTION_PARANOIA_LEVEL &quot;@lt 1&quot; &quot;id:913011&quot;，lt函数比较VARIABLES与1的值，如果VARIABLES小于1，,则执行action。pmFromFIle函数匹配variables与入参，不区分大小写，入参可以有多个，可以送入文件。SecRule REQUEST_HEADERS:User-Agent...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/22/modsecurity/" title="modsecurity环境配置">modsecurity环境配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-21T16:00:00.000Z" title="发表于 2025-04-22 00:00:00">2025-04-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/security/">security</a></span></div><div class="content">modsecurity+nginx+dvwa安装配置下载nginx与modsecurity 123456789101112# 下载modsecurity并安装git clone git@github.com:owasp-modsecurity/ModSecurity.git# 下载nginx和modsecurity的nginx插件wget http://nginx.org/download/nginx-1.26.1.tar.gztar -zxvf nginx-1.26.1.tar.gzgit clone https://github.com/SpiderLabs/ModSecurity-nginxcd nginx-1.26.1# 编译安装./configure --add-module=../Modsecurity-nginx --with-http_ssl_modulemake -j 8sudo make install  安装dvwa及相关依赖 1234567891011121314151617181920212223242526272829cd ~/gitwget...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/17/pacman/" title="pacman常用命令">pacman常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-16T16:00:00.000Z" title="发表于 2025-04-17 00:00:00">2025-04-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/pacman/">pacman</a></span></div><div class="content">pacman常用命令pacman -Rc packagename, -c &#x3D; –cascade; 删除该软件以及所有依赖该软件的软件 pacman -Rs packagename, -s &#x3D; –recursive; 删除该软件，并递归删除该软件的不需要的依赖。在安装该软件时，可能安装一些依赖软件，如果这些依赖软件没有被其他软件依赖，则递归删除。 pacman -Rsc packagename; 可以删除该软件的上下游依赖关系 pacman -S –overwrite \* packagename; 覆盖性强制安装软件，当错误删除&#x2F;var&#x2F;lib&#x2F;pacman后，导致pacman无法识别已安装的软件，可以用–overwrite \*进行强制覆盖，之后pacman会识别到重新安装的软件 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/25/security-analysis/" title="证券分析阅读笔记">证券分析阅读笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-24T16:00:00.000Z" title="发表于 2025-03-25 00:00:00">2025-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/readnote/">readnote</a></span></div><div class="content">   23aeb3008bb770d90784d19252d56dd209bd924e00f05086652f923dd7ca20d6efc598e5a2edfc1b8d62a1557aa9f7c648001d3109447629b2afa90a418e658989c8614dc8fe404ea51d3378d4c5e0c16f7e4a523bbecb0f0aaa2e045da52bef7a505df5c98570a5837b668a2a0dcd15bc17fa79a820bc64f6b115b595ea10cf4d006cab665fa5495730805a9d0dddadc46ac1e4ffe310eebf7b845262626f5d842389eb4a6c28fca9616bc61e9ee852c535fe65121b4b58f97929061c67def1                               Hey, password is required here.                 </div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">月的奏鸣曲</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/container/" title="container库">container库</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/leetcode207/" title="dfs">dfs</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/linux-wifi/" title="linux-wifi">linux-wifi</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/%E5%89%8D%E7%BC%80/" title="前缀及其优化">前缀及其优化</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/invest2-cyclicalStock/" title="投资笔记与思考-周期股">投资笔记与思考-周期股</a><time datetime="2025-05-18T16:00:00.000Z" title="发表于 2025-05-19 00:00:00">2025-05-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            <a class="card-more-btn" href="/categories/" title="查看更多">
-      <i class="fas fa-angle-right"></i></a>
-          </div>
-          <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/f2fs/"><span class="card-category-list-name">f2fs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go-java/"><span class="card-category-list-name">go, java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/investment/"><span class="card-category-list-name">investment</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pacman/"><span class="card-category-list-name">pacman</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/readnote/"><span class="card-category-list-name">readnote</span><span class="card-category-list-count">1</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/stock/" style="font-size: 1.3em; color: #99a1ac">stock</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/modsecurity/" style="font-size: 1.3em; color: #99a1ac">modsecurity</a> <a href="/tags/nil/" style="font-size: 1.1em; color: #999">nil</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/error/" style="font-size: 1.1em; color: #999">error</a> <a href="/tags/parameter/" style="font-size: 1.1em; color: #999">parameter</a> <a href="/tags/linux/" style="font-size: 1.3em; color: #99a1ac">linux</a> <a href="/tags/slice/" style="font-size: 1.5em; color: #99a9bf">slice</a> <a href="/tags/gopacket/" style="font-size: 1.3em; color: #99a1ac">gopacket</a> <a href="/tags/reflect/" style="font-size: 1.1em; color: #999">reflect</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">基本数据结构</a> <a href="/tags/WAF/" style="font-size: 1.3em; color: #99a1ac">WAF</a> <a href="/tags/stack/" style="font-size: 1.1em; color: #999">stack</a> <a href="/tags/container/" style="font-size: 1.1em; color: #999">container</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 1.3em; color: #99a1ac">内存</a> <a href="/tags/investment/" style="font-size: 1.5em; color: #99a9bf">investment</a> <a href="/tags/systemcommand/" style="font-size: 1.1em; color: #999">systemcommand</a> <a href="/tags/monotonic-stack/" style="font-size: 1.1em; color: #999">monotonic_stack</a> <a href="/tags/pacman/" style="font-size: 1.1em; color: #999">pacman</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">拓扑排序</a> <a href="/tags/list/" style="font-size: 1.1em; color: #999">list</a> <a href="/tags/readnote/" style="font-size: 1.1em; color: #999">readnote</a> <a href="/tags/zero-value/" style="font-size: 1.1em; color: #999">zero value</a> <a href="/tags/golang/" style="font-size: 1.1em; color: #999">golang</a> <a href="/tags/hash/" style="font-size: 1.1em; color: #999">hash</a> <a href="/tags/dfs/" style="font-size: 1.1em; color: #999">dfs</a> <a href="/tags/f2fs/" style="font-size: 1.3em; color: #99a1ac">f2fs</a> <a href="/tags/file/" style="font-size: 1.1em; color: #999">file</a> <a href="/tags/%E5%A4%A9%E6%B0%94/" style="font-size: 1.1em; color: #999">天气</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>归档</span>
-      <a class="card-more-btn" href="/archives/"
-            title="查看更多">
-            <i class="fas fa-angle-right"></i>
-          </a>
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">月的奏鸣曲</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
   
-    <ul class="card-archive-list">
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/05/">
-            <span class="card-archive-list-date">
-              五月 2025
-            </span>
-            <span class="card-archive-list-count">5</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/04/">
-            <span class="card-archive-list-date">
-              四月 2025
-            </span>
-            <span class="card-archive-list-count">4</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/03/">
-            <span class="card-archive-list-date">
-              三月 2025
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2023/07/">
-            <span class="card-archive-list-date">
-              七月 2023
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2023/04/">
-            <span class="card-archive-list-date">
-              四月 2023
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2023/02/">
-            <span class="card-archive-list-date">
-              二月 2023
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2022/09/">
-            <span class="card-archive-list-date">
-              九月 2022
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2022/07/">
-            <span class="card-archive-list-date">
-              七月 2022
-            </span>
-            <span class="card-archive-list-count">3</span>
-          </a>
-        </li>
-      
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">32</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-05-20T01:05:22.052Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 月的奏鸣曲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 6.2.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

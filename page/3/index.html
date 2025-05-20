@@ -1,236 +1,1304 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="月的奏鸣曲"><meta name="copyright" content="月的奏鸣曲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zt-winter.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://zt-winter.github.io/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zt-winter.github.io/img/butterfly-icon.png">
 <meta property="article:author" content="月的奏鸣曲">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zt-winter.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zt-winter.github.io/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
+
+<link rel="canonical" href="http://zt-winter.github.io/page/3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo</title>
   
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
 
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
-        
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Hexo',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'home'
-}</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/06/06/fileIO/" title="文件IO">文件IO</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-05T16:00:00.000Z" title="发表于 2022-06-06 00:00:00">2022-06-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content"> 文件一次性全部读取到内存中 通过文件名直接读取文件到内存中 os: func ReadFile(filename string) ([]byte, error)  os: func WriteFile(filename string, data []byte, perm FileMode) error io&#x2F;ioutil: func ReadFile(filename string) ([]byte, error) io&#x2F;ioutil: func WriteFIle(filename string, data []byte, perm FileMode) error   通过文件名获取文件的句柄, 然后通过文件句柄读取文件 获取文件句柄 os: func OpenFile(name string, flag int, perm FileMode) (*File, error) flag用于指定文件句柄的操作范围，当打开的文件不存在，而flag有os.O_CREATE属性时，就会创建文件，文件的所有者、组、其他人的权限由perm设定 os: func...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/05/07/data_struct/" title="基本数据结构">基本数据结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-06T16:00:00.000Z" title="发表于 2022-05-07 00:00:00">2022-05-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">GO基本数据结构 string  go语言的字符串无法直接修改每一个字符元素，只能通过重新构造新的字符串。 123456789101112131415161718192021222324package mainimport(	&quot;fmt&quot;)func main() &#123;	test := &quot;hello world&quot;	test1 := []byte(test)	for i := 6; i &lt; 8; i++ &#123;		test1[i] = &#x27; &#x27;	&#125;	fmt.Println(string(test1))	fmt.Println(test)	test2 := []byte(test)	test2[0] = &#x27;f&#x27;	test2[1] = &#x27;u&#x27;	test2[2] = &#x27;c&#x27;	test2[3] = &#x27;k&#x27;	test2[4] = &#x27; &#x27;	fmt.Println(string(test2))	hello  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/05/07/module/" title="module">module</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-06T16:00:00.000Z" title="发表于 2022-05-07 00:00:00">2022-05-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">模块 module一个基本模块的创建 123456789101112131415161718# cd ~/code/go# mkdir greetings &amp;&amp; cd greetings# go mod init test.com/greetingsgo: creating new go.mod: module test.com/greetings# vim greetings.go//函数首字母大写，表示该函数可以被其他包调用package greetingsimport &quot;fmt&quot;func Hello(name string) string &#123;        message := fmt.Sprintf(&quot;Hi, %v. welcome!&quot;, name)        return message&#125;//需要有main package，但go mod init &quot;模块名&quot; 模块名任意# go build #...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/05/06/parameter/" title="参数传递">参数传递</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-05T16:00:00.000Z" title="发表于 2022-05-06 00:00:00">2022-05-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">参数传递GO中参数传递只有值传递，没有参数传递slice map chan  在使用时都是指针类型主函数调用test函数，在函数传递参数时，func test( sliceA  []int)，sliceA就是指针，它和原切片的指针不是同一个东西，两个指针指向同一个slice，但所在的位置不同。由于slice创建时，自身就有cap和len两个参数。如果只是对原有slice中数值进行修改，那么是没有问题的，主函数中slice也会修改。但如果进行扩容操作，如append，如果cap改变了，那么就会在新的slice上进行操作，返回新的slice地址。主函数中的slice地址就不会修改。 如果传递的参数是slice的地址， func test ( sliceA *[]int)。在进行扩容操作后，新的slice地址也会赋值给slice，相当于主函数中slice指针指向了新的slice地址。 所以 __在GO中没有按参数传递，只有指针的副本传递和值的副本传递__。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/28/append/" title="append与切片">append与切片</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-27T16:00:00.000Z" title="发表于 2022-04-28 00:00:00">2022-04-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">append函数append函数原型 1func append(slice []Type, elems ...Type) []Type  内置函数append可以在切片末尾添加元素。如果切片有足够的空间，后面的空间会分配给新的元素。如果没有足够空间，就会一个新的隐含数组会被分配出来，然后将所有的元素复制到新的隐含数组中，然后返回这个隐含数组的头部指针（或者说新的切片）。 12345678910111213141516171819package mainimport(    &quot;fmt&quot;    &quot;unsafe&quot;)func main()&#123;	var slice []int = []int&#123;1, 2, 3&#125;	var slices [][]int = [][]int&#123;&#123;3, 4&#125;, &#123;5, 6&#125;, &#123;7,...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/28/gopacket_layer/" title="gopacket_layer">gopacket_layer</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-27T16:00:00.000Z" title="发表于 2022-04-28 00:00:00">2022-04-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">在使用gopacket时部分学习思考layer总体结构Layer(interface) -&gt; TCP(struct) -&gt; BaseLayer(struct)Layer(interface):定义三个方法 LayerType(),LayerContents(),LayerPayload()TCP(struct):定义LayerType()BaseLayer(struct):定义LayerContents(),LayerPayload() 接口的使用，动态类型推断layers，也就是tcp&#x2F;ip协议中各层，主要是链路层、网络层、传输层、应用层，在gopacket中具体指向流量数据某一层的协议。 在gopacket的说明文档中可以看到type Layer的定义 https://github.com/google/gopacket/blob/v1.1.19/base.go#L19 123456789type Layer interface &#123;	// LayerType is the gopacket type for this...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/28/gopacket_reassembly/" title="gopacket_reassembly">gopacket_reassembly</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-27T16:00:00.000Z" title="发表于 2022-04-28 00:00:00">2022-04-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">TCP重组开源项目中相关代码  gopacket中关于TCP重组有两个库，一个是tcpassembly，另一个是reassembly。tcpassembly功能不完善，bug比较多，并且已经很久没有维护。reassembly非常完善，因此在TCP重组实现时选择使用reassembly  一般实现TCP重组过程中基本变量初始化为steamFacotry -&gt; streamPool -&gt; assembler -&gt; AssembleWithContext -&gt; FlushWithOptions  AssembleWithContext在函数执行过程调用三个重要的函数StreamFactory.New(Creating a stream)	ReassembledSG(on a single stream)	ReassemblyComplete(on the same...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/19/build-in_function/" title="内置函数">内置函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-18T16:00:00.000Z" title="发表于 2022-04-19 00:00:00">2022-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">内置函数参考文章 universe.go源文件定义了go内置函数列表，Main函数调用initUniverse，进而调用lexinit对builtinpkg进行了初始化。SetSubOp调用会将Node结构(下文给出)中的Op设置为对应的值，用于标识该Node结构为内置函数。 builtinFuncs 12345678910111213141516171819202122232425262728var builtinFuncs = [...]struct &#123;    name string    op   Op&#125;&#123;    &#123;&quot;append&quot;, OAPPEND&#125;,    &#123;&quot;cap&quot;, OCAP&#125;,    &#123;&quot;close&quot;, OCLOSE&#125;,    &#123;&quot;complex&quot;, OCOMPLEX&#125;,    &#123;&quot;copy&quot;, OCOPY&#125;,   ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/19/ellipsis.../" title="省略号用法">省略号用法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-18T16:00:00.000Z" title="发表于 2022-04-19 00:00:00">2022-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">go语言中省略号一般用在三个地方  数组初始化中，用于编译器自动推断元素个数  1array := [...]int&#123;1,2,3&#125;   切片（数组指针）后面，用于表示将切片中每一个元素列出  1sliceThree := append(sliceTow, sliceOne...)   函数传递参数，用于表示参数的数量不固定，变长参数  12345678func functionOne(parms ...int)&#123;	for i,v := range parms &#123;		fmt.Printf(&quot;%v %v\n&quot;, i, v)	&#125;&#125;func main()&#123;	function(0,1,2)&#125;  1234567891011121314151617181920package mainimport(    &quot;bytes&quot;    &quot;fmt&quot;    &quot;os/exec&quot;    &quot;log&quot;)func main()...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/19/go_network/" title="goproxy">goproxy</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-18T16:00:00.000Z" title="发表于 2022-04-19 00:00:00">2022-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">goproxy1234// gopls等插件无法下载go env -w GO111MODULE=ongo env -w GOPROXY=https://goproxy.cn,direct//就该代理地址，google被墙  1234//vim coc-nvim插件中coc-go无法在vim界面安装 CocInstall coc-gocd ~/.config/coc/extensions//手动进入插件扩展目录，然后使用代理下载proxychains yarn add coc-go  </div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">月的奏鸣曲</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/container/" title="container库">container库</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/leetcode207/" title="dfs">dfs</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/linux-wifi/" title="linux-wifi">linux-wifi</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/%E5%89%8D%E7%BC%80/" title="前缀及其优化">前缀及其优化</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/19/invest2-cyclicalStock/" title="投资笔记与思考-周期股">投资笔记与思考-周期股</a><time datetime="2025-05-18T16:00:00.000Z" title="发表于 2025-05-19 00:00:00">2025-05-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            <a class="card-more-btn" href="/categories/" title="查看更多">
-      <i class="fas fa-angle-right"></i></a>
-          </div>
-          <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/f2fs/"><span class="card-category-list-name">f2fs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go-java/"><span class="card-category-list-name">go, java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/investment/"><span class="card-category-list-name">investment</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pacman/"><span class="card-category-list-name">pacman</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/readnote/"><span class="card-category-list-name">readnote</span><span class="card-category-list-count">1</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/stock/" style="font-size: 1.3em; color: #99a1ac">stock</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/modsecurity/" style="font-size: 1.3em; color: #99a1ac">modsecurity</a> <a href="/tags/nil/" style="font-size: 1.1em; color: #999">nil</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/error/" style="font-size: 1.1em; color: #999">error</a> <a href="/tags/parameter/" style="font-size: 1.1em; color: #999">parameter</a> <a href="/tags/linux/" style="font-size: 1.3em; color: #99a1ac">linux</a> <a href="/tags/slice/" style="font-size: 1.5em; color: #99a9bf">slice</a> <a href="/tags/gopacket/" style="font-size: 1.3em; color: #99a1ac">gopacket</a> <a href="/tags/reflect/" style="font-size: 1.1em; color: #999">reflect</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">基本数据结构</a> <a href="/tags/WAF/" style="font-size: 1.3em; color: #99a1ac">WAF</a> <a href="/tags/stack/" style="font-size: 1.1em; color: #999">stack</a> <a href="/tags/container/" style="font-size: 1.1em; color: #999">container</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 1.3em; color: #99a1ac">内存</a> <a href="/tags/investment/" style="font-size: 1.5em; color: #99a9bf">investment</a> <a href="/tags/systemcommand/" style="font-size: 1.1em; color: #999">systemcommand</a> <a href="/tags/monotonic-stack/" style="font-size: 1.1em; color: #999">monotonic_stack</a> <a href="/tags/pacman/" style="font-size: 1.1em; color: #999">pacman</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">拓扑排序</a> <a href="/tags/list/" style="font-size: 1.1em; color: #999">list</a> <a href="/tags/readnote/" style="font-size: 1.1em; color: #999">readnote</a> <a href="/tags/zero-value/" style="font-size: 1.1em; color: #999">zero value</a> <a href="/tags/golang/" style="font-size: 1.1em; color: #999">golang</a> <a href="/tags/hash/" style="font-size: 1.1em; color: #999">hash</a> <a href="/tags/dfs/" style="font-size: 1.1em; color: #999">dfs</a> <a href="/tags/f2fs/" style="font-size: 1.3em; color: #99a1ac">f2fs</a> <a href="/tags/file/" style="font-size: 1.1em; color: #999">file</a> <a href="/tags/%E5%A4%A9%E6%B0%94/" style="font-size: 1.1em; color: #999">天气</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>归档</span>
-      <a class="card-more-btn" href="/archives/"
-            title="查看更多">
-            <i class="fas fa-angle-right"></i>
-          </a>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section">分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
   
-    <ul class="card-archive-list">
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/05/">
-            <span class="card-archive-list-date">
-              五月 2025
-            </span>
-            <span class="card-archive-list-count">5</span>
-          </a>
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
         </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/04/">
-            <span class="card-archive-list-date">
-              四月 2025
-            </span>
-            <span class="card-archive-list-count">4</span>
-          </a>
+        <li class="sidebar-nav-overview">
+          站点概览
         </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">月的奏鸣曲</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/06/06/fileIO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/06/fileIO/" class="post-title-link" itemprop="url">文件IO</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-06-06 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-06T00:00:00+08:00">2022-06-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>文件一次性全部读取到内存中<ul>
+<li>通过文件名直接读取文件到内存中<ul>
+<li>os: <code>func ReadFile(filename string) ([]byte, error)</code> </li>
+<li>os: <code>func WriteFile(filename string, data []byte, perm FileMode) error</code></li>
+<li>io&#x2F;ioutil: <code>func ReadFile(filename string) ([]byte, error)</code></li>
+<li>io&#x2F;ioutil: <code>func WriteFIle(filename string, data []byte, perm FileMode) error</code></li>
+</ul>
+</li>
+<li>通过文件名获取文件的句柄, 然后通过文件句柄读取文件<ul>
+<li>获取文件句柄<ul>
+<li>os: <code>func OpenFile(name string, flag int, perm FileMode) (*File, error)</code> flag用于指定文件句柄的操作范围，当打开的文件不存在，而flag有os.O_CREATE属性时，就会创建文件，文件的所有者、组、其他人的权限由perm设定</li>
+<li>os: <code>func Open(name string) (*File, error)</code>  Open是OpenFile的简化版，直接读取文件，flag设置为os.O_RDONLY。</li>
+</ul>
+</li>
+<li>通过句柄读取文件<ul>
+<li>os: <code>func (*File) Read(b []byte) (n int, err error)</code> 从文件中读取长度为len(b)的字节到b中，返回读取的字节数大小，如果读到文件末尾，则返回0和io.EOF</li>
+<li>os: <code>func (*File) ReadAt(b []byte, off int64) (n int, err error)</code> 从文件开头起偏移off个字节的地方开始，读取长度为len(b)的字节到b中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>将文件一部分读入到缓存中,逐份读取<ul>
+<li>io库，定义了这两个接口，并实现了这两个接口的相关函数如<code>func LimitReader(r Reader, n int64) Reader</code> n指定要读取的字节数<ul>
+<li>io.Reader, io.Writer接口  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type Reader interface &#123;</span><br><span class="line">	Read(p []byte) (n int, err error)</span><br><span class="line">&#125;</span><br><span class="line">type Writer interface &#123;</span><br><span class="line">	Write(p []byte) (n int, err error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>bufio在io的基础上实现了带有缓冲的IO,实现了io.Reader,io.Writer接口  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func NewReader(rd io.Reader) *Reader</span><br><span class="line">func (b *Reader) Read(p []byte) (n int, err error) </span><br></pre></td></tr></table></figure></li>
+<li>实现io.Reader,io.Writer接口的有：os.File, strings.Reader, net.conn, net.Buffers。os.File 可以通过os.Open()得到。strings.Read 可以通过strings.NewReader()得到。net.conn 可以通过net.Dail()得到</li>
+</ul>
+</li>
+</ul>
+
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/03/">
-            <span class="card-archive-list-date">
-              三月 2025
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2023/07/">
-            <span class="card-archive-list-date">
-              七月 2023
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/05/07/data_struct/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/07/data_struct/" class="post-title-link" itemprop="url">基本数据结构</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-07 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-07T00:00:00+08:00">2022-05-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="GO基本数据结构"><a href="#GO基本数据结构" class="headerlink" title="GO基本数据结构"></a>GO基本数据结构</h1><ul>
+<li><p>string</p>
+<ul>
+<li><p>go语言的字符串无法直接修改每一个字符元素，只能通过重新构造新的字符串。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import(</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	test := &quot;hello world&quot;</span><br><span class="line">	test1 := []byte(test)</span><br><span class="line">	for i := 6; i &lt; 8; i++ &#123;</span><br><span class="line">		test1[i] = &#x27; &#x27;</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(string(test1))</span><br><span class="line">	fmt.Println(test)</span><br><span class="line">	test2 := []byte(test)</span><br><span class="line">	test2[0] = &#x27;f&#x27;</span><br><span class="line">	test2[1] = &#x27;u&#x27;</span><br><span class="line">	test2[2] = &#x27;c&#x27;</span><br><span class="line">	test2[3] = &#x27;k&#x27;</span><br><span class="line">	test2[4] = &#x27; &#x27;</span><br><span class="line">	fmt.Println(string(test2))</span><br><span class="line">	</span><br><span class="line">hello   rld</span><br><span class="line">hello world</span><br><span class="line">fuck  world</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>array &amp;&amp; slice</p>
+<ul>
+<li><p>数组的数据类型是[length]int，length是一个确定的数字。数组是具有相同 唯一类型 的一组以编号且长度固定的数据项序列（这是一种同构的数据结构）；这种类型可以是任意的原始类型例如整型、字符串或者自定义类型。数组长度必须是一个常量表达式，并且必须是一个非负整数。数组长度也是数组类型的一部分，所以 [5] int s和 [10] int 是属于不同类型的。</p>
+</li>
+<li><p>数组的长度一旦确定就不能更改，这与C&#x2F;C++有很大的不同。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//因此下面这种代码是错的，在编译环节就过不去</span><br><span class="line">func test(length int)&#123;</span><br><span class="line">	var array[length]int</span><br><span class="line">=================================</span><br><span class="line">func test()&#123;</span><br><span class="line">	length := 10</span><br><span class="line">	var array[length]int</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切片不一样，切片本质是指针，切片的数据类型是[]int，切片的初始化一般通过数组创建<code> sliceOne := array[0:1]</code>，也可以直接初始化赋值<code> var sliceTwo []int = []int&#123;10,11,12,13,14,15&#125;</code>，还可以通过make创建，这个后面再说。</li>
+</ul>
+<p>下面的代码可以说明一些性质</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> array = [<span class="number">5</span>]<span class="type">int</span>&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;array: %p\n&quot;</span>, &amp;array)</span><br><span class="line">	<span class="keyword">var</span> sliceOne = array[<span class="number">0</span>:<span class="number">5</span>]</span><br><span class="line">	fmt.Println(reflect.TypeOf(sliceOne))</span><br><span class="line">	fmt.Printf(<span class="string">&quot;sliceOne: %p\n&quot;</span>, sliceOne)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(sliceOne); i++ &#123;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;%d\n&quot;</span>, sliceOne[i])</span><br><span class="line">	&#125;</span><br><span class="line">    sliceOne[<span class="number">4</span>] = <span class="number">100</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;slicOne: %p\n&quot;</span>, sliceOne)</span><br><span class="line">	sliceOne = <span class="built_in">append</span>(sliceOne, <span class="number">5</span>)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;sliceOne: %p\n&quot;</span>, sliceOne)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(sliceOne); i++ &#123;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;%d\n&quot;</span>, sliceOne[i])</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> sliceTwo []<span class="type">int</span> = []<span class="type">int</span>&#123;<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;sliceTwo: %p\n&quot;</span>, sliceTwo)</span><br><span class="line">	sliceTwo = sliceOne</span><br><span class="line">    fmt.Printf(<span class="string">&quot;sliceTwo: %p\n&quot;</span>, sliceTwo)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(sliceTwo); i++ &#123;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;%d\n&quot;</span>, sliceTwo[i])</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">=========编译执行==========</span><br><span class="line">array: <span class="number">0xc00000a4b0</span></span><br><span class="line">[]<span class="type">int</span></span><br><span class="line">sliceOne: <span class="number">0xc00000a4b0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">sliceOne: <span class="number">0xc00000a4b0</span>, array[<span class="number">4</span>]=<span class="number">100</span></span><br><span class="line">sliceOne: <span class="number">0xc000010410</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">100</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line">sliceTwo: <span class="number">0xc00000a510</span></span><br><span class="line">sliceTwo: <span class="number">0xc000010410</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">100</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>使用数组给切片sliceOne初始化时，sliceOne的值与&amp;array的值是一样的，对sliceOne[i]中的值就行修改时，array中对应的值也会修改。但sliceOne的长度发生变化时，sliceOne的地址就会发生变化。相当于在新开的内存区域创建了一个新的C&#x2F;C++数组。切片也可以互相赋值，如sliceTwo&#x3D;sliceOne，但要注意，这样0xc00000a510的值就再也没有指针指向它，无法释放，造成了内存使用不安全。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// one是一个一维数组，ans是一个二维数组</span><br><span class="line">onecopy := make([]int, len(one))</span><br><span class="line">copy(onecopy, one)</span><br><span class="line">ans = append(ans, onecopy)</span><br><span class="line">//或者</span><br><span class="line">ans = append(ans, append([]int&#123;&#125;, path...))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二维切片需要注意的地方</p>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = [][]<span class="type">int</span>&#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;, &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;, &#123;<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>&#125;, &#123;<span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>&#125;&#125;</span><br><span class="line"><span class="keyword">var</span> testOne [][]<span class="type">int</span> = test[<span class="number">1</span>:<span class="number">4</span>][:]</span><br><span class="line"><span class="comment">/* testOne的值</span></span><br><span class="line"><span class="comment">5, 6, 7, 8</span></span><br><span class="line"><span class="comment">9, 10, 11, 12</span></span><br><span class="line"><span class="comment">13, 14, 15, 16</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> testTwo [][]<span class="type">int</span> = testOne[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line"><span class="comment">/* testTwo的值</span></span><br><span class="line"><span class="comment">9, 10, 11, 12</span></span><br><span class="line"><span class="comment">13, 14, 15, 16</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//想从4*4的数组中取中心的2*2的数组</span></span><br><span class="line"><span class="keyword">var</span> testerror [][]<span class="type">int</span> = test[<span class="number">1</span>:<span class="number">4</span>][<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line"><span class="comment">//报错&quot;runtime error: slice bounds out of range [:4] with capacity 3&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">对二维切片不能同时取两次切片，取一次切片也是对test[]取切片。</span></span><br><span class="line"><span class="comment">var testThree [][]int = test[1:4][1:3]也不是对test[][]同时取了两次切片</span></span><br><span class="line"><span class="comment">实际上的操作是：</span></span><br><span class="line"><span class="comment">var tmp [][]int = test[1:4]</span></span><br><span class="line"><span class="comment">var testThree [][]int = tmp[1:3]</span></span><br><span class="line"><span class="comment">这样可以理解testerror为什么会报错</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//实现从4*4的数组中取中心的2*2的数组</span></span><br><span class="line"><span class="keyword">var</span> testerror [][]<span class="type">int</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">    testerror = <span class="built_in">append</span>(testerror, test[i][<span class="number">1</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>值得注意的符号</p>
+<ul>
+<li>分号;    GO与C语言一样，采用分号作为一条语句的结束，但GO的语法解析器自动在每一行的末尾添加分号，{除外。所以在就会有下面得到语法<code> if firstString, isOk = mapString[tmp]; isOk&#123;</code></li>
+<li>大括号{}    用于初始化</li>
+</ul>
+</li>
+<li><p>hash表，字典，map</p>
+</li>
+</ul>
+<p>map的初始化</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mapInstance := <span class="built_in">make</span>(<span class="keyword">map</span>[typeOne]typeTwo)</span><br><span class="line">mapInstance[typeOne] = typeTwo</span><br><span class="line"><span class="comment">//在这里typeOne就是key，typeTwo就是value</span></span><br></pre></td></tr></table></figure>
+
+<p>使用数组或者切片作为key   <code> mp := map[[26]int][]string&#123;&#125;</code>。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">26</span>]<span class="type">int</span>：数组作为key</span><br><span class="line">[]<span class="type">string</span>：字符串数组作为value</span><br><span class="line">&#123;&#125;：<span class="keyword">map</span>初始化</span><br></pre></td></tr></table></figure>
+
+
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2023/04/">
-            <span class="card-archive-list-date">
-              四月 2023
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2023/02/">
-            <span class="card-archive-list-date">
-              二月 2023
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/05/07/module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/07/module/" class="post-title-link" itemprop="url">module</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-07 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-07T00:00:00+08:00">2022-05-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="模块-module"><a href="#模块-module" class="headerlink" title="模块 module"></a>模块 module</h1><p>一个基本模块的创建</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># cd ~/code/<span class="keyword">go</span></span><br><span class="line"># mkdir greetings &amp;&amp; cd greetings</span><br><span class="line"># <span class="keyword">go</span> mod init test.com/greetings</span><br><span class="line"><span class="keyword">go</span>: creating <span class="built_in">new</span> <span class="keyword">go</span>.mod: module test.com/greetings</span><br><span class="line"># vim greetings.<span class="keyword">go</span></span><br><span class="line"><span class="comment">//函数首字母大写，表示该函数可以被其他包调用</span></span><br><span class="line"><span class="keyword">package</span> greetings</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hello</span><span class="params">(name <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">        message := fmt.Sprintf(<span class="string">&quot;Hi, %v. welcome!&quot;</span>, name)</span><br><span class="line">        <span class="keyword">return</span> message</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//需要有main package，但go mod init &quot;模块名&quot; 模块名任意</span></span><br><span class="line"># <span class="keyword">go</span> build </span><br><span class="line"># ./<span class="string">&quot;模块名&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>一个模块调用另一个模块</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># cd ~/code/<span class="keyword">go</span></span><br><span class="line"># mkdir hello &amp;&amp; cd hello</span><br><span class="line"># <span class="keyword">go</span> mod init test.com/hello</span><br><span class="line"><span class="keyword">go</span>: creating <span class="built_in">new</span> <span class="keyword">go</span>.mod: module test.com/hello</span><br><span class="line"># vim hello.<span class="keyword">go</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">        <span class="string">&quot;fmt&quot;</span></span><br><span class="line">        <span class="string">&quot;test.com/greetings&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">        message := greetings.Hello(<span class="string">&quot;Gladys&quot;</span>)</span><br><span class="line">        fmt.Println(message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​		上面这种包引用情况是，你将greetings里所有函数打包，然后形成greetings包上传到test.com中，然后在写hello时要调用greetings中的函数，就直接从网上下载，然后使用。但很多时候，一个大项目中许多小项目要互相引用，但有要引用的项目还没有上线，或者两个项目都在一个主机上，那么该如何引用其中的函数呢？这里提供方法，就是相对于本项目，指出要引用的包的路径。</p>
+<p>​		这里我们要引用greetings中函数</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># tree</span><br><span class="line">.</span><br><span class="line">├── greetings</span><br><span class="line">│   ├── <span class="keyword">go</span>.mod</span><br><span class="line">│   └── greetings.<span class="keyword">go</span></span><br><span class="line">├── hello</span><br><span class="line">│   ├── <span class="keyword">go</span>.mod</span><br><span class="line">│   └── hello.<span class="keyword">go</span></span><br><span class="line">└── pkg</span><br><span class="line">    └── mod</span><br><span class="line">        └── cache</span><br><span class="line">            └── lock</span><br><span class="line"><span class="comment">/* 	在hello目录的命令提示符下执行下列命令</span></span><br><span class="line"><span class="comment">	将go.mod文件中test.com/greetings替换为../greetings</span></span><br><span class="line"><span class="comment">	当前目录~/code/go/hello，那么../greetings就是</span></span><br><span class="line"><span class="comment">	~/code/go/greetings目录</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"># <span class="keyword">go</span> mod edit -replace test.com/greetings=../greetings</span><br><span class="line"></span><br><span class="line"><span class="comment">/*	在hello目录的命令提示符下执行下列命令</span></span><br><span class="line"><span class="comment">	该命令会在刷新同步test.com/hello模块的依赖，</span></span><br><span class="line"><span class="comment">	自动添加不全所需要的代码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"># <span class="keyword">go</span> mod tidy</span><br><span class="line"><span class="keyword">go</span>: found test.com/greetings in test.com/greetings v0<span class="number">.0</span><span class="number">.0</span><span class="number">-00010101000000</span><span class="number">-000000000000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	这之后go.mod文件的内容</span></span><br><span class="line">module test.com/hello</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.17</span></span><br><span class="line"></span><br><span class="line">replace test.com/greetings =&gt; ../greetings</span><br><span class="line"></span><br><span class="line">require test.com/greetings v0<span class="number">.0</span><span class="number">.0</span><span class="number">-00010101000000</span><span class="number">-000000000000</span></span><br><span class="line"># <span class="keyword">go</span> run .</span><br><span class="line">Hi, Gladys. welcome!</span><br></pre></td></tr></table></figure>
+
+<p>这里我们继续添加一个模块，模块位于hello模块中。目录结构如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># mkdir ./hello/submodule</span><br><span class="line"># tree</span><br><span class="line">├── greetings</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   └── greetings.go</span><br><span class="line">├── hello</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   ├── hello</span><br><span class="line">│   ├── hello.go</span><br><span class="line">│   └── submodule</span><br><span class="line">└── pkg</span><br><span class="line">    └── mod</span><br><span class="line">        └── cache</span><br><span class="line">            └── lock</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	我们在submodule文件夹下开始新的模块的建立</span></span><br><span class="line"># <span class="keyword">go</span> mod init test.com/submodule</span><br><span class="line"># vim submodule.<span class="keyword">go</span></span><br><span class="line"><span class="keyword">package</span> submodule</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Test</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;This is a test module&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	然后我们回到hello目录下</span></span><br><span class="line"># vim hello.<span class="keyword">go</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">        <span class="string">&quot;fmt&quot;</span></span><br><span class="line">        <span class="string">&quot;test.com/greetings&quot;</span></span><br><span class="line">        <span class="string">&quot;test.com/submodule&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">        message := greetings.Hello(<span class="string">&quot;Gladys&quot;</span>)</span><br><span class="line">        fmt.Println(message)</span><br><span class="line">        submodule.Test()</span><br><span class="line">&#125;</span><br><span class="line"># <span class="keyword">go</span> mod edit -replace test.com/submodule=./submodule</span><br><span class="line"># <span class="keyword">go</span> mod tidy</span><br><span class="line"><span class="keyword">go</span>: found test.com/submodule in test.com/submodule v0<span class="number">.0</span><span class="number">.0</span><span class="number">-00010101000000</span><span class="number">-000000000000</span></span><br><span class="line"># <span class="keyword">go</span> run .</span><br><span class="line">Hi, Gladys. welcome!</span><br><span class="line">This is a test module</span><br></pre></td></tr></table></figure>
+
+<h2 id="在同一个项目下"><a href="#在同一个项目下" class="headerlink" title="在同一个项目下"></a>在同一个项目下</h2><p><strong>注意</strong>：在一个项目（project）下我们是可以定义多个包（package）的。</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>现在的情况是，我们在<code>moduledemo/main.go</code>中调用了<code>mypackage</code>这个包。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moduledemo</span><br><span class="line">├── go.mod</span><br><span class="line">├── main.go</span><br><span class="line">└── mypackage</span><br><span class="line">    └── mypackage.go</span><br></pre></td></tr></table></figure>
+
+<h3 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h3><p>这个时候，我们需要在<code>moduledemo/go.mod</code>中按如下定义：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module moduledemo</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>moduledemo/main.go</code>中按如下方式导入<code>mypackage</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;moduledemo/mypackage&quot;</span>  <span class="comment">// 导入同一项目下的mypackage包</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    mypackage.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h3><p>举一反三，假设我们现在有文件目录结构如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">└── bubble</span><br><span class="line">    ├── dao</span><br><span class="line">    │   └── mysql.go</span><br><span class="line">    ├── go.mod</span><br><span class="line">    └── main.go</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>bubble/go.mod</code>内容如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module github.com/q1mi/bubble</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
+
+<p><code>bubble/dao/mysql.go</code>内容如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dao</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;mypackage.New&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>bubble/main.go</code>内容如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;github.com/q1mi/bubble/dao&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dao.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="不在同一个项目下"><a href="#不在同一个项目下" class="headerlink" title="不在同一个项目下"></a>不在同一个项目下</h2><h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├── moduledemo</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   └── main.go</span><br><span class="line">└── mypackage</span><br><span class="line">    ├── go.mod</span><br><span class="line">    └── mypackage.go</span><br></pre></td></tr></table></figure>
+
+<h3 id="导入包-1"><a href="#导入包-1" class="headerlink" title="导入包"></a>导入包</h3><p>这个时候，<code>mypackage</code>也需要进行module初始化，即拥有一个属于自己的<code>go.mod</code>文件，内容如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module mypackage</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们在<code>moduledemo/main.go</code>中按如下方式导入：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;mypackage&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    mypackage.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为这两个包不在同一个项目路径下，你想要导入本地包，并且这些包也没有发布到远程的github或其他代码仓库地址。这个时候我们就需要在<code>go.mod</code>文件中使用<code>replace</code>指令。</p>
+<p>在调用方也就是<code>packagedemo/go.mod</code>中按如下方式指定使用<strong>相对路径</strong>来寻找<code>mypackage</code>这个包。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module moduledemo</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require <span class="string">&quot;mypackage&quot;</span> v0<span class="number">.0</span><span class="number">.0</span></span><br><span class="line">replace <span class="string">&quot;mypackage&quot;</span> =&gt; <span class="string">&quot;../mypackage&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a>举个例子</h3><p>最后我们再举个例子巩固下上面的内容。</p>
+<p>我们现在有文件目录结构如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├── p1</span><br><span class="line">│   ├── go.mod</span><br><span class="line">│   └── main.go</span><br><span class="line">└── p2</span><br><span class="line">    ├── go.mod</span><br><span class="line">    └── p2.go</span><br></pre></td></tr></table></figure>
+
+<p><code>p1/main.go</code>中想要导入<code>p2.go</code>中定义的函数。</p>
+<p><code>p2/go.mod</code>内容如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module liwenzhou.com/q1mi/p2</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
+
+<p><code>p1/main.go</code>中按如下方式导入</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;liwenzhou.com/q1mi/p2&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    p2.New()</span><br><span class="line">    fmt.Println(<span class="string">&quot;main&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为我并没有把<code>liwenzhou.com/q1mi/p2</code>这个包上传到<code>liwenzhou.com</code>这个网站，我们只是想导入本地的包，这个时候就需要用到<code>replace</code>这个指令了。</p>
+<p><code>p1/go.mod</code>内容如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module github.com/q1mi/p1</span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.14</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require <span class="string">&quot;liwenzhou.com/q1mi/p2&quot;</span> v0<span class="number">.0</span><span class="number">.0</span></span><br><span class="line">replace <span class="string">&quot;liwenzhou.com/q1mi/p2&quot;</span> =&gt; <span class="string">&quot;../p2&quot;</span></span><br></pre></td></tr></table></figure>
+
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2022/09/">
-            <span class="card-archive-list-date">
-              九月 2022
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2022/07/">
-            <span class="card-archive-list-date">
-              七月 2022
-            </span>
-            <span class="card-archive-list-count">3</span>
-          </a>
-        </li>
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/05/06/parameter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/06/parameter/" class="post-title-link" itemprop="url">参数传递</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-06 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-06T00:00:00+08:00">2022-05-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h1><h2 id="GO中参数传递只有值传递，没有参数传递"><a href="#GO中参数传递只有值传递，没有参数传递" class="headerlink" title="GO中参数传递只有值传递，没有参数传递"></a>GO中参数传递只有值传递，没有参数传递</h2><h3 id="slice-map-chan-在使用时都是指针类型"><a href="#slice-map-chan-在使用时都是指针类型" class="headerlink" title="slice map chan  在使用时都是指针类型"></a>slice map chan  在使用时都是指针类型</h3><p>主函数调用test函数，在函数传递参数时，<code>func test( sliceA  []int)</code>，sliceA就是指针，它和原切片的指针不是同一个东西，两个指针指向同一个slice，但所在的位置不同。由于slice创建时，自身就有cap和len两个参数。如果只是对原有slice中数值进行修改，那么是没有问题的，主函数中slice也会修改。但如果进行扩容操作，如append，如果cap改变了，那么就会在新的slice上进行操作，返回新的slice地址。主函数中的slice地址就不会修改。</p>
+<p>如果传递的参数是slice的地址，<code> func test ( sliceA *[]int)</code>。在进行扩容操作后，新的slice地址也会赋值给slice，相当于主函数中slice指针指向了新的slice地址。</p>
+<p>所以 __在GO中没有按参数传递，只有指针的副本传递和值的副本传递__。</p>
+
       
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">32</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-05-20T01:05:22.052Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 月的奏鸣曲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 6.2.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/28/append/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/28/append/" class="post-title-link" itemprop="url">append与切片</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-28T00:00:00+08:00">2022-04-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="append函数"><a href="#append函数" class="headerlink" title="append函数"></a>append函数</h1><p>append函数原型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">append</span><span class="params">(slice []Type, elems ...Type)</span></span> []Type</span><br></pre></td></tr></table></figure>
+
+<p>内置函数append可以在切片末尾添加元素。如果切片有足够的空间，后面的空间会分配给新的元素。如果没有足够空间，就会一个新的隐含数组会被分配出来，然后将所有的元素复制到新的隐含数组中，然后返回这个隐含数组的头部指针（或者说新的切片）。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;unsafe&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> slice []<span class="type">int</span> = []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">	<span class="keyword">var</span> slices [][]<span class="type">int</span> = [][]<span class="type">int</span>&#123;&#123;<span class="number">3</span>, <span class="number">4</span>&#125;, &#123;<span class="number">5</span>, <span class="number">6</span>&#125;, &#123;<span class="number">7</span>, <span class="number">8</span>&#125;&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;go中一个字节8位\n&quot;</span>)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;字节数为%d\n&quot;</span>, unsafe.Sizeof(slice[<span class="number">0</span>]))</span><br><span class="line">    fmt.Printf(<span class="string">&quot;slices的空间为%d\n&quot;</span>, <span class="built_in">cap</span>(slices[<span class="number">0</span>]))</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%p %p %p\n&quot;</span>, slices[<span class="number">0</span>], slices[<span class="number">1</span>], slices[<span class="number">2</span>])</span><br><span class="line">	slices = <span class="built_in">append</span>(slices, slice)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%p %p %p %p\n&quot;</span>, slices[<span class="number">0</span>], slices[<span class="number">1</span>], slices[<span class="number">2</span>], slices[<span class="number">3</span>])</span><br><span class="line">	<span class="keyword">var</span> slicesTwo [][]<span class="type">int</span> = <span class="built_in">append</span>([][]<span class="type">int</span>&#123;slice&#125;, slices...)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%p %p %p %p\n&quot;</span>, slicesTwo[<span class="number">0</span>], slicesTwo[<span class="number">1</span>], slicesTwo[<span class="number">2</span>], slicesTwo[<span class="number">3</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是append正确的使用方法。<code> slices = append(slices, slice)</code>是将slice切片添加到slices二维切片的后面。如果要将slice添加到slices的前面，应该是</p>
+<p><code> var sliceTwo [][]int = append([][]int&#123;slice&#125;, slices...)</code></p>
+<p><code> [][]int&#123;slice&#125;</code>是新建了一个二维切片，然后切片的初始化了一个元素（一个一维切片）。</p>
+<p><code> slices...</code>是将slices中每一个元素全部列出来作为参数，也就是<code> elem ...Type</code>。</p>
+<p>最后slices和sliceTwo的值为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">slices-&gt;</span><br><span class="line">[0]:[3,4]</span><br><span class="line">[1]:[5,6]</span><br><span class="line">[2]:[7,8]</span><br><span class="line">[3]:[1,2,3]</span><br><span class="line">sliceTwo-&gt;</span><br><span class="line">[0]:[1,2,3]</span><br><span class="line">[1]:[3,4]</span><br><span class="line">[2]:[5,6]</span><br><span class="line">[3]:[7,8]</span><br><span class="line">[4]:[1,2,3]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//程序输出</span><br><span class="line">go中一个字节8位</span><br><span class="line">字节数为8</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br><span class="line">0xc0000160a0 0xc0000160b0 0xc0000160c0 0xc00000e168</span><br><span class="line">0xc00000e168 0xc0000160a0 0xc0000160b0 0xc0000160c0</span><br></pre></td></tr></table></figure>
+
+<p>0xc0000160a0 + </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/28/gopacket_layer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/28/gopacket_layer/" class="post-title-link" itemprop="url">gopacket_layer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-28T00:00:00+08:00">2022-04-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="在使用gopacket时部分学习思考"><a href="#在使用gopacket时部分学习思考" class="headerlink" title="在使用gopacket时部分学习思考"></a>在使用gopacket时部分学习思考</h1><h3 id="layer总体结构"><a href="#layer总体结构" class="headerlink" title="layer总体结构"></a>layer总体结构</h3><p>Layer(interface) -&gt; TCP(struct) -&gt; BaseLayer(struct)<br>Layer(interface):定义三个方法 LayerType(),LayerContents(),LayerPayload()<br>TCP(struct):定义LayerType()<br>BaseLayer(struct):定义LayerContents(),LayerPayload()</p>
+<h3 id="接口的使用，动态类型推断"><a href="#接口的使用，动态类型推断" class="headerlink" title="接口的使用，动态类型推断"></a>接口的使用，动态类型推断</h3><p>layers，也就是tcp&#x2F;ip协议中各层，主要是链路层、网络层、传输层、应用层，在gopacket中具体指向流量数据某一层的协议。</p>
+<p>在gopacket的说明文档中可以看到type Layer的定义</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/base.go#L19">https://github.com/google/gopacket/blob/v1.1.19/base.go#L19</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Layer <span class="keyword">interface</span> &#123;</span><br><span class="line">	<span class="comment">// LayerType is the gopacket type for this layer.</span></span><br><span class="line">	LayerType() LayerType</span><br><span class="line">	<span class="comment">// LayerContents returns the set of bytes that make up this layer.</span></span><br><span class="line">	LayerContents() []<span class="type">byte</span></span><br><span class="line">	<span class="comment">// LayerPayload returns the set of bytes contained within this layer, not</span></span><br><span class="line">	<span class="comment">// including the layer itself.</span></span><br><span class="line">	LayerPayload() []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在实际使用时，可以看到下面的列子，**ethernetLayer.(*layers.Ethernet)**，需要对接口类型进行断言和转化。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ethernetLayer := packet.Layer(layers.LayerTypeEthernet)</span><br><span class="line"><span class="keyword">if</span> ethernetLayer != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Ethernet layer detected.&quot;</span>)</span><br><span class="line">    ethernetPacket, _ := ethernetLayer.(*layers.Ethernet)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Source MAC: &quot;</span>, ethernetPacket.SrcMAC)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Destination MAC: &quot;</span>, ethernetPacket.DstMAC)</span><br><span class="line">    <span class="comment">// Ethernet type is typically IPv4 but could be ARP or other</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Ethernet type: &quot;</span>, ethernetPacket.EthernetType)</span><br><span class="line">    fmt.Println()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/layers/base.go">https://github.com/google/gopacket/blob/v1.1.19/layers/base.go</a> 中可以看到BaseLayer的定义</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BaseLayer is a convenience struct which implements the LayerData and</span></span><br><span class="line"><span class="comment">// LayerPayload functions of the Layer interface.</span></span><br><span class="line"><span class="keyword">type</span> BaseLayer <span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="comment">// Contents is the set of bytes that make up this layer.  IE: for an</span></span><br><span class="line">	<span class="comment">// Ethernet packet, this would be the set of bytes making up the</span></span><br><span class="line">	<span class="comment">// Ethernet frame.</span></span><br><span class="line">	Contents []<span class="type">byte</span></span><br><span class="line">	<span class="comment">// Payload is the set of bytes contained by (but not part of) this</span></span><br><span class="line">	<span class="comment">// Layer.  Again, to take Ethernet as an example, this would be the</span></span><br><span class="line">	<span class="comment">// set of bytes encapsulated by the Ethernet protocol.</span></span><br><span class="line">	Payload []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在BaseLayer的基础上，对不同层的不同协议进行</p>
+<p>ipv4 layer的定义 <a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/layers/ip4.go#L43">https://github.com/google/gopacket/blob/v1.1.19/layers/ip4.go#L43</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">type IPv4 struct &#123;</span><br><span class="line">	BaseLayer</span><br><span class="line">	Version    uint8</span><br><span class="line">	IHL        uint8</span><br><span class="line">	TOS        uint8</span><br><span class="line">	Length     uint16</span><br><span class="line">	Id         uint16</span><br><span class="line">	Flags      IPv4Flag</span><br><span class="line">	FragOffset uint16</span><br><span class="line">	TTL        uint8</span><br><span class="line">	Protocol   IPProtocol</span><br><span class="line">	   uint16</span><br><span class="line">	SrcIP      net.IP</span><br><span class="line">	DstIP      net.IP</span><br><span class="line">	Options    []IPv4Option</span><br><span class="line">	Padding    []byte</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Layer接口的实现中还缺少了LayerType()函数，具体实现可以参考下文</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/layers/layertypes.go#L24">https://github.com/google/gopacket/blob/v1.1.19/layers/layertypes.go#L24</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LayerTypeIPv4 = gopacket.RegisterLayerType(20, gopacket.LayerTypeMetadata&#123;Name: &quot;IPv4&quot;, Decoder: gopacket.DecodeFunc(decodeIPv4)&#125;)</span><br><span class="line">LayerTypeIPv6 = gopacket.RegisterLayerType(21, gopacket.LayerTypeMetadata&#123;Name: &quot;IPv6&quot;, Decoder: gopacket.DecodeFunc(decodeIPv6)&#125;)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/a9779d139771f6a06fc983b18e0efd23ca30222f/layertype.go#L53">https://github.com/google/gopacket/blob/a9779d139771f6a06fc983b18e0efd23ca30222f/layertype.go#L53</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func RegisterLayerType(num int, meta LayerTypeMetadata) LayerType &#123;</span><br><span class="line">	if 0 &lt;= num &amp;&amp; num &lt; maxLayerType &#123;</span><br><span class="line">		if ltMeta[num].inUse &#123;</span><br><span class="line">			panic(&quot;Layer type already exists&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		if ltMetaMap[LayerType(num)].inUse &#123;</span><br><span class="line">			panic(&quot;Layer type already exists&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return OverrideLayerType(num, meta)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/28/gopacket_reassembly/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/28/gopacket_reassembly/" class="post-title-link" itemprop="url">gopacket_reassembly</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-28T00:00:00+08:00">2022-04-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="TCP重组"><a href="#TCP重组" class="headerlink" title="TCP重组"></a>TCP重组</h1><p><a href="github.com/asmcos/sniffer/blob/master/sniffer.go#L1056">开源项目中相关代码</a></p>
+<ul>
+<li><p>gopacket中关于TCP重组有两个库，一个是tcpassembly，另一个是reassembly。tcpassembly功能不完善，bug比较多，并且已经很久没有维护。reassembly非常完善，因此在TCP重组实现时选择使用reassembly</p>
+</li>
+<li><p>一般实现TCP重组过程中基本变量初始化为steamFacotry -&gt; streamPool -&gt; assembler -&gt; AssembleWithContext -&gt; FlushWithOptions</p>
+</li>
+<li><p>AssembleWithContext在函数执行过程调用三个重要的函数StreamFactory.New(Creating a stream)	ReassembledSG(on a single stream)	ReassemblyComplete(on the same stream)</p>
+</li>
+<li><p>其中StreamFactory.New函数，由接口StreamFactory定义,AssembleWithContext函数调用getConnection函数，getConnection函数会调用StreamFactory.New()。StreamFactory接口定义New方法，需要使用者自己去构造New函数，新建的stream就可以在New函数中进行操作。<a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/reassembly/memory.go#L233">getConnection函数位置</a></p>
+</li>
+<li><p>ReassembledSG函数，在接口Stream中定义，AssembleWithContext函数调用sendToConnection函数，再调用ReassembledSG。同样需要使用者自己去构造ReassembledSG函数。<a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/reassembly/tcpassembly.go#L1101">sendToConnection函数位置</a></p>
+</li>
+<li><p>ReassemblyComplete函数，在接口Stream中定义，AssembleWithContext函数调用sendToConnection函数，再调用closeHalfConnection函数，再调用ReassemblyComplete函数。<a target="_blank" rel="noopener" href="https://github.com/google/gopacket/blob/v1.1.19/reassembly/tcpassembly.go#L1198">closeHalfConnection函数位置</a></p>
+</li>
+<li><p>在接口stream中还定义了Accept函数，由该函数可以实现如何选择正确的TCP数据包加入到流中</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">// AssembleWithContext reassembles the given TCP packet into its appropriate</span><br><span class="line">// stream.</span><br><span class="line">//</span><br><span class="line">// The timestamp passed in must be the timestamp the packet was seen.</span><br><span class="line">// For packets read off the wire, time.Now() should be fine.  For packets read</span><br><span class="line">// from PCAP files, CaptureInfo.Timestamp should be passed in.  This timestamp</span><br><span class="line">// will affect which streams are flushed by a call to FlushCloseOlderThan.</span><br><span class="line">//</span><br><span class="line">// Each AssembleWithContext call results in, in order:</span><br><span class="line">//</span><br><span class="line">//    zero or one call to StreamFactory.New, creating a stream</span><br><span class="line">//    zero or one call to ReassembledSG on a single stream</span><br><span class="line">//    zero or one call to ReassemblyComplete on the same stream</span><br><span class="line">func (a *Assembler) AssembleWithContext(netFlow gopacket.Flow, t *layers.TCP, ac AssemblerContext) &#123;</span><br><span class="line">	var conn *connection</span><br><span class="line">	var half *halfconnection</span><br><span class="line">	var rev *halfconnection</span><br><span class="line"></span><br><span class="line">	a.ret = a.ret[:0]</span><br><span class="line">	key := key&#123;netFlow, t.TransportFlow()&#125;</span><br><span class="line">	ci := ac.GetCaptureInfo()</span><br><span class="line">	timestamp := ci.Timestamp</span><br><span class="line"></span><br><span class="line">	conn, half, rev = a.connPool.getConnection(key, false, timestamp, t, ac)</span><br><span class="line">	if conn == nil &#123;</span><br><span class="line">		if *debugLog &#123;</span><br><span class="line">			log.Printf(&quot;%v got empty packet on otherwise empty connection&quot;, key)</span><br><span class="line">		&#125;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	conn.mu.Lock()</span><br><span class="line">	defer conn.mu.Unlock()</span><br><span class="line">	if half.lastSeen.Before(timestamp) &#123;</span><br><span class="line">		half.lastSeen = timestamp</span><br><span class="line">	&#125;</span><br><span class="line">	a.start = half.nextSeq == invalidSequence &amp;&amp; t.SYN</span><br><span class="line">	if *debugLog &#123;</span><br><span class="line">		if half.nextSeq &lt; rev.ackSeq &#123;</span><br><span class="line">			log.Printf(&quot;Delay detected on %v, data is acked but not assembled yet (acked %v, nextSeq %v)&quot;, key, rev.ackSeq, half.nextSeq)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if !half.stream.Accept(t, ci, half.dir, half.nextSeq, &amp;a.start, ac) &#123;</span><br><span class="line">		if *debugLog &#123;</span><br><span class="line">			log.Printf(&quot;Ignoring packet&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	if half.closed &#123;</span><br><span class="line">		// this way is closed</span><br><span class="line">		if *debugLog &#123;</span><br><span class="line">			log.Printf(&quot;%v got packet on closed half&quot;, key)</span><br><span class="line">		&#125;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	seq, ack, bytes := Sequence(t.Seq), Sequence(t.Ack), t.Payload</span><br><span class="line">	if t.ACK &#123;</span><br><span class="line">		half.ackSeq = ack</span><br><span class="line">	&#125;</span><br><span class="line">	// TODO: push when Ack is seen ??</span><br><span class="line">	action := assemblerAction&#123;</span><br><span class="line">		nextSeq: Sequence(invalidSequence),</span><br><span class="line">		queue:   true,</span><br><span class="line">	&#125;</span><br><span class="line">	a.dump(&quot;AssembleWithContext()&quot;, half)</span><br><span class="line">	if half.nextSeq == invalidSequence &#123;</span><br><span class="line">		if t.SYN &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v saw first SYN packet, returning immediately, seq=%v&quot;, key, seq)</span><br><span class="line">			&#125;</span><br><span class="line">			seq = seq.Add(1)</span><br><span class="line">			half.nextSeq = seq</span><br><span class="line">			action.queue = false</span><br><span class="line">		&#125; else if a.start &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v start forced&quot;, key)</span><br><span class="line">			&#125;</span><br><span class="line">			half.nextSeq = seq</span><br><span class="line">			action.queue = false</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v waiting for start, storing into connection&quot;, key)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		diff := half.nextSeq.Difference(seq)</span><br><span class="line">		if diff &gt; 0 &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v gap in sequence numbers (%v, %v) diff %v, storing into connection&quot;, key, half.nextSeq, seq, diff)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			if *debugLog &#123;</span><br><span class="line">				log.Printf(&quot;%v found contiguous data (%v, %v), returning immediately: len:%d&quot;, key, seq, half.nextSeq, len(bytes))</span><br><span class="line">			&#125;</span><br><span class="line">			action.queue = false</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	action = a.handleBytes(bytes, seq, half, t.SYN, t.RST || t.FIN, action, ac)</span><br><span class="line">	if len(a.ret) &gt; 0 &#123;</span><br><span class="line">		action.nextSeq = a.sendToConnection(conn, half, ac)</span><br><span class="line">	&#125;</span><br><span class="line">	if action.nextSeq != invalidSequence &#123;</span><br><span class="line">		half.nextSeq = action.nextSeq</span><br><span class="line">		if t.FIN &#123;</span><br><span class="line">			half.nextSeq = half.nextSeq.Add(1)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if *debugLog &#123;</span><br><span class="line">		log.Printf(&quot;%v nextSeq:%d&quot;, key, half.nextSeq)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type StreamFactory interface &#123;</span><br><span class="line">	// New should return a new stream for the given TCP key.</span><br><span class="line">	New(netFlow, tcpFlow gopacket.Flow, tcp *layers.TCP, ac AssemblerContext) Stream</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// Stream is implemented by the caller to handle incoming reassembled</span><br><span class="line">// TCP data.  Callers create a StreamFactory, then StreamPool uses</span><br><span class="line">// it to create a new Stream for every TCP stream.</span><br><span class="line">//</span><br><span class="line">// assembly will, in order:</span><br><span class="line">//    1) Create the stream via StreamFactory.New</span><br><span class="line">//    2) Call ReassembledSG 0 or more times, passing in reassembled TCP data in order</span><br><span class="line">//    3) Call ReassemblyComplete one time, after which the stream is dereferenced by assembly.</span><br><span class="line">type Stream interface &#123;</span><br><span class="line">	// Tell whether the TCP packet should be accepted, start could be modified to force a start even if no SYN have been seen</span><br><span class="line">	Accept(tcp *layers.TCP, ci gopacket.CaptureInfo, dir TCPFlowDirection, nextSeq Sequence, start *bool, ac AssemblerContext) bool</span><br><span class="line"></span><br><span class="line">	// ReassembledSG is called zero or more times.</span><br><span class="line">	// ScatterGather is reused after each Reassembled call,</span><br><span class="line">	// so it&#x27;s important to copy anything you need out of it,</span><br><span class="line">	// especially bytes (or use KeepFrom())</span><br><span class="line">	ReassembledSG(sg ScatterGather, ac AssemblerContext)</span><br><span class="line"></span><br><span class="line">	// ReassemblyComplete is called when assembly decides there is</span><br><span class="line">	// no more data for this Stream, either because a FIN or RST packet</span><br><span class="line">	// was seen, or because the stream has timed out without any new</span><br><span class="line">	// packet data (due to a call to FlushCloseOlderThan).</span><br><span class="line">	// It should return true if the connection should be removed from the pool</span><br><span class="line">	// It can return false if it want to see subsequent packets with Accept(), e.g. to</span><br><span class="line">	// see FIN-ACK, for deeper state-machine analysis.</span><br><span class="line">	ReassemblyComplete(ac AssemblerContext) bool</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/19/build-in_function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/19/build-in_function/" class="post-title-link" itemprop="url">内置函数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-19T00:00:00+08:00">2022-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76524813">参考文章</a></p>
+<p>universe.go源文件定义了go内置函数列表，Main函数调用initUniverse，进而调用lexinit对builtinpkg进行了初始化。SetSubOp调用会将Node结构(下文给出)中的Op设置为对应的值，用于标识该Node结构为内置函数。</p>
+<figure class="highlight plaintext"><figcaption><span>builtinFuncs </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var builtinFuncs = [...]struct &#123;</span><br><span class="line">    name string</span><br><span class="line">    op   Op</span><br><span class="line">&#125;&#123;</span><br><span class="line">    &#123;&quot;append&quot;, OAPPEND&#125;,</span><br><span class="line">    &#123;&quot;cap&quot;, OCAP&#125;,</span><br><span class="line">    &#123;&quot;close&quot;, OCLOSE&#125;,</span><br><span class="line">    &#123;&quot;complex&quot;, OCOMPLEX&#125;,</span><br><span class="line">    &#123;&quot;copy&quot;, OCOPY&#125;,</span><br><span class="line">    &#123;&quot;delete&quot;, ODELETE&#125;,</span><br><span class="line">    &#123;&quot;imag&quot;, OIMAG&#125;,</span><br><span class="line">    &#123;&quot;len&quot;, OLEN&#125;,</span><br><span class="line">    &#123;&quot;make&quot;, OMAKE&#125;,</span><br><span class="line">    &#123;&quot;new&quot;, ONEW&#125;,</span><br><span class="line">    &#123;&quot;panic&quot;, OPANIC&#125;,</span><br><span class="line">    &#123;&quot;print&quot;, OPRINT&#125;,</span><br><span class="line">    &#123;&quot;println&quot;, OPRINTN&#125;,</span><br><span class="line">    &#123;&quot;real&quot;, OREAL&#125;,</span><br><span class="line">    &#123;&quot;recover&quot;, ORECOVER&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func lexinit()&#123;</span><br><span class="line">    for _, s := range builtinFuncs &#123;</span><br><span class="line">        s2 := builtinpkg.Lookup(s.name)</span><br><span class="line">        s2.Def = asTypesNode(newname(s2))</span><br><span class="line">        asNode(s2.Def).SetSubOp(s.op)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>make</code> 的作用是初始化内置的数据结构，也就是我们在前面提到的切片、哈希表和 Channel<a target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:2">2</a>；</li>
+<li><code>new</code> 的作用是根据传入的类型分配一片内存空间并返回指向这片内存空间的指针<a target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:3">3</a>；</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">100</span>)</span><br><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>)</span><br><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>, <span class="built_in">cap</span>)</span><br><span class="line">hash := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">bool</span>, <span class="number">10</span>)</span><br><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>slice</code> 是一个包含 <code>data</code>、<code>cap</code> 和 <code>len</code> 的结构体 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/reflect.SliceHeader"><code>reflect.SliceHeader</code></a>；</li>
+<li><code>hash</code> 是一个指向 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hmap"><code>runtime.hmap</code></a> 结构体的指针；</li>
+<li><code>ch</code> 是一个指向 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hchan"><code>runtime.hchan</code></a> 结构体的指针；</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i := <span class="built_in">new</span>(<span class="type">int</span>)</span><br><span class="line">=============</span><br><span class="line"><span class="keyword">var</span> v <span class="type">int</span></span><br><span class="line">i := &amp;v</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/19/ellipsis.../">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/19/ellipsis.../" class="post-title-link" itemprop="url">省略号用法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-19T00:00:00+08:00">2022-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>go语言中省略号一般用在三个地方</p>
+<ul>
+<li>数组初始化中，用于编译器自动推断元素个数</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array := [...]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切片（数组指针）后面，用于表示将切片中每一个元素列出</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sliceThree := <span class="built_in">append</span>(sliceTow, sliceOne...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数传递参数，用于表示参数的数量不固定，变长参数</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">functionOne</span><span class="params">(parms ...<span class="type">int</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> i,v := <span class="keyword">range</span> parms &#123;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;%v %v\n&quot;</span>, i, v)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	function(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span>(</span><br><span class="line">    <span class="string">&quot;bytes&quot;</span></span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;os/exec&quot;</span></span><br><span class="line">    <span class="string">&quot;log&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    args := []<span class="type">string</span>&#123;<span class="string">&quot;/home/zt&quot;</span>, <span class="string">&quot;-l&quot;</span>&#125;</span><br><span class="line">    cmd := exec.Command(<span class="string">&quot;ls&quot;</span>, args...)</span><br><span class="line">    <span class="comment">//cmd := exec.Command(&quot;ls&quot;, &quot;/home/zt&quot;, &quot;-l&quot;)</span></span><br><span class="line">    <span class="keyword">var</span> out bytes.Buffer</span><br><span class="line">    cmd.Stdout = &amp;out</span><br><span class="line">    err := cmd.Run()</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Fatal(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;\n%q\n&quot;</span>, out.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/04/19/go_network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="月的奏鸣曲">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/19/go_network/" class="post-title-link" itemprop="url">goproxy</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-19T00:00:00+08:00">2022-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="goproxy"><a href="#goproxy" class="headerlink" title="goproxy"></a>goproxy</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// gopls等插件无法下载</span><br><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br><span class="line">//就该代理地址，google被墙</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//vim coc-nvim插件中coc-go无法在vim界面安装 CocInstall coc-go</span><br><span class="line">cd ~/.config/coc/extensions</span><br><span class="line">//手动进入插件扩展目录，然后使用代理下载</span><br><span class="line">proxychains yarn add coc-go</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">月的奏鸣曲</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
