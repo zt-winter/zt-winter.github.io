@@ -1,1175 +1,218 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"zt-winter.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="月的奏鸣曲"><meta name="copyright" content="月的奏鸣曲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://zt-winter.github.io/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="月的奏鸣曲">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zt-winter.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-05-20 09:34:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<link rel="canonical" href="http://zt-winter.github.io/page/2/">
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section">分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
-  </ul>
-</nav>
-
-
-
-
-</div>
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">月的奏鸣曲</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives">
-          <span class="site-state-item-count">32</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories">
-        <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">34</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="cc-license site-overview-item animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/topImg/2em38y.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/07/25/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/" title="天气预报">天气预报</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-24T16:00:00.000Z" title="发表于 2023-07-25 00:00:00">2023-07-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">
+  23aeb3008bb770d90784d19252d56dd209bd924e00f05086652f923dd7ca20d6fd604035b738e4cd0e0f815d9db4f89f7a5f5bac1fd7b862c224f17e16dab59afe69875852c103d49997679a71df60ef8729e6a3b48dbddc761f4d1edb231939b595f42e32b28a7db0c82ceb3e7c2a070705ec525a49731e28e19b81519dc92d7f11d8fa491f6694350c397ba0a9e5193a6382537ac9e51b26411958f5922d72b27b909f4d3569cbaff5d71aee756d7ba146e2895704edd5e764167237575d2800f23830fe19cd8d1d819a636ec4d66cd22014904e0c576923b63d5bc6adf7037d3882a4a425df51d0cdf3aec998438f852df5454683442f3 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/04/10/%E9%9B%B6%E5%80%BCnil%E7%A9%BA%E5%80%BC/" title="golang中的零值、nil与空值">golang中的零值、nil与空值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-09T16:00:00.000Z" title="发表于 2023-04-10 00:00:00">2023-04-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">零值零值是指声明变量（分配内存时）并未显示初始化时，编译器为你的变量自动设置一个默认初始值。零值官方说明零值默认初始值可以分为两大类：
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
+值类型：int默认值为0，bool默认值为false，float64的默认值为0.000000，byte默认值为0，string默认值是“”,对于数组和结构体，会递归初始化其元素或者字段，取决于其类型。
+引用类型：均为nil，包括指针pointer，函数func，接口interface，切片slice，管道channel，哈希表map。注意testNum := 0已经完成了初始化，不属于零值。
 
+nil最初接触nil，是错误处理时，通过返回的error是否为nil判断是否出现错误。nil是go中预先声明的标识符，主要用来表示引用类型的零值，表示它们未被初始化。
+1234567\\nil经典问题var p *intvar i interface&#123;&#125;var p1 *[3]intfmt.Println(p1 == p) \\编译不通过，因为类型不一致fmt.Println(i == p) \\返回结果为True
+上述结果的原因在于，in ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/02/05/ssh/" title="ssh配置">ssh配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-04T16:00:00.000Z" title="发表于 2023-02-05 00:00:00">2023-02-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ssh/">ssh</a></span></div><div class="content">ssh配置与相关错误解决
+错误信息:git@github.com: Permission denied (publickey,password,keyboard-interactive)环境:linux,在一个星期前,原本github配置还能够使用,突然需要输入密码,且在输入密码后依然无法连接原因:连接github无法找到对应的密钥排查过程:使用ssh -Tv git@github.com报错依然是该信息,重新生成密钥后再次添加到github.com的ssh公钥管理中,依然报错.怀疑是ssh配置出现问题,查看~&#x2F;.ssh&#x2F;config文件,相关信息如下所示
+1234Host github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github
+解决方法:在stackoverflow中找到解决方法,将github.com(HostName)改为ssh.github.com. 尝试后解决.怀疑github关于https与ssh两种连接方式更新后,ssh需要单独指 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/20/error/" title="error处理">error处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-19T16:00:00.000Z" title="发表于 2022-09-20 00:00:00">2022-09-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go-java/">go, java</a></span></div><div class="content">error处理机制
+用golang写网络流量处理代码时，因为网络协议很多内容字段解析依靠前面的规定的长度，而应用层的具体协议在传输层不会指出，因此依靠一些简单字段判断协议会将协议识别错误，导致slice越界。因此在每次读取字符流都要做错误判断，同时gopacket大量协议解析函数返回值都存在error，都需要做错误判断。在写的时候觉得非常麻烦。觉得try{}catch{}的处理方式可能更好。
+最近维护的一个java的代码，在上线测试出现问题，排查问题时代码在最上层使用try catch，所有的错误都在最上层的几个函数抛出，导致需要自己在各处下判断，需找错误。
+try catch这种错误处理模式，就是直接将所有错误全部甩出，导致后期维护困难，而每个错误做具体处理导致前期开发困难，各有优劣。
 
-    <div class="main-inner index posts-expand">
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/07/21/%E9%97%AD%E5%8C%85/" title="闭包">闭包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-20T16:00:00.000Z" title="发表于 2022-07-21 00:00:00">2022-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">相关参考文章这篇文章说的很详细，可以自己动手从汇编的角度看看底层实现
+闭包的定义闭包 是由函数及其相关引用环境组合而成的实体(即：闭包&#x3D;函数+引用环境)。“官方”的解释是：所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。
+12345678910111213141516171819202122232425262728293031323334353637383940package mainimport (	&quot;fmt&quot;	&quot;reflect&quot;)func chain(a string) int &#123;	fmt.Printf(&quot;%s&quot;, a)	return 0&#125;func chain2() &#123;	fmt.Println(&quot;test2&quot;)&#125;// fib函数的返回值是一个函数func() intfunc fib() func() int &#123;	a, b := 0, 1	return func() int  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/07/15/monotonic_stack/" title="单调栈">单调栈</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-14T16:00:00.000Z" title="发表于 2022-07-15 00:00:00">2022-07-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">单调栈leetcode 84题
+给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。
+求在该柱状图中，能够勾勒出来的矩形的最大面积。
+​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果向左扩展，那么要求 i &lt; j ，同时heights[i] &gt; heights[j]。然后是边界如何重复利用的问题。 x &lt; y &lt; z ，当我们知道 y 的边界是 x 后，能否能过比较 y 和 z 来判断 z 的边界。对于任意的 i ， x &lt; i &lt; y ，可以说 heights[i] &gt; heights[y] ，如果 heights[y] &gt; heights[z] ，所有的 heights[i] &gt; heights[z] ，所以 z 的边界可以从 x 开始推。这种数据进出模式类似栈。所以可以尝试用栈试试。
+​		例子 [6,7,5,2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/" title="f2fs文件目录存储结构">f2fs文件目录存储结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-12T16:00:00.000Z" title="发表于 2022-07-13 00:00:00">2022-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/f2fs/">f2fs</a></span></div><div class="content">f2f2文件目录存储结构当前目录结构：
+12345678$ tree mnt/f2fsmnt/f2fs├── dir│   ├── 6.29.cfx.pcap│   └── testone└── test1 directory, 3 files
 
-    
+文件内容
+12345mnt/f2fs/test:hello worldmnt/f2fs/dir/testonehellow ztmnt/f2fs/dir/6.29.cfx.pcap 一个27MB的数据包文件
 
+NAT信息查看inode信息
+12345678910111213141516$ sudo dump.f2fs -n 0~-1 /dev/loop0$ nvim dump_nat  1 nid:    3   ino:    3   offset:    0    blkaddr:      4101  pack:2  2 nid:    4   ino:    4   offset:    0    blkaddr:      4105  pack:2  3 nid:    5   ino:    5   offset:    0    ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/06/21/f2fstool/" title="f2fstool函数说明">f2fstool函数说明</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-20T16:00:00.000Z" title="发表于 2022-06-21 00:00:00">2022-06-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/f2fs/">f2fs</a></span></div><div class="content">f2fs的基本数据结构
+sector: 扇区
+block: F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为4KB的大小，这是因为很多flash设备单次IO的读写都是基于4KB的倍数进行。
+segment: segment是管理block的结构，一个segment的大小是512个block，也就是2MB。
+section: 默认情况下一个segment等于一个section，section是GC的基本操作单位，每次GC都会从section中选出特定的segment进行回收。F2FS将section分为了6类，分别是hot-node，warm-node，cold-node，hot-data，warm-data，cold-data，hot-&gt;cold表示了数据的从高到低的修改频率，通过不同类型的section，进行gc的时候可针对使用hot的section进行gc，以降低gc的时间开销。
+zone: 默认情况一个zone等于一个section，与物理设备有关，大部分情况下用不上
 
-<div class="post-block">
-  
-  
+f2fs_confi ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/06/21/%E5%86%85%E5%AD%98/" title="内存管理">内存管理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-20T16:00:00.000Z" title="发表于 2022-06-21 00:00:00">2022-06-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">一般来说函数调用的参数、返回值、局部变量都会被分配到栈上。但golang是静态语言，在编译过程中，编译器会做逃逸分析，如果发现在函数外部有对应的指针指向这些值时，这些值会被分配到堆上，在函数结束后保留，由golang的垃圾回收机制决定何时回收。
+堆的内存管理内存管理一般包含三个不同的组件,分别是用户程序（Mutatur），分配器（allocator）和收集器（Collector），当用户程序申请内存时，它会通过内存分配器申请新内存，而分配器会负责从堆中初始化相应的内存区域。
+堆的内存分配策略：该策略会将内存分割成由4、8、16、32字节的内存块组成的链表，根据申请内存大小，找到满足条件的链表，再从链表中选择合适的内存块。
+栈的内存管理目前需要注意的一点是，函数参数是放在栈中的。而放入的一个slice时，栈的内存分配是按照size分配，而slice可能cap大于size。如果出现append(sliceone, elem)的情况，可能会覆盖sliceone后面的参数，造成数据错误。
+12345678910111213141516171819202122232425262728293031 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/06/13/reflect/" title="反射">反射</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-12T16:00:00.000Z" title="发表于 2022-06-13 00:00:00">2022-06-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">reflect反射是指在程序运行时对程序本身的进行访问和修改的能力。
+type和value在golang中对所有的接口反射，都可以得到type和value。而golang中任意数据结构都实现了空接口,也就是说任意数据结构都有reflectt.type和reflect.value。reflect.type表示一个数据结构的类型，这个类型的各种基本信息。reflect.value则表示了运行过程中，该数据结构类型的一个具体实现的值。
+123456789type test struct&#123;	a int	b string	c map[int]int	d *test&#125;a := new(test)aT := reflect.Typeof(a)aV := reflect.Valueof(a)
+12*main.test0x47e1c0
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2023/07/25/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/07/25/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/" class="post-title-link" itemprop="url">天气预报</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-07-25 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-25T00:00:00+08:00">2023-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          Here's something encrypted, password is required to continue reading.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/07/25/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+type接口的函数
+value结构体定义
+type和value的相关函数都在前面两处文档中有详细说明，这里不在赘述。
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">月的奏鸣曲</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2025/05/19/container/" title="container库">container库</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2025/05/19/leetcode207/" title="dfs">dfs</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2025/05/19/linux-wifi/" title="linux-wifi">linux-wifi</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2025/05/19/%E5%89%8D%E7%BC%80/" title="前缀及其优化">前缀及其优化</a><time datetime="2025-05-19T05:41:26.969Z" title="发表于 2025-05-19 13:41:26">2025-05-19</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2025/05/19/invest2-cyclicalStock/" title="投资笔记与思考-周期股">投资笔记与思考-周期股</a><time datetime="2025-05-18T16:00:00.000Z" title="发表于 2025-05-19 00:00:00">2025-05-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2023/04/10/%E9%9B%B6%E5%80%BCnil%E7%A9%BA%E5%80%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/04/10/%E9%9B%B6%E5%80%BCnil%E7%A9%BA%E5%80%BC/" class="post-title-link" itemprop="url">golang中的零值、nil与空值</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-04-10 00:00:00" itemprop="dateCreated datePublished" datetime="2023-04-10T00:00:00+08:00">2023-04-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="零值"><a href="#零值" class="headerlink" title="零值"></a>零值</h1><p>零值是指声明变量（分配内存时）并未显示初始化时，编译器为你的变量自动设置一个默认初始值。<a target="_blank" rel="noopener" href="https://go.dev/ref/spec#The_zero_value">零值官方说明</a><br>零值默认初始值可以分为两大类：</p>
-<ul>
-<li>值类型：int默认值为0，bool默认值为false，float64的默认值为0.000000，byte默认值为0，string默认值是“”,对于数组和结构体，会递归初始化其元素或者字段，取决于其类型。</li>
-<li>引用类型：均为nil，包括指针pointer，函数func，接口interface，切片slice，管道channel，哈希表map。<br>注意<code>testNum := 0</code>已经完成了初始化，不属于零值。</li>
-</ul>
-<h1 id="nil"><a href="#nil" class="headerlink" title="nil"></a>nil</h1><p>最初接触nil，是错误处理时，通过返回的error是否为nil判断是否出现错误。nil是go中预先声明的标识符，主要用来表示引用类型的零值，表示它们未被初始化。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\\nil经典问题</span><br><span class="line">var p *int</span><br><span class="line">var i interface&#123;&#125;</span><br><span class="line">var p1 *[3]int</span><br><span class="line"></span><br><span class="line">fmt.Println(p1 == p) \\编译不通过，因为类型不一致</span><br><span class="line">fmt.Println(i == p) \\返回结果为True</span><br></pre></td></tr></table></figure>
-<p>上述结果的原因在于，interface是没有类型，其他变量声明时已经指定了类型。一般不同类型的数据不能直接比较。有些比较是go内部进行了类型转换，然后比较。而interface可以接受任意类型，因此在interface比较时会比较类型与值两个部分。p与i值都是nil，但是类型不一致。<br>在判断<code>p1==p</code>时，编辑器会直接提示类型不一致，不能比较。</p>
-<p>#空结构<br>空结构是没有任何字段的结构类型</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type sample struct&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>一个结构体示例的大小由其字段的宽度与对齐标准决定。空结构占用零字节，也不用填充对齐。空结构数组或者切片也不占用空间。常见的两个用途：</p>
-<ul>
-<li>chan strcut{}代替chan bool传递信号，此时我们不关注传递的值，只关注传递的动作是否发生。</li>
-<li>防止unkeyed初始化结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">type sample &#123;</span><br><span class="line"> x int</span><br><span class="line"> y int</span><br><span class="line"> _ struct&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-此时赋值sample{x:1,y:1}，但sample{1,1}出现错误。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2023/02/05/ssh/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/05/ssh/" class="post-title-link" itemprop="url">ssh配置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+08:00">2023-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/ssh/" itemprop="url" rel="index"><span itemprop="name">ssh</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="ssh配置与相关错误解决"><a href="#ssh配置与相关错误解决" class="headerlink" title="ssh配置与相关错误解决"></a>ssh配置与相关错误解决</h1><ol>
-<li><p>错误信息:<code>git@github.com: Permission denied (publickey,password,keyboard-interactive)</code><br>环境:linux,在一个星期前,原本github配置还能够使用,突然需要输入密码,且在输入密码后依然无法连接<br>原因:连接github无法找到对应的密钥<br>排查过程:使用<code>ssh -Tv git@github.com</code>报错依然是该信息,重新生成密钥后再次添加到github.com的ssh公钥管理中,依然报错.怀疑是ssh配置出现问题,查看~&#x2F;.ssh&#x2F;config文件,相关信息如下所示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github</span><br></pre></td></tr></table></figure>
-<p>解决方法:在stackoverflow中找到解决方法,将github.com(HostName)改为ssh.github.com. 尝试后解决.怀疑github关于https与ssh两种连接方式更新后,ssh需要单独指向ssh.github.com</p>
-</li>
-<li><p>错误信息:<code>git@github.com: Permission denied (publickey,password,keyboard-interactive)</code><br>环境:windows,第一次配置github,无法使用.<br>原因:连接github无法找到对应的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host github</span><br><span class="line">HostName ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<p>解决方法:将github(Host)改为github.com.问题在于对于一般的ssh远程连接,Host就是一个昵称,在命令行<code>ssh xxx</code>使用,但在github的连接中,应该使用github.com,否则ssh无法找到对应的配置.</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/09/20/error/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/20/error/" class="post-title-link" itemprop="url">error处理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-20T00:00:00+08:00">2022-09-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go-java/" itemprop="url" rel="index"><span itemprop="name">go, java</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="error处理机制"><a href="#error处理机制" class="headerlink" title="error处理机制"></a>error处理机制</h1><ul>
-<li>用golang写网络流量处理代码时，因为网络协议很多内容字段解析依靠前面的规定的长度，而应用层的具体协议在传输层不会指出，因此依靠一些简单字段判断协议会将协议识别错误，导致slice越界。因此在每次读取字符流都要做错误判断，同时gopacket大量协议解析函数返回值都存在error，都需要做错误判断。在写的时候觉得非常麻烦。觉得try{}catch{}的处理方式可能更好。</li>
-<li>最近维护的一个java的代码，在上线测试出现问题，排查问题时代码在最上层使用try catch，所有的错误都在最上层的几个函数抛出，导致需要自己在各处下判断，需找错误。</li>
-<li>try catch这种错误处理模式，就是直接将所有错误全部甩出，导致后期维护困难，而每个错误做具体处理导致前期开发困难，各有优劣。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/21/%E9%97%AD%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/21/%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">闭包</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-21T00:00:00+08:00">2022-07-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56750616">相关参考文章</a><br>这篇文章说的很详细，可以自己动手从汇编的角度看看底层实现</p>
-<h1 id="闭包的定义"><a href="#闭包的定义" class="headerlink" title="闭包的定义"></a>闭包的定义</h1><p>闭包 是由函数及其相关引用环境组合而成的实体(即：闭包&#x3D;函数+引用环境)。<br>“官方”的解释是：所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">chain</span><span class="params">(a <span class="type">string</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;%s&quot;</span>, a)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">chain2</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;test2&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// fib函数的返回值是一个函数func() int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fib</span><span class="params">()</span></span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">	a, b := <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">		a, b = b, a + b</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	f := chain</span><br><span class="line">	fmt.Println(reflect.TypeOf(f))</span><br><span class="line">	fmt.Println(f(<span class="string">&quot;sadf&quot;</span>))</span><br><span class="line">	f2 := chain2</span><br><span class="line">	f2()</span><br><span class="line">	f3 := fib</span><br><span class="line">	fmt.Println(<span class="string">&quot;func fib() func() int&quot;</span>)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;fib type is %s\n&quot;</span>, reflect.TypeOf(f3))</span><br><span class="line">	fmt.Println(f3(), f3(), f3(), f3(), f3())</span><br><span class="line">	f4 := fib()</span><br><span class="line">	fmt.Printf(<span class="string">&quot;fib() type is %s\n&quot;</span>, reflect.TypeOf(f4))</span><br><span class="line">	fmt.Println(f4(), f4(), f4(), f4(), f4())</span><br><span class="line">	<span class="keyword">return</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./code/go/test/test</span></span><br><span class="line">func(string) int</span><br><span class="line">sadf0</span><br><span class="line">test2</span><br><span class="line">func fib() func() int</span><br><span class="line">fib type is func() func() int</span><br><span class="line">0x480760 0x480740 0x480720 0x480700 0x4806e0</span><br><span class="line">fib() type is func() int</span><br><span class="line">1 1 2 3 5</span><br></pre></td></tr></table></figure>
-
-<p>合理使用闭包函数，可以减少参数传递和代码量</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//leetcode 76题</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">minWindow</span><span class="params">(s <span class="type">string</span>, t <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    ori, cnt := <span class="keyword">map</span>[<span class="type">byte</span>]<span class="type">int</span>&#123;&#125;, <span class="keyword">map</span>[<span class="type">byte</span>]<span class="type">int</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(t); i++ &#123;</span><br><span class="line">        ori[t[i]]++</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sLen := <span class="built_in">len</span>(s)</span><br><span class="line">    <span class="built_in">len</span> := math.MaxInt32</span><br><span class="line">    ansL, ansR := <span class="number">-1</span>, <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    check := <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> k, v := <span class="keyword">range</span> ori &#123;</span><br><span class="line">            <span class="keyword">if</span> cnt[k] &lt; v &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> l, r := <span class="number">0</span>, <span class="number">0</span>; r &lt; sLen; r++ &#123;</span><br><span class="line">        <span class="keyword">if</span> r &lt; sLen &amp;&amp; ori[s[r]] &gt; <span class="number">0</span> &#123;</span><br><span class="line">            cnt[s[r]]++</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> check() &amp;&amp; l &lt;= r &#123;</span><br><span class="line">            <span class="keyword">if</span> (r - l + <span class="number">1</span> &lt; <span class="built_in">len</span>) &#123;</span><br><span class="line">                <span class="built_in">len</span> = r - l + <span class="number">1</span></span><br><span class="line">                ansL, ansR = l, l + <span class="built_in">len</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> _, ok := ori[s[l]]; ok &#123;</span><br><span class="line">                cnt[s[l]] -= <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            l++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ansL == <span class="number">-1</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s[ansL:ansR]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/15/monotonic_stack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/15/monotonic_stack/" class="post-title-link" itemprop="url">单调栈</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-15T00:00:00+08:00">2022-07-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><p>leetcode 84题</p>
-<p>给定n个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。</p>
-<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
-<p>​		要求最大面积，不管最后的面积如何，都肯定包括一个完整的柱子。所以我们找最大面积，可以将所有柱子作为那个完整的柱子，也就是最大面积的高度被我们确定。然后向两边扩展，然后比较所有这些扩展的面积大小。选择柱子 j 作为最高的完整柱子，如果向左扩展，那么要求 i &lt; j ，同时heights[i] &gt; heights[j]。然后是边界如何重复利用的问题。 x &lt; y &lt; z ，当我们知道 y 的边界是 x 后，能否能过比较 y 和 z 来判断 z 的边界。对于任意的 i ， x &lt; i &lt; y ，可以说 heights[i] &gt; heights[y] ，如果 heights[y] &gt; heights[z] ，所有的 heights[i] &gt; heights[z] ，所以 z 的边界可以从 x 开始推。这种数据进出模式类似栈。所以可以尝试用栈试试。</p>
-<p>​		例子 [6,7,5,2,4,5,9,3] ：</p>
-<p> 6 进栈，栈开始为空，无出栈，栈长为1，6的边界height数组第一个数。</p>
-<p>7 进栈， 7 &gt; 6 ，无出栈，栈长为2，7的边界为height数组的第二个数。</p>
-<p>5 进栈，5 比 6、7小，所以6 、7 出栈，栈长为1，5的边界为height数组的第一个数。</p>
-<p>2 进栈，2 &lt; 5，所以5出栈，栈长为1，2的边界为height数组的第一个数。</p>
-<p>依次类推。由于数组索引第一个为0，所以可以将所以数字减一。</p>
-<p>同理可以得到柱子的右边界。</p>
-<p>使用一个栈和两个数组，可以保存数组中任意元素的左右边界。然后比较求值。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">largestRectangleArea</span><span class="params">(heights []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    n := <span class="built_in">len</span>(heights)</span><br><span class="line">    left, right := <span class="built_in">make</span>([]<span class="type">int</span>, n), <span class="built_in">make</span>([]<span class="type">int</span>, n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        right[i] = n</span><br><span class="line">    &#125;</span><br><span class="line">    mono_stack := []<span class="type">int</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">len</span>(mono_stack) &gt; <span class="number">0</span> &amp;&amp; heights[mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]] &gt;= heights[i] &#123;</span><br><span class="line">            right[mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]] = i</span><br><span class="line">            mono_stack = mono_stack[:<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(mono_stack) == <span class="number">0</span> &#123;</span><br><span class="line">            left[i] = <span class="number">-1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            left[i] = mono_stack[<span class="built_in">len</span>(mono_stack)<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        mono_stack = <span class="built_in">append</span>(mono_stack, i)</span><br><span class="line">    &#125;</span><br><span class="line">    ans := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">        ans = max(ans, (right[i] - left[i] - <span class="number">1</span>) * heights[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(x, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> x &gt; y &#123;</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/" class="post-title-link" itemprop="url">f2fs文件目录存储结构</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-13 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-13T00:00:00+08:00">2022-07-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/f2fs/" itemprop="url" rel="index"><span itemprop="name">f2fs</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="f2f2文件目录存储结构"><a href="#f2f2文件目录存储结构" class="headerlink" title="f2f2文件目录存储结构"></a>f2f2文件目录存储结构</h1><p>当前目录结构：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ tree mnt/f2fs</span><br><span class="line">mnt/f2fs</span><br><span class="line">├── dir</span><br><span class="line">│   ├── 6.29.cfx.pcap</span><br><span class="line">│   └── testone</span><br><span class="line">└── test</span><br><span class="line"></span><br><span class="line">1 directory, 3 files</span><br></pre></td></tr></table></figure>
-
-<p>文件内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mnt/f2fs/test:</span><br><span class="line">hello world</span><br><span class="line">mnt/f2fs/dir/testone</span><br><span class="line">hellow zt</span><br><span class="line">mnt/f2fs/dir/6.29.cfx.pcap 一个27MB的数据包文件</span><br></pre></td></tr></table></figure>
-
-<h3 id="NAT信息"><a href="#NAT信息" class="headerlink" title="NAT信息"></a>NAT信息</h3><p>查看inode信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dump.f2fs -n 0~-1 /dev/loop0</span><br><span class="line">$ nvim dump_nat</span><br><span class="line">  1 nid:    3   ino:    3   offset:    0    blkaddr:      4101  pack:2</span><br><span class="line">  2 nid:    4   ino:    4   offset:    0    blkaddr:      4105  pack:2</span><br><span class="line">  3 nid:    5   ino:    5   offset:    0    blkaddr:      4609  pack:2</span><br><span class="line">  4 nid:    6   ino:    6   offset:    0    blkaddr:      4610  pack:2</span><br><span class="line">  5 nid:    7   ino:    7   offset:    0    blkaddr:      4611  pack:2</span><br><span class="line">  6 nid:    8   ino:    7   offset:    1    blkaddr:      4612  pack:2</span><br><span class="line">  7 nid:    9   ino:    7   offset:    2    blkaddr:      4613  pack:2</span><br><span class="line">  8 nid:   10   ino:    7   offset:    3    blkaddr:      5120  pack:2</span><br><span class="line">  9 nid:   11   ino:    7   offset:    4    blkaddr:      4614  pack:2</span><br><span class="line"> 10 nid:   12   ino:    7   offset:    5    blkaddr:      4615  pack:2</span><br><span class="line"> 11 nid:   13   ino:    7   offset:    6    blkaddr:      4616  pack:2</span><br><span class="line"> 12 nid:   14   ino:    7   offset:    7    blkaddr:      4617  pack:2</span><br><span class="line"> 13 nid:   15   ino:    7   offset:    8    blkaddr:      4618  pack:2</span><br><span class="line"> 14 nid:   16   ino:    7   offset:    9    blkaddr:      4619  pack:2</span><br></pre></td></tr></table></figure>
-
-<p>从super block中可以得到信息，NAT的地址0xa00000，CP中的NAT journal地址在0x201000<br>00000400  10 20 f5 f2 01 00 0f 00  09 00 00 00 03 00 00 00  |. …………..|<br>00000410  0c 00 00 00 09 00 00 00  01 00 00 00 01 00 00 00  |…………….|<br>00000420  00 00 00 00 00 64 00 00  00 00 00 00 2a 00 00 00  |…..d……<em>…|<br>00000430  31 00 00 00 02 00 00 00  02 00 00 00 02 00 00 00  |1……………|<br>00000440  01 00 00 00 2a 00 00 00  00 02 00 00 00 02 00 00  |….</em>………..|<br>00000450  00 06 00 00 <font color=red><strong>00 0a 00 00</strong></font>  00 0e 00 00 00 10 00 00  |…………….|<br>00000460  03 00 00 00 01 00 00 00  02 00 00 00 83 8f 92 2c  |……………,|<br>00000470  60 18 4d 2e 85 c3 d4 8e  56 29 d9 dc 00 00 00 00  |&#96;.M…..V)……|<br>00000480  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
-<p>查看NAT，红色是node的序号，蓝色是node的地址，绿色是版本号，接下来是下一个节点。</p>
-<p>在这里3号node是根目录，4号node是dir目录，5号node是test文件，6号文件是testone，7号文件是6.29.cap</p>
-<p>00a00000  00 00 00 00 00 00 00 00  00 00 01 00 00 00 01 00  |…………….|<br>00a00010  00 00 00 02 00 00 00 01  00 00 00 <font color=green><strong>00</strong></font> <font color=red><strong>03 00 00 00</strong></font>  |…………….|<br>00a00020  <font color=blue><strong>05 10 00 00</strong></font> 00 04 00 00  00 08 10 00 00 00 05 00  |…………….|<br>00a00030  00 00 01 12 00 00 00 06  00 00 00 02 12 00 00 00  |…………….|<br>00a00040  07 00 00 00 03 12 00 00  00 07 00 00 00 04 12 00  |…………….|<br>00a00050  00 00 07 00 00 00 05 12  00 00 00 07 00 00 00 00  |…………….|<br>00a00060  14 00 00 00 07 00 00 00  06 12 00 00 00 07 00 00  |…………….|<br>00a00070  00 07 12 00 00 00 07 00  00 00 08 12 00 00 00 07  |…………….|<br>00a00080  00 00 00 09 12 00 00 00  07 00 00 00 0a 12 00 00  |…………….|<br>00a00090  00 07 00 00 00 0b 12 00  00 00 00 00 00 00 00 00  |…………….|<br>00a000a0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
-<ul>
-<li><strong>当文件系统修改比较小时，会将修改数据保存在nat journal中，而不直接写入到SIT和NAT中，减少读写次数。</strong></li>
-</ul>
-<h3 id="node-inode-文件存储"><a href="#node-inode-文件存储" class="headerlink" title="node   inode  文件存储"></a>node   inode  文件存储</h3><p>从下图的f2fs_node数据结构可以看出，f2fs_node分为三种inode、direct_node、indirect。第一种，node存储指向data的指针；第二种，direct_node存储指向node的指针，然后再由node存储指向data的指针</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1081 struct f2fs_node &#123;</span><br><span class="line">1082     /* can be one of three types: inode, direct, and indirect types */</span><br><span class="line">1083     union &#123;</span><br><span class="line">1084         struct f2fs_inode i;</span><br><span class="line">1085         struct direct_node dn;</span><br><span class="line">1086         struct indirect_node in;</span><br><span class="line">1087     &#125;;</span><br><span class="line">1088     struct node_footer footer;</span><br><span class="line">1089 &#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"> 994 struct f2fs_inode &#123;</span><br><span class="line"> 995     __le16 i_mode;          /* file mode */</span><br><span class="line"> 996     __u8 i_advise;          /* file hints */</span><br><span class="line"> 997     __u8 i_inline;          /* file inline flags */</span><br><span class="line"> 998     __le32 i_uid;           /* user ID */</span><br><span class="line"> 999     __le32 i_gid;           /* group ID */</span><br><span class="line">1000     __le32 i_links;         /* links count */</span><br><span class="line">1001     __le64 i_size;          /* file size in bytes */</span><br><span class="line">1002     __le64 i_blocks;        /* file size in blocks */</span><br><span class="line">1003     __le64 i_atime;         /* access time */</span><br><span class="line">1004     __le64 i_ctime;         /* change time */</span><br><span class="line">1005     __le64 i_mtime;         /* modification time */</span><br><span class="line">1006     __le32 i_atime_nsec;        /* access time in nano scale */</span><br><span class="line">1007     __le32 i_ctime_nsec;        /* change time in nano scale */</span><br><span class="line">1008     __le32 i_mtime_nsec;        /* modification time in nano scale */</span><br><span class="line">1009     __le32 i_generation;        /* file version (for NFS) */</span><br><span class="line">1010     union &#123;</span><br><span class="line">1011         __le32 i_current_depth; /* only for directory depth */</span><br><span class="line">1012         __le16 i_gc_failures;   /*</span><br><span class="line">1013                      * # of gc failures on pinned file.</span><br><span class="line">1014                      * only for regular files.</span><br><span class="line">1015                      */</span><br><span class="line">1016     &#125;;</span><br><span class="line">1017     __le32 i_xattr_nid;     /* nid to save xattr */</span><br><span class="line">1018     __le32 i_flags;         /* file attributes */</span><br><span class="line">1019     __le32 i_pino;          /* parent inode number */</span><br><span class="line">1020     __le32 i_namelen;       /* file name length */</span><br><span class="line">1021     __u8 i_name[F2FS_NAME_LEN]; /* file name for SPOR */</span><br><span class="line">1022     __u8 i_dir_level;       /* dentry_level for large dir */</span><br><span class="line">1023</span><br><span class="line">1024     struct f2fs_extent i_ext __attribute__((packed));   /* caching a largest extent */</span><br><span class="line">1025</span><br><span class="line">1026     union &#123;</span><br><span class="line">1027         struct &#123;</span><br><span class="line">1028             __le16 i_extra_isize;   /* extra inode attribute size */</span><br><span class="line">1029             __le16 i_inline_xattr_size; /* inline xattr size, unit: 4 bytes */</span><br><span class="line">1030             __le32 i_projid;    /* project id */</span><br><span class="line">1031             __le32 i_inode_checksum;/* inode meta checksum */</span><br><span class="line">1032             __le64 i_crtime;    /* creation time */</span><br><span class="line">1033             __le32 i_crtime_nsec;   /* creation time in nano scale */</span><br><span class="line">1034             __le64 i_compr_blocks;  /* # of compressed blocks */</span><br><span class="line">1035             __u8 i_compress_algrithm;   /* compress algrithm */</span><br><span class="line">1036             __u8 i_log_cluster_size;    /* log of cluster size */</span><br><span class="line">1037             __le16 i_padding;       /* padding */</span><br><span class="line">1038             __le32 i_extra_end[0];  /* for attribute size calculation */</span><br><span class="line">1039         &#125; __attribute__((packed));</span><br><span class="line">1040         __le32 i_addr[DEF_ADDRS_PER_INODE]; /* Pointers to data blocks */</span><br><span class="line">1041     &#125;;</span><br><span class="line">1042     __le32 i_nid[5];        /* direct(2), indirect(2),</span><br><span class="line">1043                         double_indirect(1) node id */</span><br><span class="line">1044 &#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1071 struct node_footer &#123;</span><br><span class="line">1072     __le32 nid;     /* node id */</span><br><span class="line">1073     __le32 ino;     /* inode nunmber */</span><br><span class="line">1074     __le32 flag;        /* include cold/fsync/dentry marks and offset */</span><br><span class="line">1075     __le64 cp_ver __attribute__((packed));      /* checkpoint version */</span><br><span class="line">1076     __le32 next_blkaddr;    /* next node page block address */</span><br><span class="line">1077 &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>红色部分对应inode的i_name[F2FS_NAME_LEN]和i_dir_level，占256字节；蓝色部分对应inode的f2fs_extent i_ext，占12个字节。黑色部分对应inode的__len32  i_addr[DEF_ADDRS_PER_INODE]的部分。</p>
-<p>__attribute__((paecked)) : 表示编译时不按照内存对齐的方式，以节约内存</p>
-<p>0120c000  a4 81 00 01 00 00 00 00  00 00 00 00 01 00 00 00  |…………….|<br>0120c010  06 28 18 02 00 00 00 00  8d 21 00 00 00 00 00 00  |.(…….!……|<br>0120c020  06 48 c4 62 00 00 00 00  86 32 c4 62 00 00 00 00  |.H.b…..2.b….|<br>0120c030  86 32 c4 62 00 00 00 00  cc 71 67 0c 33 04 62 2c  |.2.b…..qg.3.b,|<br>0120c040  33 04 62 2c 9c 01 92 e4  00 00 00 00 00 00 00 00  |3.b,…………|<br>0120c050  00 00 00 00 04 00 00 00  0d 00 00 00 <font color=red>36 2e 32 39</font>  |…………6.29|<br>0120c060  <font color=red>2e 63 66 78 2e 70 63 61  70 00 00 00 00 00 00 00</font>  |.cfx.pcap…….|<br>0120c070  <font color=red>00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00</font>  |…………….|<br>*<br>0120c150  <font color=red>00 00 00 00 00 00 00 00  00 00 00 00</font> <font color=blue>00 0c 00 00</font>  |…………….|<br>0120c160  <font color=blue>00 24 00 00 00 14 00 00</font>  <strong>00 38 00 00 01 38 00 00</strong>  |.$…….8…8..|<br>0120c170  <strong>02 38 00 00 03 38 00 00  04 38 00 00 05 38 00 00</strong>  |.8…8…8…8..|<br>0120c180  <strong>06 38 00 00 07 38 00 00  08 38 00 00 09 38 00 00</strong>  |.8…8…8…8..|<br>0120c190  0a 38 00 00 0b 38 00 00  0c 38 00 00 0d 38 00 00  |.8…8…8…8..|<br>0120c1a0  0e 38 00 00 0f 38 00 00  10 38 00 00 11 38 00 00  |.8…8…8…8..|<br>0120c1b0  12 38 00 00 13 38 00 00  14 38 00 00 15 38 00 00  |.8…8…8…8..|<br>0120c1c0  16 38 00 00 17 38 00 00  18 38 00 00 19 38 00 00  |.8…8…8…8..|<br>0120c1d0  1a 38 00 00 1b 38 00 00  1c 38 00 00 1d 38 00 00  |.8…8…8…8..|<br>0120c1e0  1e 38 00 00 1f 38 00 00  20 38 00 00 21 38 00 00  |.8…8.. 8..!8..|<br>0120c1f0  22 38 00 00 23 38 00 00  24 38 00 00 25 38 00 00  |”8..#8..$8..%8..|<br>0120c200  26 38 00 00 27 38 00 00  28 38 00 00 29 38 00 00  |&amp;8..’8..(8..)8..|</p>
-<p>可以看一看0x3801000的内存，是6.29.cfx.pcap的文件数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">03801000  00 01 50 64 2b 95 5d 3d  c0 a8 0c 02 00 00 00 00  |..Pd+.]=........|</span><br><span class="line">03801010  00 00 c0 a8 0c 80 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">03801020  00 00 00 00 00 00 00 00  22 1d bc 62 f5 bf 03 00  |........&quot;..b....|</span><br><span class="line">03801030  3c 00 00 00 3c 00 00 00  ff ff ff ff ff ff 2c 97  |&lt;...&lt;.........,.|</span><br><span class="line">03801040  b1 c3 58 10 99 98 00 01  00 00 00 1d 00 00 00 04  |..X.............|</span><br><span class="line">03801050  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">*</span><br><span class="line">03801070  00 00 00 00 22 1d bc 62  8e 04 04 00 3c 00 00 00  |....&quot;..b....&lt;...|</span><br><span class="line">03801080  3c 00 00 00 ff ff ff ff  ff ff 00 22 46 2c 42 58  |&lt;..........&quot;F,BX|</span><br><span class="line">03801090  08 06 00 01 08 00 06 04  00 01 00 22 46 2c 42 58  |...........&quot;F,BX|</span><br><span class="line">038010a0  c0 a8 0a 59 00 00 00 00  00 00 c0 a8 0a 8a 00 00  |...Y............|</span><br><span class="line">038010b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span><br><span class="line">038010c0  22 1d bc 62 17 07 04 00  3c 00 00 00 3c 00 00 00  |&quot;..b....&lt;...&lt;...|</span><br><span class="line">038010d0  ff ff ff ff ff ff 50 64  2b 95 5d 3d 08 06 00 01  |......Pd+.]=....|</span><br><span class="line">038010e0  08 00 06 04 00 01 50 64  2b 95 5d 3d c0 a8 0c 02  |......Pd+.]=....|</span><br></pre></td></tr></table></figure>
-
-<p>可以说，6.29.cfx的文件数据的索引保存在node7 ~ 16中。每一个node的offset  0x16c开始是文件数据的block地址。同时每个node的结尾都标注了该node的inode，都是inode7，同时标注offset，为还原文件做好了工作。</p>
-<h3 id="目录的结构"><a href="#目录的结构" class="headerlink" title="目录的结构"></a>目录的结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1325 /* One directory entry slot representing F2FS_SLOT_LEN-sized file name */</span><br><span class="line">1326 struct f2fs_dir_entry &#123;</span><br><span class="line">1327     __le32 hash_code;   /* hash code of file name */</span><br><span class="line">1328     __le32 ino;     /* inode number */</span><br><span class="line">1329     __le16 name_len;    /* lengh of file name */</span><br><span class="line">1330     __u8 file_type;     /* file type */</span><br><span class="line">1331 &#125; __attribute__((packed));</span><br><span class="line">1332</span><br><span class="line">1333 static_assert(sizeof(struct f2fs_dir_entry) == 11, &quot;&quot;);</span><br><span class="line">1334</span><br><span class="line">1335 /* 4KB-sized directory entry block */</span><br><span class="line">1336 struct f2fs_dentry_block &#123;</span><br><span class="line">1337     /* validity bitmap for directory entries in each block */</span><br><span class="line">1338     /* (214 + 8 - 1) / 8 = 27 */</span><br><span class="line">1339     __u8 dentry_bitmap[SIZE_OF_DENTRY_BITMAP];</span><br><span class="line">1340     /* pagsize - (( size_of_dir_entry + f2fs_slot_len)*nr_entry_in_block + size_of_dir_entry_bitmap) */</span><br><span class="line">1341     /* 4096 - (( 11 + 8) * 214 + 27) = 3 */</span><br><span class="line">1342     __u8 reserved[SIZE_OF_RESERVED];</span><br><span class="line">1343     /* f2fs_dir_entry[214] len(32+32+16+8) */</span><br><span class="line">1344     struct f2fs_dir_entry dentry[NR_DENTRY_IN_BLOCK];</span><br><span class="line">1345     /* filename[214][8] */</span><br><span class="line">1346     __u8 filename[NR_DENTRY_IN_BLOCK][F2FS_SLOT_LEN];</span><br><span class="line">1347 &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>目前目录对应的nid：</p>
-<ul>
-<li>&#x2F; 根目录对应：nid3，对应的地址0x01005000。在0x01005168开始是data block pointer，指向的地址是0x1602000。红色部分是f2fs_dir_entry的hash_code，蓝色是ino(inode number)，绿色是文件名长度name_len，橘色是file_type。</li>
-</ul>
-<p>01602000  0f 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>01602010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>01602020  00 00 03 00 00 00 01 00  02 00 00 00 00 03 00 00  |…………….|<br>01602030  00 02 00 02 <font color=red><strong>2a 8b 40 64</strong></font>  <font color=blue><strong>04 00 00 00</strong></font> <font color=green><strong>03 00</strong></font> <font color=orange><strong>02</strong></font> c9  |....*.@d……..|<br>01602040  7c b4 e4 05 00 00 00 04  00 01 00 00 00 00 00 00  ||……………|<br>01602050  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|<br>*<br>01602950  2e 00 00 00 00 00 00 00  2e 2e 00 00 00 00 00 00  |…………….|<br>01602960  64 69 72 00 00 00 00 00  74 65 73 74 00 00 00 00  |dir…..test….|<br>01602970  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |…………….|</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/06/21/f2fstool/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/21/f2fstool/" class="post-title-link" itemprop="url">f2fstool函数说明</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-21T00:00:00+08:00">2022-06-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/f2fs/" itemprop="url" rel="index"><span itemprop="name">f2fs</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="f2fs的基本数据结构"><a href="#f2fs的基本数据结构" class="headerlink" title="f2fs的基本数据结构"></a>f2fs的基本数据结构</h1><ul>
-<li>sector: 扇区</li>
-<li>block: F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为4KB的大小，这是因为很多flash设备单次IO的读写都是基于4KB的倍数进行。</li>
-<li>segment: segment是管理block的结构，一个segment的大小是512个block，也就是2MB。</li>
-<li>section: 默认情况下一个segment等于一个section，section是GC的基本操作单位，每次GC都会从section中选出特定的segment进行回收。F2FS将section分为了6类，分别是hot-node，warm-node，cold-node，hot-data，warm-data，cold-data，hot-&gt;cold表示了数据的从高到低的修改频率，通过不同类型的section，进行gc的时候可针对使用hot的section进行gc，以降低gc的时间开销。</li>
-<li>zone: 默认情况一个zone等于一个section，与物理设备有关，大部分情况下用不上</li>
-</ul>
-<h1 id="f2fs-configuration结构体"><a href="#f2fs-configuration结构体" class="headerlink" title="f2fs_configuration结构体"></a>f2fs_configuration结构体</h1><p>f2fs_configuration结构体在include&#x2F;f2fs_fs.h文件中定义，f2fs文件系统初始化时默认参数也在include&#x2F;f2fs_fs.h文件中定义。在lib&#x2F;libf2fs.c的f2fs_init_configuration函数中进行初始化</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">struct f2fs_configuration &#123;</span><br><span class="line">	uint32_t reserved_segments;</span><br><span class="line">	uint32_t new_reserved_segments;</span><br><span class="line">	int sparse_mode;</span><br><span class="line">	int zoned_mode;</span><br><span class="line">	int zoned_model;</span><br><span class="line">	size_t zone_blocks;</span><br><span class="line">	double overprovision;</span><br><span class="line">	double new_overprovision;</span><br><span class="line">	uint32_t cur_seg[6];</span><br><span class="line">	//一个section几个segment，默认为1个</span><br><span class="line">	uint32_t segs_per_sec;</span><br><span class="line">	//默认为1</span><br><span class="line">	uint32_t secs_per_zone;</span><br><span class="line">	//默认为1</span><br><span class="line">	uint32_t segs_per_zone;</span><br><span class="line">	uint32_t start_sector;</span><br><span class="line">	uint32_t total_segments;</span><br><span class="line">	uint32_t sector_size;</span><br><span class="line">	uint64_t device_size;</span><br><span class="line">	uint64_t total_sectors;</span><br><span class="line">	uint64_t wanted_total_sectors;</span><br><span class="line">	uint64_t wanted_sector_size;</span><br><span class="line">	uint64_t target_sectors;</span><br><span class="line">	uint64_t max_size;</span><br><span class="line">	//一个block包含多少个扇区sector</span><br><span class="line">	uint32_t sectors_per_blk;</span><br><span class="line">	//一个segment包含多少个block</span><br><span class="line">	uint32_t blks_per_seg;</span><br><span class="line">	__u8 init_version[VERSION_LEN + 1];</span><br><span class="line">	__u8 sb_version[VERSION_LEN + 1];</span><br><span class="line">	__u8 version[VERSION_LEN + 1];</span><br><span class="line">	char *vol_label;</span><br><span class="line">	char *vol_uuid;</span><br><span class="line">	uint16_t s_encoding;</span><br><span class="line">	uint16_t s_encoding_flags;</span><br><span class="line">	int heap;</span><br><span class="line">	int32_t kd;</span><br><span class="line">	int32_t dump_fd;</span><br><span class="line">	//设备列表</span><br><span class="line">	struct device_info devices[MAX_DEVICES];</span><br><span class="line">	int ndevs;</span><br><span class="line">	char *extension_list[2];</span><br><span class="line">	const char *rootdev_name;</span><br><span class="line">	int dbg_lv;</span><br><span class="line">	int show_dentry;</span><br><span class="line">	int trim;</span><br><span class="line">	int trimmed;</span><br><span class="line">	int func;</span><br><span class="line">	void *private;</span><br><span class="line">	int dry_run;</span><br><span class="line">	//andorid 非内核运行检查</span><br><span class="line">	int no_kernel_check;</span><br><span class="line">	int fix_on;</span><br><span class="line">	int force;</span><br><span class="line">	int defset;</span><br><span class="line">	int bug_on;</span><br><span class="line">	int bug_nat_bits;</span><br><span class="line">	bool quota_fixed;</span><br><span class="line">	int alloc_failed;</span><br><span class="line">	int auto_fix;</span><br><span class="line">	int layout;</span><br><span class="line">	int show_file_map;</span><br><span class="line">	u64 show_file_map_max_offset;</span><br><span class="line">	int quota_fix;</span><br><span class="line">	int preen_mode;</span><br><span class="line">	int ro;</span><br><span class="line">	//andorid</span><br><span class="line">	int preserve_limits;		/* preserve quota limits */</span><br><span class="line">	int large_nat_bitmap;</span><br><span class="line">	int fix_chksum;			/* fix old cp.chksum position */</span><br><span class="line">	__le32 feature;			/* defined features */</span><br><span class="line">	unsigned int quota_bits;	/* quota bits */</span><br><span class="line">	time_t fixed_time;</span><br><span class="line"></span><br><span class="line">	/* mkfs parameters */</span><br><span class="line">	int fake_seed;</span><br><span class="line">	uint32_t next_free_nid;</span><br><span class="line">	uint32_t quota_inum;</span><br><span class="line">	uint32_t quota_dnum;</span><br><span class="line">	uint32_t lpf_inum;</span><br><span class="line">	uint32_t lpf_dnum;</span><br><span class="line">	uint32_t lpf_ino;</span><br><span class="line">	uint32_t root_uid;</span><br><span class="line">	uint32_t root_gid;</span><br><span class="line"></span><br><span class="line">	/* defragmentation parameters */</span><br><span class="line">	int defrag_shrink;</span><br><span class="line">	uint64_t defrag_start;</span><br><span class="line">	uint64_t defrag_len;</span><br><span class="line">	uint64_t defrag_target;</span><br><span class="line"></span><br><span class="line">	/* sload parameters */</span><br><span class="line">	char *from_dir;</span><br><span class="line">	char *mount_point;</span><br><span class="line">	char *target_out_dir;</span><br><span class="line">	char *fs_config_file;</span><br><span class="line">#ifdef HAVE_LIBSELINUX</span><br><span class="line">	struct selinux_opt seopt_file[8];</span><br><span class="line">	int nr_opt;</span><br><span class="line">#endif</span><br><span class="line">	int preserve_perms;</span><br><span class="line"></span><br><span class="line">	/* resize parameters */</span><br><span class="line">	int safe_resize;</span><br><span class="line"></span><br><span class="line">	/* precomputed fs UUID checksum for seeding other checksums */</span><br><span class="line">	uint32_t chksum_seed;</span><br><span class="line"></span><br><span class="line">	/* cache parameters */</span><br><span class="line">	dev_cache_config_t cache_config;</span><br><span class="line"></span><br><span class="line">	/* compression support for sload.f2fs */</span><br><span class="line">	compress_config_t compress;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/06/21/%E5%86%85%E5%AD%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/21/%E5%86%85%E5%AD%98/" class="post-title-link" itemprop="url">内存管理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-21T00:00:00+08:00">2022-06-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一般来说函数调用的参数、返回值、局部变量都会被分配到栈上。但golang是静态语言，在编译过程中，编译器会做逃逸分析，如果发现在函数外部有对应的指针指向这些值时，这些值会被分配到堆上，在函数结束后保留，由golang的垃圾回收机制决定何时回收。</p>
-<h3 id="堆的内存管理"><a href="#堆的内存管理" class="headerlink" title="堆的内存管理"></a>堆的内存管理</h3><p>内存管理一般包含三个不同的组件,分别是用户程序（Mutatur），分配器（allocator）和收集器（Collector），当用户程序申请内存时，它会通过内存分配器申请新内存，而分配器会负责从堆中初始化相应的内存区域。</p>
-<p>堆的内存分配策略：该策略会将内存分割成由4、8、16、32字节的内存块组成的链表，根据申请内存大小，找到满足条件的链表，再从链表中选择合适的内存块。</p>
-<h3 id="栈的内存管理"><a href="#栈的内存管理" class="headerlink" title="栈的内存管理"></a>栈的内存管理</h3><p>目前需要注意的一点是，函数参数是放在栈中的。而放入的一个slice时，栈的内存分配是按照size分配，而slice可能cap大于size。如果出现append(sliceone, elem)的情况，可能会覆盖sliceone后面的参数，造成数据错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">func CombineIPPort(addressA net.IP, addressAPort uint16, addressB net.IP, addressBPort uint16) []byte &#123;</span><br><span class="line">	lengthA := len(addressA)</span><br><span class="line">	lengthB := len(addressB)</span><br><span class="line">	fmt.Println(addressA[0], addressB[0])</span><br><span class="line">	var flag bool</span><br><span class="line">	for i := 0; i &lt; lengthA &amp;&amp; i &lt; lengthB; i++ &#123;</span><br><span class="line">		if addressA[i] &lt; addressB[i] &#123;</span><br><span class="line">			flag = true</span><br><span class="line">			break</span><br><span class="line">		&#125; else if addressA[i] &gt; addressB[i] &#123;</span><br><span class="line">			flag = false</span><br><span class="line">			break</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			if i == lengthA - 1 &#123;</span><br><span class="line">				flag = true</span><br><span class="line">			&#125; else if i == lengthB - 1 &#123;</span><br><span class="line">				flag = false</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	var newAddress []byte</span><br><span class="line">	fmt.Println(flag)</span><br><span class="line">	fmt.Println(addressA)</span><br><span class="line">	fmt.Println(cap(addressA))</span><br><span class="line">	if flag &#123;</span><br><span class="line">		print(addressA)</span><br><span class="line">		print(addressB)</span><br><span class="line">		//这里就会出现问题</span><br><span class="line">		newAddress = append(addressA, uint16ToBytes(addressAPort)...)</span><br><span class="line">		print(newAddress)</span><br><span class="line">		newAddress = append(newAddress, addressB...)</span><br><span class="line">		newAddress = append(newAddress, uint16ToBytes(addressBPort)...)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		newAddress = append(addressB, uint16ToBytes(addressBPort)...)</span><br><span class="line">		newAddress = append(newAddress, addressA...)</span><br><span class="line">		newAddress = append(newAddress, uint16ToBytes(addressAPort)...)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(newAddress)</span><br><span class="line">	return newAddress</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zt-winter.github.io/2022/06/13/reflect/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="月的奏鸣曲">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/13/reflect/" class="post-title-link" itemprop="url">反射</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-13 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-13T00:00:00+08:00">2022-06-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-19 13:41:26" itemprop="dateModified" datetime="2025-05-19T13:41:26+08:00">2025-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="reflect"><a href="#reflect" class="headerlink" title="reflect"></a>reflect</h1><p>反射是指在程序运行时对程序本身的进行访问和修改的能力。</p>
-<h2 id="type和value"><a href="#type和value" class="headerlink" title="type和value"></a>type和value</h2><p>在golang中对所有的接口反射，都可以得到type和value。而golang中任意数据结构都实现了空接口,也就是说任意数据结构都有reflectt.type和reflect.value。<br>reflect.type表示一个数据结构的类型，这个类型的各种基本信息。reflect.value则表示了运行过程中，该数据结构类型的一个具体实现的值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type test struct&#123;</span><br><span class="line">	a int</span><br><span class="line">	b string</span><br><span class="line">	c map[int]int</span><br><span class="line">	d *test</span><br><span class="line">&#125;</span><br><span class="line">a := new(test)</span><br><span class="line">aT := reflect.Typeof(a)</span><br><span class="line">aV := reflect.Valueof(a)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*main.test</span><br><span class="line">0x47e1c0</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://pkg.go.dev/reflect@go1.18.3#Type">type接口的函数</a></p>
-<p><a target="_blank" rel="noopener" href="https://cs.opensource.google/go/go/+/refs/tags/go1.18.3:src/reflect/value.go;l=39">value结构体定义</a></p>
-<p>type和value的相关函数都在前面两处文档中有详细说明，这里不在赘述。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">月的奏鸣曲</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-</body>
-</html>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/f2fs/"><span class="card-category-list-name">f2fs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go-java/"><span class="card-category-list-name">go, java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/investment/"><span class="card-category-list-name">investment</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pacman/"><span class="card-category-list-name">pacman</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/readnote/"><span class="card-category-list-name">readnote</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/stack/" style="font-size: 1.1em; color: #999">stack</a> <a href="/tags/monotonic-stack/" style="font-size: 1.1em; color: #999">monotonic_stack</a> <a href="/tags/f2fs/" style="font-size: 1.3em; color: #99a1ac">f2fs</a> <a href="/tags/file/" style="font-size: 1.1em; color: #999">file</a> <a href="/tags/modsecurity/" style="font-size: 1.3em; color: #99a1ac">modsecurity</a> <a href="/tags/investment/" style="font-size: 1.5em; color: #99a9bf">investment</a> <a href="/tags/WAF/" style="font-size: 1.3em; color: #99a1ac">WAF</a> <a href="/tags/zero-value/" style="font-size: 1.1em; color: #999">zero value</a> <a href="/tags/pacman/" style="font-size: 1.1em; color: #999">pacman</a> <a href="/tags/stock/" style="font-size: 1.3em; color: #99a1ac">stock</a> <a href="/tags/error/" style="font-size: 1.1em; color: #999">error</a> <a href="/tags/golang/" style="font-size: 1.1em; color: #999">golang</a> <a href="/tags/container/" style="font-size: 1.1em; color: #999">container</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/linux/" style="font-size: 1.3em; color: #99a1ac">linux</a> <a href="/tags/%E5%A4%A9%E6%B0%94/" style="font-size: 1.1em; color: #999">天气</a> <a href="/tags/parameter/" style="font-size: 1.1em; color: #999">parameter</a> <a href="/tags/list/" style="font-size: 1.1em; color: #999">list</a> <a href="/tags/slice/" style="font-size: 1.5em; color: #99a9bf">slice</a> <a href="/tags/hash/" style="font-size: 1.1em; color: #999">hash</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 1.3em; color: #99a1ac">内存</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/readnote/" style="font-size: 1.1em; color: #999">readnote</a> <a href="/tags/dfs/" style="font-size: 1.1em; color: #999">dfs</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/nil/" style="font-size: 1.1em; color: #999">nil</a> <a href="/tags/systemcommand/" style="font-size: 1.1em; color: #999">systemcommand</a> <a href="/tags/reflect/" style="font-size: 1.1em; color: #999">reflect</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">拓扑排序</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">基本数据结构</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/gopacket/" style="font-size: 1.3em; color: #99a1ac">gopacket</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">32</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-05-20T01:34:18.186Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 月的奏鸣曲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
