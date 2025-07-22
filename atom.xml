@@ -6,7 +6,7 @@
   <link href="http://zt-winter.github.io/atom.xml" rel="self"/>
   
   <link href="http://zt-winter.github.io/"/>
-  <updated>2025-06-17T02:21:08.192Z</updated>
+  <updated>2025-07-22T08:45:45.386Z</updated>
   <id>http://zt-winter.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>投资笔记与思考-卖出的时机</title>
+    <link href="http://zt-winter.github.io/2025/07/22/invest3-sellpoint/"/>
+    <id>http://zt-winter.github.io/2025/07/22/invest3-sellpoint/</id>
+    <published>2025-07-21T16:00:00.000Z</published>
+    <updated>2025-07-22T08:45:45.386Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="卖出的方法">卖出的方法</h1><p>如果按照长期价值投资者的理论，如果确认买入的公司是一家生意好的公司，不用太在意股票价格波动，也不用考虑卖出的问题。只需要确认这家公司的生意是否还可以，管理层是否经营正常，市场优势是否保持稳固即可。但本人买入的是ETF，不会自己主动选择，也没有办法观察每家公司的做生意的模式、经营情况等。在实际投资过程中，需要考虑合适的卖出时点。在大半年的实际交易情况看，自己卖出的股票经常会卖飞，比如银行、能源，都在卖出后继续涨了8个点，创新药甚至有10%以上。这些ETF都是上涨一段时间后，个人感觉估值和风险偏高后卖出的。如果事后诸葛亮来看应该继续持有，市场总是带有情绪的，某类股票上涨一段时候，会碰到散户追高、机构抱团等影响，继续保持上涨。如何平衡风险和收益。<br />目前考虑的方法是逐步减仓的方式，可以大概将持仓分为三部分：第一部分是底仓，什么时候都不会卖出；第二部分是估值偏高仓位，当个人判断估值已经偏高后卖出；第三部分是风险仓位，在上涨时一直保持持有，直到出现短时间大幅回撤（可以通过条件单控制）时卖出。通过三部分仓位，在控制风险的情况下，提高收益率。<br />其次还有一种方法。对于同一大类的股票，如果在上涨过程中，原股票或者ETF偏高，可以考虑是否有逻辑类似但没有高估的股票或者ETF做替代。但在替代前，需要分析替代股为什么没有同步上涨，是否存在财务经营风险。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;卖出的方法&quot;&gt;卖出的方法&lt;/h1&gt;
+&lt;p&gt;如果按照长期价值投资者的理论，如果确认买入的公司是一家生意好的公司，不用太在意股票价格波动，也不用考虑卖出的问题。只需要确认这家公司的生意是否还可以，管理层是否经营正常，市场优势是否保持稳固即可。但本人买入的是ETF，不会</summary>
+      
+    
+    
+    
+    <category term="investment" scheme="http://zt-winter.github.io/categories/investment/"/>
+    
+    
+    <category term="-- investment -- stock" scheme="http://zt-winter.github.io/tags/investment-stock/"/>
+    
+  </entry>
   
   <entry>
     <title>投资记录（202411-202505）</title>
@@ -532,31 +557,6 @@ F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被
     
     
     <category term="f2fs" scheme="http://zt-winter.github.io/tags/f2fs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>内存管理</title>
-    <link href="http://zt-winter.github.io/2022/06/21/%E5%86%85%E5%AD%98/"/>
-    <id>http://zt-winter.github.io/2022/06/21/%E5%86%85%E5%AD%98/</id>
-    <published>2022-06-20T16:00:00.000Z</published>
-    <updated>2025-05-19T05:41:26.969Z</updated>
-    
-    <content type="html"><![CDATA[<p>一般来说函数调用的参数、返回值、局部变量都会被分配到栈上。但golang是静态语言，在编译过程中，编译器会做逃逸分析，如果发现在函数外部有对应的指针指向这些值时，这些值会被分配到堆上，在函数结束后保留，由golang的垃圾回收机制决定何时回收。</p><h3 id="堆的内存管理">堆的内存管理</h3><p>内存管理一般包含三个不同的组件,分别是用户程序（Mutatur），分配器（allocator）和收集器（Collector），当用户程序申请内存时，它会通过内存分配器申请新内存，而分配器会负责从堆中初始化相应的内存区域。</p><p>堆的内存分配策略：该策略会将内存分割成由4、8、16、32字节的内存块组成的链表，根据申请内存大小，找到满足条件的链表，再从链表中选择合适的内存块。</p><h3 id="栈的内存管理">栈的内存管理</h3><p>目前需要注意的一点是，函数参数是放在栈中的。而放入的一个slice时，栈的内存分配是按照size分配，而slice可能cap大于size。如果出现append(sliceone,elem)的情况，可能会覆盖sliceone后面的参数，造成数据错误。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">func CombineIPPort(addressA net.IP, addressAPort uint16, addressB net.IP, addressBPort uint16) []byte &#123;</span><br><span class="line">lengthA := len(addressA)</span><br><span class="line">lengthB := len(addressB)</span><br><span class="line">fmt.Println(addressA[0], addressB[0])</span><br><span class="line">var flag bool</span><br><span class="line">for i := 0; i &lt; lengthA &amp;&amp; i &lt; lengthB; i++ &#123;</span><br><span class="line">if addressA[i] &lt; addressB[i] &#123;</span><br><span class="line">flag = true</span><br><span class="line">break</span><br><span class="line">&#125; else if addressA[i] &gt; addressB[i] &#123;</span><br><span class="line">flag = false</span><br><span class="line">break</span><br><span class="line">&#125; else &#123;</span><br><span class="line">if i == lengthA - 1 &#123;</span><br><span class="line">flag = true</span><br><span class="line">&#125; else if i == lengthB - 1 &#123;</span><br><span class="line">flag = false</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">var newAddress []byte</span><br><span class="line">fmt.Println(flag)</span><br><span class="line">fmt.Println(addressA)</span><br><span class="line">fmt.Println(cap(addressA))</span><br><span class="line">if flag &#123;</span><br><span class="line">print(addressA)</span><br><span class="line">print(addressB)</span><br><span class="line">//这里就会出现问题</span><br><span class="line">newAddress = append(addressA, uint16ToBytes(addressAPort)...)</span><br><span class="line">print(newAddress)</span><br><span class="line">newAddress = append(newAddress, addressB...)</span><br><span class="line">newAddress = append(newAddress, uint16ToBytes(addressBPort)...)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">newAddress = append(addressB, uint16ToBytes(addressBPort)...)</span><br><span class="line">newAddress = append(newAddress, addressA...)</span><br><span class="line">newAddress = append(newAddress, uint16ToBytes(addressAPort)...)</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(newAddress)</span><br><span class="line">return newAddress</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;一般来说函数调用的参数、返回值、局部变量都会被分配到栈上。但golang是静态语言，在编译过程中，编译器会做逃逸分析，如果发现在函数外部有对应的指针指向这些值时，这些值会被分配到堆上，在函数结束后保留，由golang的垃圾回收机制决定何时回收。&lt;/p&gt;
-&lt;h3 id=&quot;堆的</summary>
-      
-    
-    
-    
-    <category term="go" scheme="http://zt-winter.github.io/categories/go/"/>
-    
-    
-    <category term="内存管理" scheme="http://zt-winter.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
