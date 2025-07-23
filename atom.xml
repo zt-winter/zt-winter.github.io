@@ -6,7 +6,7 @@
   <link href="http://zt-winter.github.io/atom.xml" rel="self"/>
   
   <link href="http://zt-winter.github.io/"/>
-  <updated>2025-07-22T08:45:45.386Z</updated>
+  <updated>2025-07-23T01:38:34.758Z</updated>
   <id>http://zt-winter.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>投资笔记与思考-买入时点</title>
+    <link href="http://zt-winter.github.io/2025/07/23/invest4-buypoint/"/>
+    <id>http://zt-winter.github.io/2025/07/23/invest4-buypoint/</id>
+    <published>2025-07-22T16:00:00.000Z</published>
+    <updated>2025-07-23T01:38:34.758Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="左侧买入">左侧买入</h1><p>左侧买入是指在股票单边下跌时买入，可以说是抄底。但买入的时点是否是底部，事前没有人能够预测。在股票单边长期下跌时，市场上会出现企业各种负面的消息，一部分投资者会在下跌一段时间后直接卖出，因为他们的持仓成本很低，已经盈利了很多，下跌过程中直接止盈。一部分投资者会在长期阴跌的情况下，受到长期亏损、负面消息、机构停止抱团等刺激，选择止损跑路。最后还有一部分投资者由于还在亏损状态，所以继续持有，当股票价格反弹一些后，持仓由亏损到不亏不赚，投资者会由于之前长期下跌的阴影，直接卖出。这些情况综合会导致一个现象，股票长期单边下跌，在底部时有所反弹就会引起抛售，底部时间可能会很长。如果在左侧买入，会承担巨大的压力，市场整体对企业价值的判断与个人意见相反，如果你觉得自己的判断是正确的，需要与股票的价格的背离、市场舆论的反差做对抗，而且在长期底部或者长期下跌的情况下忍受账面上的浮亏，这对于人性是巨大的考验，可以说是逆人性买入。<br />很多声称自己是价值投资者的人在股票上升期和下跌期的买入卖出理由会截然相反，在股价上升期，会找到公司的各种优势利好，过分高估；在股价下跌期，会极度恐慌，过分低估。其中最好的一个例子是腾讯，腾讯从19年的300块，一路飞升到21年的750块，之后又快速下跌到23年的200块，最后到25年的500块。中间有长达2年的上涨，又有长达2年的下跌。19年到21年由于疫情导致互联网需求上升、国内货币宽松政策放水，导致腾讯的股价快速上升。后面由于国家对互联网无序扩张的打击、疫情中后期经济环境下行，导致腾讯的股票下跌到200块。尽管网上利空消息频出，但腾讯的基本盘即时通信社交并没有太多改变，抖音可能冲击了部分业务，不过微信推出视频号后威胁并没有那么大。同时腾讯在文娱上的投资还是非常成功，游戏、小说、音乐的营收都不错。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;左侧买入&quot;&gt;左侧买入&lt;/h1&gt;
+&lt;p&gt;左侧买入是指在股票单边下跌时买入，可以说是抄底。但买入的时点是否是底部，事前没有人能够预测。在股票单边长期下跌时，市场上会出现企业各种负面的消息，一部分投资者会在下跌一段时间后直接卖出，因为他们的持仓成本很低，已经盈利了很多，</summary>
+      
+    
+    
+    
+    <category term="investment" scheme="http://zt-winter.github.io/categories/investment/"/>
+    
+    
+    <category term="investment" scheme="http://zt-winter.github.io/tags/investment/"/>
+    
+    <category term="stock" scheme="http://zt-winter.github.io/tags/stock/"/>
+    
+  </entry>
   
   <entry>
     <title>投资笔记与思考-卖出的时机</title>
@@ -521,34 +548,6 @@ href=&quot;https://go.dev/ref/spec#The_zero_value&quot;&gt;零值官方说明&lt
     <summary type="html">&lt;h1 id=&quot;f2f2文件目录存储结构&quot;&gt;f2f2文件目录存储结构&lt;/h1&gt;
 &lt;p&gt;当前目录结构：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;l</summary>
-      
-    
-    
-    
-    <category term="f2fs" scheme="http://zt-winter.github.io/categories/f2fs/"/>
-    
-    
-    <category term="f2fs" scheme="http://zt-winter.github.io/tags/f2fs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>f2fstool函数说明</title>
-    <link href="http://zt-winter.github.io/2022/06/21/f2fstool/"/>
-    <id>http://zt-winter.github.io/2022/06/21/f2fstool/</id>
-    <published>2022-06-20T16:00:00.000Z</published>
-    <updated>2025-05-19T05:41:26.969Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="f2fs的基本数据结构">f2fs的基本数据结构</h1><ul><li>sector: 扇区</li><li>block:F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为4KB的大小，这是因为很多flash设备单次IO的读写都是基于4KB的倍数进行。</li><li>segment:segment是管理block的结构，一个segment的大小是512个block，也就是2MB。</li><li>section:默认情况下一个segment等于一个section，section是GC的基本操作单位，每次GC都会从section中选出特定的segment进行回收。F2FS将section分为了6类，分别是hot-node，warm-node，cold-node，hot-data，warm-data，cold-data，hot-&gt;cold表示了数据的从高到低的修改频率，通过不同类型的section，进行gc的时候可针对使用hot的section进行gc，以降低gc的时间开销。</li><li>zone:默认情况一个zone等于一个section，与物理设备有关，大部分情况下用不上</li></ul><h1 id="f2fs_configuration结构体">f2fs_configuration结构体</h1><p>f2fs_configuration结构体在include/f2fs_fs.h文件中定义，f2fs文件系统初始化时默认参数也在include/f2fs_fs.h文件中定义。在lib/libf2fs.c的f2fs_init_configuration函数中进行初始化<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">struct f2fs_configuration &#123;</span><br><span class="line">uint32_t reserved_segments;</span><br><span class="line">uint32_t new_reserved_segments;</span><br><span class="line">int sparse_mode;</span><br><span class="line">int zoned_mode;</span><br><span class="line">int zoned_model;</span><br><span class="line">size_t zone_blocks;</span><br><span class="line">double overprovision;</span><br><span class="line">double new_overprovision;</span><br><span class="line">uint32_t cur_seg[6];</span><br><span class="line">//一个section几个segment，默认为1个</span><br><span class="line">uint32_t segs_per_sec;</span><br><span class="line">//默认为1</span><br><span class="line">uint32_t secs_per_zone;</span><br><span class="line">//默认为1</span><br><span class="line">uint32_t segs_per_zone;</span><br><span class="line">uint32_t start_sector;</span><br><span class="line">uint32_t total_segments;</span><br><span class="line">uint32_t sector_size;</span><br><span class="line">uint64_t device_size;</span><br><span class="line">uint64_t total_sectors;</span><br><span class="line">uint64_t wanted_total_sectors;</span><br><span class="line">uint64_t wanted_sector_size;</span><br><span class="line">uint64_t target_sectors;</span><br><span class="line">uint64_t max_size;</span><br><span class="line">//一个block包含多少个扇区sector</span><br><span class="line">uint32_t sectors_per_blk;</span><br><span class="line">//一个segment包含多少个block</span><br><span class="line">uint32_t blks_per_seg;</span><br><span class="line">__u8 init_version[VERSION_LEN + 1];</span><br><span class="line">__u8 sb_version[VERSION_LEN + 1];</span><br><span class="line">__u8 version[VERSION_LEN + 1];</span><br><span class="line">char *vol_label;</span><br><span class="line">char *vol_uuid;</span><br><span class="line">uint16_t s_encoding;</span><br><span class="line">uint16_t s_encoding_flags;</span><br><span class="line">int heap;</span><br><span class="line">int32_t kd;</span><br><span class="line">int32_t dump_fd;</span><br><span class="line">//设备列表</span><br><span class="line">struct device_info devices[MAX_DEVICES];</span><br><span class="line">int ndevs;</span><br><span class="line">char *extension_list[2];</span><br><span class="line">const char *rootdev_name;</span><br><span class="line">int dbg_lv;</span><br><span class="line">int show_dentry;</span><br><span class="line">int trim;</span><br><span class="line">int trimmed;</span><br><span class="line">int func;</span><br><span class="line">void *private;</span><br><span class="line">int dry_run;</span><br><span class="line">//andorid 非内核运行检查</span><br><span class="line">int no_kernel_check;</span><br><span class="line">int fix_on;</span><br><span class="line">int force;</span><br><span class="line">int defset;</span><br><span class="line">int bug_on;</span><br><span class="line">int bug_nat_bits;</span><br><span class="line">bool quota_fixed;</span><br><span class="line">int alloc_failed;</span><br><span class="line">int auto_fix;</span><br><span class="line">int layout;</span><br><span class="line">int show_file_map;</span><br><span class="line">u64 show_file_map_max_offset;</span><br><span class="line">int quota_fix;</span><br><span class="line">int preen_mode;</span><br><span class="line">int ro;</span><br><span class="line">//andorid</span><br><span class="line">int preserve_limits;/* preserve quota limits */</span><br><span class="line">int large_nat_bitmap;</span><br><span class="line">int fix_chksum;/* fix old cp.chksum position */</span><br><span class="line">__le32 feature;/* defined features */</span><br><span class="line">unsigned int quota_bits;/* quota bits */</span><br><span class="line">time_t fixed_time;</span><br><span class="line"></span><br><span class="line">/* mkfs parameters */</span><br><span class="line">int fake_seed;</span><br><span class="line">uint32_t next_free_nid;</span><br><span class="line">uint32_t quota_inum;</span><br><span class="line">uint32_t quota_dnum;</span><br><span class="line">uint32_t lpf_inum;</span><br><span class="line">uint32_t lpf_dnum;</span><br><span class="line">uint32_t lpf_ino;</span><br><span class="line">uint32_t root_uid;</span><br><span class="line">uint32_t root_gid;</span><br><span class="line"></span><br><span class="line">/* defragmentation parameters */</span><br><span class="line">int defrag_shrink;</span><br><span class="line">uint64_t defrag_start;</span><br><span class="line">uint64_t defrag_len;</span><br><span class="line">uint64_t defrag_target;</span><br><span class="line"></span><br><span class="line">/* sload parameters */</span><br><span class="line">char *from_dir;</span><br><span class="line">char *mount_point;</span><br><span class="line">char *target_out_dir;</span><br><span class="line">char *fs_config_file;</span><br><span class="line">#ifdef HAVE_LIBSELINUX</span><br><span class="line">struct selinux_opt seopt_file[8];</span><br><span class="line">int nr_opt;</span><br><span class="line">#endif</span><br><span class="line">int preserve_perms;</span><br><span class="line"></span><br><span class="line">/* resize parameters */</span><br><span class="line">int safe_resize;</span><br><span class="line"></span><br><span class="line">/* precomputed fs UUID checksum for seeding other checksums */</span><br><span class="line">uint32_t chksum_seed;</span><br><span class="line"></span><br><span class="line">/* cache parameters */</span><br><span class="line">dev_cache_config_t cache_config;</span><br><span class="line"></span><br><span class="line">/* compression support for sload.f2fs */</span><br><span class="line">compress_config_t compress;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;f2fs的基本数据结构&quot;&gt;f2fs的基本数据结构&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;sector: 扇区&lt;/li&gt;
-&lt;li&gt;block:
-F2FS的数据存储的基本单位是block，大小为4KB，整个flash设备被格式化为多个block组成的结构。很多数据结构也被设计为</summary>
       
     
     
