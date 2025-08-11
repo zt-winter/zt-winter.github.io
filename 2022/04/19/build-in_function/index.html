@@ -174,22 +174,17 @@
 <ul>
 <li><code>make</code>
 的作用是初始化内置的数据结构，也就是我们在前面提到的切片、哈希表和
-Channel<a
-target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:2">2</a>；</li>
+Channel<a target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:2">2</a>；</li>
 <li><code>new</code>
-的作用是根据传入的类型分配一片内存空间并返回指向这片内存空间的指针<a
-target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:3">3</a>；</li>
+的作用是根据传入的类型分配一片内存空间并返回指向这片内存空间的指针<a target="_blank" rel="noopener" href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-make-and-new/#fn:3">3</a>；</li>
 </ul>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">100</span>)</span><br><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>)</span><br><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>, <span class="built_in">cap</span>)</span><br><span class="line">hash := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">bool</span>, <span class="number">10</span>)</span><br><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 <ol type="1">
 <li><code>slice</code> 是一个包含 <code>data</code>、<code>cap</code> 和
-<code>len</code> 的结构体 <a
-target="_blank" rel="noopener" href="https://draveness.me/golang/tree/reflect.SliceHeader"><code>reflect.SliceHeader</code></a>；</li>
-<li><code>hash</code> 是一个指向 <a
-target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hmap"><code>runtime.hmap</code></a>
+<code>len</code> 的结构体 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/reflect.SliceHeader"><code>reflect.SliceHeader</code></a>；</li>
+<li><code>hash</code> 是一个指向 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hmap"><code>runtime.hmap</code></a>
 结构体的指针；</li>
-<li><code>ch</code> 是一个指向 <a
-target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hchan"><code>runtime.hchan</code></a>
+<li><code>ch</code> 是一个指向 <a target="_blank" rel="noopener" href="https://draveness.me/golang/tree/runtime.hchan"><code>runtime.hchan</code></a>
 结构体的指针；</li>
 </ol>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i := <span class="built_in">new</span>(<span class="type">int</span>)</span><br><span class="line">=============</span><br><span class="line"><span class="keyword">var</span> v <span class="type">int</span></span><br><span class="line">i := &amp;v</span><br></pre></td></tr></table></figure>
