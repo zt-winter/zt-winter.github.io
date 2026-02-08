@@ -1,6 +1,14 @@
+http://zt-winter.github.io/2026/02/01/invest-record202601/
+http://zt-winter.github.io/2026/01/04/invest-record2025/
+http://zt-winter.github.io/2025/12/15/read-record20251215/
+http://zt-winter.github.io/2025/09/28/invest5-buyandhold/
+http://zt-winter.github.io/2025/11/09/invest-record202510/
+http://zt-winter.github.io/2025/05/31/invest-record202505/
+http://zt-winter.github.io/2025/08/31/invest-record20250831/
+http://zt-winter.github.io/2025/07/23/invest4-buypoint/
 http://zt-winter.github.io/2025/04/23/invest1-valuation/
-http://zt-winter.github.io/2025/05/31/%E6%8A%95%E8%B5%84%E8%AE%B0%E5%BD%95202505/
 http://zt-winter.github.io/2025/05/19/invest2-cyclicalStock/
+http://zt-winter.github.io/2025/07/22/invest3-sellpoint/
 http://zt-winter.github.io/2025/05/20/modsecurity/
 http://zt-winter.github.io/2022/07/13/f2fs%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E8%AF%B4%E6%98%8E/
 http://zt-winter.github.io/2022/06/21/%E5%86%85%E5%AD%98/
@@ -69,6 +77,8 @@ http://zt-winter.github.io/tags/%E9%97%AD%E5%8C%85/
 http://zt-winter.github.io/tags/golang/
 http://zt-winter.github.io/tags/nil/
 http://zt-winter.github.io/tags/zero-value/
+http://zt-winter.github.io/tags/investment-stock/
+http://zt-winter.github.io/tags/read-life-investment/
 http://zt-winter.github.io/categories/go/
 http://zt-winter.github.io/categories/go-java/
 http://zt-winter.github.io/categories/f2fs/
