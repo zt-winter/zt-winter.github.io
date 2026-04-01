@@ -1,7 +1,195 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="月的奏鸣曲"><meta name="copyright" content="月的奏鸣曲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://zt-winter.github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="月的奏鸣曲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zt-winter.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2026/04/01 08:49:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/topImg/2em38y.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/31/invest-record202601/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2026-03-31T09:19:55.568Z" title="更新于 2026/03/31 17:19:55">2026/03/31</time></span></div><div class="content">title: 投资记录（20260206）tag:    - investment    - stockdate: 2026&#x2F;02&#x2F;07categories: investment
+投资总体情况场内基金收益率9.59%，当前仓位为28.6%。仓位分布红利、消费、标普500、标普油气、创新药。
+A股港股交易首先是恒生消费和国内消费50ETF，一月大量资金被吸引到AI、商业航天、半导体中，消费进一步下跌，在一月下旬持续买入消费50ETF。是分批买入消费且之前买入的价格较低，消费股没有亏损，二月上旬，消费股迎来一波反弹，收益率为4%左右，因为消费的基本面没有明显改善，预计消费还会来回波动，需要静待时间，反正持有成本较低，如果股价没有上涨，就当收息股了。科技板块暴涨时，同时买入了红利，并通过做T再次降低成本，目前红利的收益率为12.4%，降低成本后拿着不动就好，除非市场有合适的机会可以做T，否则不会变动。红利股作为投资的基石，金额只会增加不会减少。在月底创新药持续下跌后，分批买入少量观察仓。创新药每次有较大跌幅，都会少量买入。在研发人员和临床测试人员方面创新药优势明显，买E ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/31/invest-record20260329/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2026-03-31T09:19:55.568Z" title="更新于 2026/03/31 17:19:55">2026/03/31</time></span></div><div class="content">title: 投资记录（20260329）tag:	- investment	- stockdate: 2026&#x2F;03&#x2F;29categoreis: investment
+投资总体情况场内基金收益率8.6%，当前仓位为40.92%。仓位分布在红利、消费、标普500、创新药、互联网、养殖。  
+A股港股交易油气ETF在上涨20%后全部卖出，卖出后的周六美以突袭伊朗，油价暴涨。目前油气ETF相比于买入的价格上涨了一倍，由于过早卖出，少赚了80%多。由于海峡石油的原因，全球股市普遍大跌，在创新药距最高值下跌30左右分配买入，创新药目前收益率为-1%，创新药作为风险投资，长期持有，逢低买入。互联网也是距高点下跌30%后买入，目前互联网的整体估值属于合理范围，没有低估。当前买入并非便宜价格。事后看这笔投资，主要是两个原因：一个是长期的牛市，导致价格普遍偏高，自己的买入的心理预期有隐形的变化。在投资之前，我认为自己对事物是可以保持相对理性的，但现在看虽然我没有追高，但实际买入时，考虑的安全边际减少了，这确实是受牛市影响。另一个原因是我感觉像三年疫情导致市场绝对下跌的情况很难再次出 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/04/invest-record2025/" title="投资记录（至20251231）">投资记录（至20251231）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2026-03-31T09:19:55.568Z" title="更新于 2026/03/31 17:19:55">2026/03/31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">投资总体情况所有资金的总收益率为4.3%，基金收益率为16.8%，货币基金、国债收益率为1.5%。  
+A股港股在2025年11月、12月，持仓跟随大盘在震荡。在12月消费再次连续下跌期间继续买入消费，主要是港股消费。但从市场情况下看，消费可能会长期在底部，短时间很难有上涨空间，在买入时按照价格下跌程度分批买入。目前基金投资金额较少，还有很多资金没有足够好的机会买入，需要等待消费再下探10%、20%时追加买入。A股消费基金中白酒占比较高。目前白酒龙头茅台在12月正式开始控量保价，但如果经济持续下行，茅台价格可能无法保住1499，在茅台价格跌破指导价后，如果股价出现暴跌，可能存在大量买入机会。今年虽然是科技牛市，但个人除了创新药和互联网在早期买入卖出小赚后再也没有碰过。主要以AI为主的A股企业大部分处于炒作阶段，市盈率过高，基本都是赌未来的增长预期。但这种增长预期大部分公司很难兑现，或者说现在的估值已经透支了未来很多年的增长。这种估值下，买纳指或者标普500会是更好的选择。如果26年的AI企业实现了营收和盈利增长，但增长不及预期，可能股价会迎来下挫，此时有一个相对好的安全边际，或许可以买 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/15/read-record20251215/" title="读书随笔-《以日为鉴》">读书随笔-《以日为鉴》</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-12-15T14:28:11.472Z" title="更新于 2025/12/15 22:28:11">2025/12/15</time></span></div><div class="content">读书随笔-《以日为鉴》近期花了三四个小时把《以日为鉴》看完了，这本书不厚，但作者结合数据从各个方面描述了日本从巅峰时期经济到快速衰落期间科技、经济、民生、就业、医疗的变化。读完时一种看完一个时代的沧桑感觉，阅读过程中比较普通人在当前时代的感觉，有一些思考，故有此随笔。首先就是科技方面，日本在衰退30年中为了保障社会稳定，保住了大量的僵尸企业，由于大企业和小企业互相控股，利益关系复杂，大企业的负担很重。并且在资产负债表衰退时期，企业没有意愿加大科技研发投资意愿。日本错过了90年代起的信息技术革命，包括后面的互联网、移动互联网时代。如果能赶上信息技术革命，可能日本走出衰退的时间会提前很多。这一点与现在国内可能是相反的。国内的政府引导企业进行新产业革命的意识很强。在AI大模型、机器人、半导体、卫星互联网的投资力度都很大。在我的印象中，18、19年国内就开始进行供给侧改革，淘汰落后产能。现在网上最经典的段子就是记者访问马科长关于关闭钢铁厂了。很残酷的是，这些落后产能在当地真的是百万漕公衣食所系，淘汰的过剩产能是一个个失业的人和家庭。由于现在的就业艰难的环境，人们普遍表达的是对马科长的认同，对记 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/11/09/invest-record202510/" title="投资记录（至20251031）">投资记录（至20251031）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-11-09T05:13:43.392Z" title="更新于 2025/11/09 13:13:43">2025/11/09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">投资总体情况场外基金收益率为6.7%，场内基金收益率为8.91%。由于中间有大量资金从银行转入到短融ETF和债券中，导致仓位和最大回撤率失真。从真实有效资金投入看，收益率为19.3%。
+A股港股20250901到20251031，由于这段时间市场还在不断走高，股票估值过高，买卖行为较少。主要交易可以分为三个方面。在银行股持续下跌期间分三批买入，其实银行的质地存在很多问题，大部分问题都与房地产的下行周期有关，房贷利率下跌后导致营收下降；买房观望人群、提前还贷人群增加，导致贷款量下降；银行的资产负债表资产端很多都与房子有关，房子的估价其实在下降，银行的报表中会隐藏这部分，如果有意搜索下银行的坏账信息，发现不少小银行被中大型银行接管，中大型银行把不良资产打包出售amc公司，其中部分会包装成高收益理财产品销售。但国内银行在防范金融风险的背景下，有国家托底，始终没有被戳破。所以买不买银行全看自己对国家托底的观念是否有信心。城投债ETF买入，其实城投债的风险也是比较大的，原因也主要是和房地产有关。但买入的原因是因为在这两三个的牛市中，大量资金从债市转移到股市中，债券价格已经有一个较大的下跌，并且在 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/28/invest5-buyandhold/" title="投资笔记与思考-长期持有">投资笔记与思考-长期持有</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-12-15T13:54:37.744Z" title="更新于 2025/12/15 21:54:37">2025/12/15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">长期持有的投资理念首先需要说明的一个普遍误区是：长期持有不是指买入股票后，一定要持有5年10年。它是一种买入前的假设性考虑，当你买入股票前，你是否愿意持有这家公司5年甚至10年。这种假设性考虑会要求你去思考公司的长期经营能力，营收利润是否能长期保持目前的增长，你能否承受1至3年的股价下跌或者低迷。通过长期持有的投资理念，会迫使你去更加了解公司的经营状况，对公司股票选择有更高的要求。当买入公司股票时，肯定有买入的逻辑。在持有股票时，不能一味长期持有。而应该继续检查当时买入的逻辑是否依然成立。如果买入的逻辑存在变动，则会需要考虑是否卖出。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/03/container/" title="container库">container库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.000Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">container该库主要是实现三个数据结构
+
+
+list : 双向链表
+heap : 最小堆
+ring : 环形链表
+
+list可以用list双向链表实现栈的操作
+1234567891011121314151617181920212223import(	&quot;container/list&quot;)//stack初始化stack := list.New()//压栈操作stack.PushBack(value)//出栈操作e := stack.Back()if e != nil &#123;	stack.Remove(e)&#125;return e.Value//获取栈顶元素e := stack.Back()return e.Value//栈长度length := stack.Len()
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/03/linux-wifi/" title="linux-wifi">linux-wifi</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.000Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">主机上装了双系统，昨天晚上使用windows10打完游戏后，今天进入Linux发现没有无线网卡设备，报错信息为kernel iwlwifi: probe of failed with error -110。
+搜索相关报错信息后发现原因为windows10为了快速启动，即使关闭windows也不会释放网卡设备，以便下次启动时不用再次加载网卡驱动，但这导致linux启动时发现网卡设备被占用，无法使用网卡设备。
+解决方法：windows10进入控制面板，打开电源设置，关闭快速启动。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/03/leetcode207/" title="dfs">dfs</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.000Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">深度优先搜索算法一般用于树或者图的结构中，在写代码时有下面几个注意的地方。
+leetcode 207题首先读懂题目，课程只有0~crousenum-1门，如果没有课程相互前置，是一定能够学完的。题目就是判断是否有循环依赖。可以使用广度+深度搜索，遍历一个节点所依赖节点，如果所依赖节点也有依赖则继续判断。
+这里每个节点在遍历时赋予了属性：未检索、正在检索、已经完成检索。为什么不是设置未检索和已经完成检索两个值。主要原因是需要判断是否有相互依赖。设置已经完成检索需要在完成该节点的依赖遍历后，但遍历的节点如果依赖正在的遍历的节点，那只设置两个值的话，就会检测不出来。
+12345678910111213141516171819202122232425262728293031canFinish(numCourses int, prerequisites [][]int) bool &#123;    depend := make([][]int, numCourses)	flag := make([]int, numCourses)	for i := 0; i &lt; len(prerequi ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/03/%E5%89%8D%E7%BC%80/" title="前缀及其优化">前缀及其优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.969Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a></span></div><div class="content">有些问题可以转化为两个前缀进行简单计算得到结果，如：一个数组子数组的和为K的个数，子数组的和，可以转化为两个前缀数组相减。类似题目有：leetcode 209leetcode 560leetcode 862
+以leetcode 560题为例subsum &#x3D; sum[i] - sum[j]因此可以使用两次循环遍历获得，这么做时间复杂度为O(n2)。
+可以在此基础上，进一步优化。在第一次循环中，我们已知sum[i]，subsum的目标值k，同时j&lt;i。因此可以使用map，来检索是否存在sum[j]。时间复杂度降为O(n)。
+12345678910111213141516171819202122232425func subarraySum(nums []int, k int) int &#123;    length := len(nums)    sum := make([]int, length)    sum[0] = nums[0]    for i := 1; i &lt; length; i++ &#123;        sum[i] = sum[i-1] +  ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">月的奏鸣曲</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/invest-record202601/" title="无题">无题</a><time datetime="2026-03-31T09:19:55.568Z" title="发表于 2026/03/31 17:19:55">2026/03/31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/invest-record20260329/" title="无题">无题</a><time datetime="2026-03-31T09:19:55.568Z" title="发表于 2026/03/31 17:19:55">2026/03/31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/04/invest-record2025/" title="投资记录（至20251231）">投资记录（至20251231）</a><time datetime="2026-01-03T16:00:00.000Z" title="发表于 2026/01/04 00:00:00">2026/01/04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/15/read-record20251215/" title="读书随笔-《以日为鉴》">读书随笔-《以日为鉴》</a><time datetime="2025-12-14T16:00:00.000Z" title="发表于 2025/12/15 00:00:00">2025/12/15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/09/invest-record202510/" title="投资记录（至20251031）">投资记录（至20251031）</a><time datetime="2025-11-08T16:00:00.000Z" title="发表于 2025/11/09 00:00:00">2025/11/09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/f2fs/"><span class="card-category-list-name">f2fs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go-java/"><span class="card-category-list-name">go, java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/investment/"><span class="card-category-list-name">investment</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pacman/"><span class="card-category-list-name">pacman</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/readnote/"><span class="card-category-list-name">readnote</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/stock/" style="font-size: 1.4em; color: #99a5b6">stock</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">基本数据结构</a> <a href="/tags/file/" style="font-size: 1.1em; color: #999">file</a> <a href="/tags/readnote/" style="font-size: 1.1em; color: #999">readnote</a> <a href="/tags/f2fs/" style="font-size: 1.2em; color: #999da3">f2fs</a> <a href="/tags/linux/" style="font-size: 1.2em; color: #999da3">linux</a> <a href="/tags/list/" style="font-size: 1.1em; color: #999">list</a> <a href="/tags/modsecurity/" style="font-size: 1.2em; color: #999da3">modsecurity</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/nil/" style="font-size: 1.1em; color: #999">nil</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 1.2em; color: #999da3">内存</a> <a href="/tags/container/" style="font-size: 1.1em; color: #999">container</a> <a href="/tags/parameter/" style="font-size: 1.1em; color: #999">parameter</a> <a href="/tags/WAF/" style="font-size: 1.2em; color: #999da3">WAF</a> <a href="/tags/zero-value/" style="font-size: 1.1em; color: #999">zero value</a> <a href="/tags/read-life-investment/" style="font-size: 1.1em; color: #999">-- read -- life -- investment</a> <a href="/tags/pacman/" style="font-size: 1.1em; color: #999">pacman</a> <a href="/tags/%E5%A4%A9%E6%B0%94/" style="font-size: 1.1em; color: #999">天气</a> <a href="/tags/monotonic-stack/" style="font-size: 1.1em; color: #999">monotonic_stack</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/slice/" style="font-size: 1.3em; color: #99a1ac">slice</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/golang/" style="font-size: 1.1em; color: #999">golang</a> <a href="/tags/error/" style="font-size: 1.1em; color: #999">error</a> <a href="/tags/systemcommand/" style="font-size: 1.1em; color: #999">systemcommand</a> <a href="/tags/investment-stock/" style="font-size: 1.2em; color: #999da3">-- investment -- stock</a> <a href="/tags/dfs/" style="font-size: 1.1em; color: #999">dfs</a> <a href="/tags/investment/" style="font-size: 1.5em; color: #99a9bf">investment</a> <a href="/tags/reflect/" style="font-size: 1.1em; color: #999">reflect</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">拓扑排序</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/gopacket/" style="font-size: 1.2em; color: #999da3">gopacket</a> <a href="/tags/stack/" style="font-size: 1.1em; color: #999">stack</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/hash/" style="font-size: 1.1em; color: #999">hash</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/03/"><span class="card-archive-list-date">三月 2026</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/01/"><span class="card-archive-list-date">一月 2026</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/12/"><span class="card-archive-list-date">十二月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">42</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-01T00:49:28.591Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 月的奏鸣曲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

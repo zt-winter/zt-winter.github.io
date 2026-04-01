@@ -1,7 +1,193 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="月的奏鸣曲"><meta name="copyright" content="月的奏鸣曲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://zt-winter.github.io/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="月的奏鸣曲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zt-winter.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2026/04/01 08:49:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/topImg/2em38y.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/08/31/invest-record20250831/" title="投资记录（202411-202508）">投资记录（202411-202508）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-09-04T01:09:11.193Z" title="更新于 2025/09/04 09:09:11">2025/09/04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">投资总体情况从202411开始投资以来，场外基金收益率5.84%，场内基金收益率8.55%，已清仓收益占总收益的57.6%，最大回撤1.32%，最大仓位55.3%。收益率区间-0.33%到8.99%。
+A股港股主交易20250601到20250831，创新药ETF在5月底卖出后大涨15%左右，卖空了，原因主要是国家药品集中采购政策有调整，在降低药价的同时，防止避免药企为了拿到订单，集采药价过低导致药品质量不合格的问题，设置了成本价限制。同时国家放开了部分国产原研药的价格压制，导致创新药ETF大涨。政策面的消息，作为普通投资者我没有任何提前消息。在创新药ETF已经盈利11%的情况下离场也算正常行为。疫情期间医药作为衣食住行外最大的必需品，叠加疫情炒作，机构抱团，医药ETF大涨，后续疫情结束，国家开启集采，医药股大跌。事后诸葛亮看，老龄化加快，所有人都觉得医药的业绩会保持高速增长。可是在建立基础国家医保后，国家不会允许医药企业从医保基金中获取太多利益，在社保基金和医保资金长期趋势承压的情况，集采的推出算是大势所趋。但是当时所有机构、个人投资者在股票疯涨时都没有考虑到这种情况。少数在当时看到 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/07/23/invest4-buypoint/" title="投资笔记与思考-买入时点">投资笔记与思考-买入时点</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-09-04T01:09:11.193Z" title="更新于 2025/09/04 09:09:11">2025/09/04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">左侧买入左侧买入是指在股票单边下跌时买入，可以说是抄底。但买入的时点是否是底部，事前没有人能够预测。在股票单边长期下跌时，市场上会出现企业各种负面的消息，一部分投资者会在下跌一段时间后直接卖出，因为他们的持仓成本很低，已经盈利了很多，下跌过程中直接止盈。一部分投资者会在长期阴跌的情况下，受到长期亏损、负面消息、机构停止抱团等刺激，选择止损跑路。最后还有一部分投资者由于还在亏损状态，所以继续持有，当股票价格反弹一些后，持仓由亏损到不亏不赚，投资者会由于之前长期下跌的阴影，直接卖出。这些情况综合会导致一个现象，股票长期单边下跌，在底部时有所反弹就会引起抛售，底部时间可能会很长。如果在左侧买入，会承担巨大的压力，市场整体对企业价值的判断与个人意见相反，如果你觉得自己的判断是正确的，需要与股票的价格的背离、市场舆论的反差做对抗，而且在长期底部或者长期下跌的情况下忍受账面上的浮亏，这对于人性是巨大的考验，可以说是逆人性买入。如果按照价值投资的绝对理性操作，在确认企业的基本面有大改变的情况，股票大幅下跌，导致可以用更低的成本获取企业更多的收益，应该加大购买的数量，但实际情况是，大部分的投资者仅继续 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/07/22/invest3-sellpoint/" title="投资笔记与思考-卖出的时机">投资笔记与思考-卖出的时机</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-09-04T01:09:11.193Z" title="更新于 2025/09/04 09:09:11">2025/09/04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">卖出的方法如果按照长期价值投资者的理论，如果确认买入的公司是一家生意好的公司，不用太在意股票价格波动，也不用考虑卖出的问题。只需要确认这家公司的生意是否还可以，管理层是否经营正常，市场优势是否保持稳固即可。但本人买入的是ETF，不会自己主动选择，也没有办法观察每家公司的做生意的模式、经营情况等。在实际投资过程中，需要考虑合适的卖出时点。在大半年的实际交易情况看，自己卖出的股票经常会卖飞，比如银行、能源，都在卖出后继续涨了8个点，创新药甚至有10%以上。这些ETF都是上涨一段时间后，个人感觉估值和风险偏高后卖出的。如果事后诸葛亮来看应该继续持有，市场总是带有情绪的，某类股票上涨一段时候，会碰到散户追高、机构抱团等影响，继续保持上涨。如何平衡风险和收益。目前考虑的方法是逐步减仓的方式，可以大概将持仓分为三部分：第一部分是底仓，什么时候都不会卖出；第二部分是估值偏高仓位，当个人判断估值已经偏高后卖出；第三部分是风险仓位，在上涨时一直保持持有，直到出现短时间大幅回撤（可以通过条件单控制）时卖出。通过三部分仓位，在控制风险的情况下，提高收益率。其次还有一种方法。对于同一大类的股票，如果在上涨过程 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/31/invest-record202505/" title="投资记录（202411-202505）">投资记录（202411-202505）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-09-04T01:09:11.193Z" title="更新于 2025/09/04 09:09:11">2025/09/04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">投资总体情况从202411开始投资以来，总资产收益率4.12%（包含qdii基金），已清仓收益42%，最大回撤1.32%，最大仓位50%。收益率区间-0.33%到4.35%。
+A股港股主要交易20241231到20250110指数连续下跌后，股票估值比较合适时部分买入抗跌的红利股，部分买入消费股、创新药、酒ETF等高弹性。所有弹性证券在4月初全部卖出，只留下红利股。20250311纯投机买入黄金，20250401卖出，收益率8.5%。20250407由于上周末美国全球关税政策，股市暴跌，在0407到0411期间，再次买入红利、银行、消费。虽然根据特朗普的经济顾问米兰的文章推测，激进关税只是手段，绝对高关税不太可能持续，但是逆市场买入风险较大，所以买入黄金作为风险对冲。黄金在0414卖出，收益率6.1%。由于银行净息差承压加上银行股价新高，银行ETF在0509、0513卖出，收益率7.4%。4月份港股创新药企业的年报发出，营收高速增长，股价大幅增长，进入观察范围。5月7号特朗普表示药品研发服务也要加关税，由于创新药企业营收主要依赖于美国市场，创新药股价大幅下跌。美国的医药研发人才成本远高 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/20/modsecurity/" title="modsecurity环境配置">modsecurity环境配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-20T02:37:29.000Z" title="更新于 2025/05/20 10:37:29">2025/05/20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/security/">security</a></span></div><div class="content">modsecurity+nginx+dvwa安装配置下载nginx与modsecurity
+123456789101112# 下载modsecurity并安装git clone git@github.com:owasp-modsecurity/ModSecurity.git# 下载nginx和modsecurity的nginx插件wget http://nginx.org/download/nginx-1.26.1.tar.gztar -zxvf nginx-1.26.1.tar.gzgit clone https://github.com/SpiderLabs/ModSecurity-nginxcd nginx-1.26.1# 编译安装./configure --add-module=../Modsecurity-nginx --with-http_ssl_modulemake -j 8sudo make install 
+安装dvwa及相关依赖
+1234567891011121314151617181920212223242526272829cd ~/gitwget https:/ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/19/invest2-cyclicalStock/" title="投资笔记与思考-周期股">投资笔记与思考-周期股</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-09-04T01:09:11.193Z" title="更新于 2025/09/04 09:09:11">2025/09/04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">投资笔记与思考-周期股周期股一般可以分为二类：第一类是企业营收受经济大周期影响严重的企业，比如银行、证券等金融部门，金融企业在经营过程中存在大量投资杠杆行为，在经济上行期，由于所有部门都认为未来经济总量会比当前经济总量要好，所以会存在大量高杠杆融资行为，这些金融风险都会集中到金融企业，个人投资也会借当前资金投资未来产品，通过经济发展中利率的提高、社会经济总量提高获取收益，如借入资金买期房，本质就是已当前利率借入，在经济上行，获取远期利率收益。一旦切换到下行周期，在上行周期产生的负债就会产生难以偿还的风险。银行作为间接融资的集中点，风险会快速上升。（在我国由于银行有国家隐形背书，所以风险会增加，但很难暴雷，这点需要注意）。第二类是企业的主要经营商品为大宗商品。大宗商品有四个特点标准化、实物属性、大宗交易、价格波动性。由于大宗商品的标准化，导致相关经营企业差异化竞争的空间很小，所以大宗商品的价格、企业的利润主要依赖供需关系情况。由于大宗商品的实物属性，所以大宗商品的供需关系受到地缘政治、气候影响较大。这些共同导致了大宗商品的价格波动性。大宗商品的周期股，当商品价格较高时，所有的企业都大规模 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/23/invest1-valuation/" title="投资笔记与思考-企业估值模型">投资笔记与思考-企业估值模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-09-04T01:09:11.193Z" title="更新于 2025/09/04 09:09:11">2025/09/04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/investment/">investment</a></span></div><div class="content">简单估值公式大部分投机者投资证券盈利的方式就是高买低卖，即使是投资者，不在乎短期股价波动，在乎企业长期发展和分红，也需要避免在企业估值过高的情况，这时股价下跌带来的亏损远高于分红和企业的营收增长。在合适甚至便宜的价格购买证券，有利于投资者控制风险，如果整体市场大幅下跌，便宜价格购买的证券下跌的空间也会减小。在格雷厄姆的聪明的投资者一书中给出了一个简单的评估成长股价值的公式价值=当前收益 * （8.5 + 预期年增长率*2）。对于不同类型的企业、不同的股息率、不同的管理层，8.5这个数值很难有一个标准化的数值，而且由于所处时代不同，格雷厄姆时期烟蒂股还有很多，目前相比于50年代，价值挖掘越来越困难。一般可能出现严重低估的股票都是流动性枯竭，很少有人交易的。目前30年国债的收益率为2%，不考虑股价的波动，投资者获得的自由现金流是股票每年分得的红利，如果股票的平均的股息支付率为50%，如果要从股票获得现金流与国债一致（股息率为2%），则需要企业盈利与市值比达到4%，倒数为25倍市盈率。大概可以说如果企业的经营没有任何风险，且没有盈利任何增长，PE为25倍。实际情况中，企业的经营风险远高于30 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/23/modsecurity-rule/" title="modsecurity rule grammar">modsecurity rule grammar</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.000Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/security/">security</a></span></div><div class="content">modsecurity规则语法modsecurity core rule规则可以参考官方wiki文档SecRule的基本语法SecRule VARIABLES OPERATOR [ACTIONS]
+
+VARIABLES:一般是指定请求和响应的对象，如REQUEST_BODY、REQUEST_HEADERS、REQUEST_METHOD、REQUEST_URI(包含完整的请求URL,有请求的字符串数据，比如&#x2F;index.php?p&#x3D;x)
+OPERATOR:可以理解为一个操作函数，一个入参是VARIABLES，一个是操作函数后面的入参，@用于标识操作函数，比如SecRule TX:DETECTION_PARANOIA_LEVEL &quot;@lt 1&quot; &quot;id:913011&quot;，lt函数比较VARIABLES与1的值，如果VARIABLES小于1，,则执行action。pmFromFIle函数匹配variables与入参，不区分大小写，入参可以有多个，可以送入文件。SecRule REQUEST_HEADERS:User-Agent &qu ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/17/pacman/" title="pacman常用命令">pacman常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.000Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/pacman/">pacman</a></span></div><div class="content">pacman常用命令pacman -Rc packagename, -c &#x3D; –cascade; 删除该软件以及所有依赖该软件的软件
+pacman -Rs packagename, -s &#x3D; –recursive; 删除该软件，并递归删除该软件的不需要的依赖。在安装该软件时，可能安装一些依赖软件，如果这些依赖软件没有被其他软件依赖，则递归删除。
+pacman -Rsc packagename; 可以删除该软件的上下游依赖关系
+pacman -S –overwrite \* packagename; 覆盖性强制安装软件，当错误删除&#x2F;var&#x2F;lib&#x2F;pacman后，导致pacman无法识别已安装的软件，可以用–overwrite \*进行强制覆盖，之后pacman会识别到重新安装的软件
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/25/security-analysis/" title="证券分析阅读笔记">证券分析阅读笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2025-05-19T05:41:26.000Z" title="更新于 2025/05/19 13:41:26">2025/05/19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/readnote/">readnote</a></span></div><div class="content">
+  23aeb3008bb770d90784d19252d56dd209bd924e00f05086652f923dd7ca20d6efc598e5a2edfc1b8d62a1557aa9f7c648001d3109447629b2afa90a418e658989c8614dc8fe404ea51d3378d4c5e0c16f7e4a523bbecb0f0aaa2e045da52bef7a505df5c98570a5837b668a2a0dcd15bc17fa79a820bc64f6b115b595ea10cf4d006cab665fa5495730805a9d0dddadc46ac1e4ffe310eebf7b845262626f5d842389eb4a6c28fca9616bc61e9ee852c535fe65121b4b58f97929061c67def1
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">月的奏鸣曲</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/invest-record202601/" title="无题">无题</a><time datetime="2026-03-31T09:19:55.568Z" title="发表于 2026/03/31 17:19:55">2026/03/31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/invest-record20260329/" title="无题">无题</a><time datetime="2026-03-31T09:19:55.568Z" title="发表于 2026/03/31 17:19:55">2026/03/31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/04/invest-record2025/" title="投资记录（至20251231）">投资记录（至20251231）</a><time datetime="2026-01-03T16:00:00.000Z" title="发表于 2026/01/04 00:00:00">2026/01/04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/15/read-record20251215/" title="读书随笔-《以日为鉴》">读书随笔-《以日为鉴》</a><time datetime="2025-12-14T16:00:00.000Z" title="发表于 2025/12/15 00:00:00">2025/12/15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/09/invest-record202510/" title="投资记录（至20251031）">投资记录（至20251031）</a><time datetime="2025-11-08T16:00:00.000Z" title="发表于 2025/11/09 00:00:00">2025/11/09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/f2fs/"><span class="card-category-list-name">f2fs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go-java/"><span class="card-category-list-name">go, java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/investment/"><span class="card-category-list-name">investment</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pacman/"><span class="card-category-list-name">pacman</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/readnote/"><span class="card-category-list-name">readnote</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/stock/" style="font-size: 1.4em; color: #99a5b6">stock</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">基本数据结构</a> <a href="/tags/file/" style="font-size: 1.1em; color: #999">file</a> <a href="/tags/readnote/" style="font-size: 1.1em; color: #999">readnote</a> <a href="/tags/f2fs/" style="font-size: 1.2em; color: #999da3">f2fs</a> <a href="/tags/linux/" style="font-size: 1.2em; color: #999da3">linux</a> <a href="/tags/list/" style="font-size: 1.1em; color: #999">list</a> <a href="/tags/modsecurity/" style="font-size: 1.2em; color: #999da3">modsecurity</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/nil/" style="font-size: 1.1em; color: #999">nil</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 1.2em; color: #999da3">内存</a> <a href="/tags/container/" style="font-size: 1.1em; color: #999">container</a> <a href="/tags/parameter/" style="font-size: 1.1em; color: #999">parameter</a> <a href="/tags/WAF/" style="font-size: 1.2em; color: #999da3">WAF</a> <a href="/tags/zero-value/" style="font-size: 1.1em; color: #999">zero value</a> <a href="/tags/read-life-investment/" style="font-size: 1.1em; color: #999">-- read -- life -- investment</a> <a href="/tags/pacman/" style="font-size: 1.1em; color: #999">pacman</a> <a href="/tags/%E5%A4%A9%E6%B0%94/" style="font-size: 1.1em; color: #999">天气</a> <a href="/tags/monotonic-stack/" style="font-size: 1.1em; color: #999">monotonic_stack</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/slice/" style="font-size: 1.3em; color: #99a1ac">slice</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/golang/" style="font-size: 1.1em; color: #999">golang</a> <a href="/tags/error/" style="font-size: 1.1em; color: #999">error</a> <a href="/tags/systemcommand/" style="font-size: 1.1em; color: #999">systemcommand</a> <a href="/tags/investment-stock/" style="font-size: 1.2em; color: #999da3">-- investment -- stock</a> <a href="/tags/dfs/" style="font-size: 1.1em; color: #999">dfs</a> <a href="/tags/investment/" style="font-size: 1.5em; color: #99a9bf">investment</a> <a href="/tags/reflect/" style="font-size: 1.1em; color: #999">reflect</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">拓扑排序</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/gopacket/" style="font-size: 1.2em; color: #999da3">gopacket</a> <a href="/tags/stack/" style="font-size: 1.1em; color: #999">stack</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/hash/" style="font-size: 1.1em; color: #999">hash</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/03/"><span class="card-archive-list-date">三月 2026</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/01/"><span class="card-archive-list-date">一月 2026</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/12/"><span class="card-archive-list-date">十二月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">42</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-01T00:49:28.591Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 月的奏鸣曲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
