@@ -6,7 +6,7 @@
   <link href="http://zt-winter.github.io/atom.xml" rel="self"/>
   
   <link href="http://zt-winter.github.io/"/>
-  <updated>2026-04-01T00:53:30.884Z</updated>
+  <updated>2026-05-05T09:58:07.976Z</updated>
   <id>http://zt-winter.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>投资记录（20260505）</title>
+    <link href="http://zt-winter.github.io/2026/05/05/invest-record20260430/"/>
+    <id>http://zt-winter.github.io/2026/05/05/invest-record20260430/</id>
+    <published>2026-05-04T16:00:00.000Z</published>
+    <updated>2026-05-05T09:58:07.976Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="投资总体情况"><a href="#投资总体情况" class="headerlink" title="投资总体情况"></a>投资总体情况</h1><p>场内基金收益率8.77%，仓位43%。仓位分布在红利、消费、标普500、创新药、互联网、养殖。  </p><h1 id="A股港股交易"><a href="#A股港股交易" class="headerlink" title="A股港股交易"></a>A股港股交易</h1><p>互联网在4月震荡，上升后又跌回去，在跌回去过程中后又加了一点仓位。保持互联网的估值处理合理范围的看法。目前互联网的收益率为-5.2%，如果后续出现暴跌，会继续加仓。港股消费持续下跌，在下跌过程中再次小幅加仓。互联网和消费在4月份都是震荡下行中，除了小幅加仓外，没有什么额外操作，也没有做T。  </p><h1 id="美日"><a href="#美日" class="headerlink" title="美日"></a>美日</h1><p>美伊冲突过程中东证ETF持续下跌，在下跌过程中买入少量。由于是条件单触发的买入，当时忘了美伊冲突调整条件单，到4月底，东证ETF收益率为0.4%。后续冲突持续导致美股回调，在回调过程中持续小幅买入标普500，在29号将回调过程中买入的标普500份额全部卖出，收益率8.1%。相当于做T减少已有持仓的持仓成本。  </p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个月基本没有操作，标普500做T主要是判断油价不可能长期走高，持续买入的份额自己认为是在做投机博弈，所以在买入时就计划反弹后卖出，不会继续持有。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;投资总体情况&quot;&gt;&lt;a href=&quot;#投资总体情况&quot; class=&quot;headerlink&quot; title=&quot;投资总体情况&quot;&gt;&lt;/a&gt;投资总体情况&lt;/h1&gt;&lt;p&gt;场内基金收益率8.77%，仓位43%。仓位分布在红利、消费、标普500、创新药、互联网、养殖。  &lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="investment" scheme="http://zt-winter.github.io/categories/investment/"/>
+    
+    
+    <category term="investment" scheme="http://zt-winter.github.io/tags/investment/"/>
+    
+    <category term="stock" scheme="http://zt-winter.github.io/tags/stock/"/>
+    
+  </entry>
   
   <entry>
     <title>投资记录（20260329）</title>
@@ -502,29 +529,6 @@
     
     
     <category term="pacman" scheme="http://zt-winter.github.io/tags/pacman/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>证券分析阅读笔记</title>
-    <link href="http://zt-winter.github.io/2025/03/25/security-analysis/"/>
-    <id>http://zt-winter.github.io/2025/03/25/security-analysis/</id>
-    <published>2025-03-24T16:00:00.000Z</published>
-    <updated>2025-05-19T05:41:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="f67dcb7e7f52cf5f559727e8efda333b616f62408425bd2cd3276d011d31daa5">23aeb3008bb770d90784d19252d56dd209bd924e00f05086652f923dd7ca20d6efc598e5a2edfc1b8d62a1557aa9f7c648001d3109447629b2afa90a418e658989c8614dc8fe404ea51d3378d4c5e0c16f7e4a523bbecb0f0aaa2e045da52bef7a505df5c98570a5837b668a2a0dcd15bc17fa79a820bc64f6b115b595ea10cf4d006cab665fa5495730805a9d0dddadc46ac1e4ffe310eebf7b845262626f5d842389eb4a6c28fca9616bc61e9ee852c535fe65121b4b58f97929061c67def1</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-    
-    
-    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
-    
-    
-    
-    <category term="readnote" scheme="http://zt-winter.github.io/categories/readnote/"/>
-    
-    
-    <category term="investment" scheme="http://zt-winter.github.io/tags/investment/"/>
-    
-    <category term="readnote" scheme="http://zt-winter.github.io/tags/readnote/"/>
     
   </entry>
   
